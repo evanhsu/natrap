@@ -1,0 +1,41 @@
+<h1>Listing incidents</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Event type</th>
+    <th>Number</th>
+    <th>Name</th>
+    <th>Charge code</th>
+    <th>Override</th>
+    <th>Acres</th>
+    <th>Fuel models</th>
+    <th>Description</th>
+    <th>G cal event url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @incidents.each do |incident| %>
+  <tr>
+    <td><%= incident.date %></td>
+    <td><%= incident.event_type %></td>
+    <td><%= incident.number %></td>
+    <td><%= incident.name %></td>
+    <td><%= incident.charge_code %></td>
+    <td><%= incident.override %></td>
+    <td><%= incident.acres %></td>
+    <td><%= incident.fuel_models %></td>
+    <td><%= incident.description %></td>
+    <td><%= incident.g_cal_event_url %></td>
+    <td><%= link_to 'Show', incident %></td>
+    <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
+    <td><%= link_to 'Destroy', incident, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Incident', new_incident_path %>

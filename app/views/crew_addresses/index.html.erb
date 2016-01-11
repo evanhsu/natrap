@@ -1,0 +1,27 @@
+<h1>Listing crew_addresses</h1>
+
+<table>
+  <tr>
+    <th>Crew</th>
+    <th>Type</th>
+    <th>Address</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @crew_addresses.each do |crew_address| %>
+  <tr>
+    <td><%= crew_address.crew_id %></td>
+    <td><%= crew_address.type %></td>
+    <td><%= crew_address.address %></td>
+    <td><%= link_to 'Show', crew_address %></td>
+    <td><%= link_to 'Edit', edit_crew_address_path(crew_address) %></td>
+    <td><%= link_to 'Destroy', crew_address, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Crew address', new_crew_address_path %>

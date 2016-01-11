@@ -1,0 +1,97 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rappeller_id: 2
+  operation_id: 1
+  door: left
+  stick: 1
+  rope_number: SRC-015
+  rope_end: A
+  knot: false
+  eto: false
+  descent_device_number: SRC-003
+  comments: Nailed it
+
+two:
+  rappeller_id: 3
+  operation_id: 1
+  door: right
+  stick: 1
+  rope_number: SRC-020
+  rope_end: A
+  knot: false
+  eto: false
+  descent_device_number: SRC-005
+  comments: OOOPSS
+
+three:
+  rappeller_id: 4
+  operation_id: 1
+  door: left
+  stick: 2
+  rope_number: SRC-022
+  rope_end: B
+  knot: false
+  eto: true
+  descent_device_number: SRC-006
+  comments: some comments
+
+four:
+  rappeller_id: 5
+  operation_id: 1
+  door: right
+  stick: 2
+  rope_number: SRC-023
+  rope_end: A
+  knot: false
+  eto: false
+  descent_device_number: COR-022
+  comments:
+
+five:
+  rappeller_id: 1
+  operation_id: 2
+  door: left
+  stick: 1
+  rope_number: SRC-015
+  rope_end: A
+  knot: false
+  eto: false
+  descent_device_number: SRC-003
+  comments: Nailed it
+
+six:
+  rappeller_id: 6
+  operation_id: 2
+  door: right
+  stick: 1
+  rope_number: SRC-020
+  rope_end: A
+  knot: false
+  eto: false
+  descent_device_number: SRC-005
+  comments: OOOPSS
+
+seven:
+  rappeller_id: 7
+  operation_id: 2
+  door: left
+  stick: 2
+  rope_number: SRC-022
+  rope_end: B
+  knot: false
+  eto: true
+  descent_device_number: SRC-006
+  comments: some comments
+
+eight:
+  rappeller_id: 8
+  operation_id: 2
+  door: right
+  stick: 2
+  rope_number: SRC-023
+  rope_end: A
+  knot: false
+  eto: false
+  descent_device_number: COR-022
+  comments:

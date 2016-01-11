@@ -1,0 +1,50 @@
+<%= form_for(@scheduled_course) do |f| %>
+
+  <%= f.text_field :crew_id, :value => @current_person.current_crew.id.to_s, :style => "visibility: hidden;" %>
+  <table style="margin:0 auto 0 auto; width:100%; font-weight:bold;" id="form_table">
+    <tr>
+      <td style="width:10em;">Dates: </td>
+      <td style='text-align:left'>
+        <% error_wrapper @scheduled_course, :date_start do %>
+        <% if @scheduled_course.date_start.nil? %>
+          <% @start_date = "" %>
+        <% else %>
+          <% @start_date = @scheduled_course.date_start.strftime('%m/%d/%Y') %>
+        <% end %>
+
+        <% if @scheduled_course.date_end.nil? %>
+          <% @end_date = "" %>
+        <% else %>
+          <% @end_date = @scheduled_course.date_end.strftime('%m/%d/%Y') %>
+        <% end %>
+
+
+          <% #This field has a calendar popup added unobtrusively using jQuery. Binding is in application.js %>
+          <%= text_field_tag "scheduled_course[date_start]", @start_date, :style => "width:7em;" %>
+        <% end %>
+        to
+        <% error_wrapper @scheduled_course, :date_end do %>
+          <% #This field has a calendar popup added unobtrusively using jQuery. Binding is in application.js %>
+          <%= text_field_tag "scheduled_course[date_end]", @end_date, :style => "width:7em;" %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Course Name (and Session #):</td>
+      <td style="text-align:left"><%= f.text_field :name, :style => "width:20em;" %></td>
+    </tr>
+    <tr>
+      <td>City, State</td>
+      <td style="text-align:left"><%= f.text_field :location, :style => "width:20em;" %></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top">Training facility:</td>
+      <td style="text-align:left">
+        <div id="training_facility">
+          <%= render "training_facility_selection" %>
+        </div>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td><td style="text-align:left"><div class="actions"><%= f.submit "Save" %></div></td></tr>
+  </table>
+<% end %>

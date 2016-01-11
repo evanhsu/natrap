@@ -1,0 +1,179 @@
+norm_sealing_cor_2013:
+  roster_id: 9
+  person_id: 6
+  bio: This is Norm's 2013 Central Oregon biography
+  role: crewmember
+
+andrew_hastings_cor_2013:
+  roster_id: 9
+  person_id: 7
+  bio: This is Andrew's 2013 Central Oregon biography
+  role: crewmember
+
+dan_quinones_src_2013:
+  roster_id: 8
+  person_id: 1
+  bio: This is Dan's 2013 Siskiyou biography
+  role: crewmember
+
+evan_hsu_src_2013:
+  roster_id: 8
+  person_id: 2
+  bio: This is Evan's 2013 Siskiyou biography
+  role: crewmember
+
+tim_lyda_src_2013:
+  roster_id: 8
+  person_id: 15
+  bio: This is Tim's 2013 Siskiyou biography
+  role: crewmember
+
+nick_sailer_src_2013:
+  roster_id: 8
+  person_id: 16
+  bio: This is Nick's 2013 Siskiyou biography
+  role: crewmember
+
+evan_hsu_src_2011:
+  roster_id: 1
+  person_id: 2
+  bio: This is Evan's 2011 Siskiyou biography
+  role: crewmember
+
+dan_quinones_src_2011:
+  roster_id: 1
+  person_id: 1
+  bio: This is Dan's 2011 Siskiyou biography
+  role: crewmember
+
+cole_taggart_src_2011:
+  roster_id: 1
+  person_id: 3
+  bio: This is Evan's 2011 Siskiyou biography
+  role: crewmember
+
+amy_kazmier_cor_2011:
+  roster_id: 2
+  person_id: 5
+  bio: This is Amy's 2011 Central Oregon biography
+  role: crewmember
+
+norm_sealing_cor_2011:
+  roster_id: 2
+  person_id: 6
+  bio: This is Norm's 2011 Central Oregon biography
+  role: crewmember
+
+andrew_hastings_cor_2011:
+  roster_id: 2
+  person_id: 7
+  bio: This is Andrew's 2011 Central Oregon biography
+  role: crewmember
+
+mike_davis_wvr_2011:
+  roster_id: 3
+  person_id: 5
+  bio: This is Mike's 2011 Wenatchee biography
+  role: crewmember
+
+hannah_dewey_wvr_2011:
+  roster_id: 3
+  person_id: 12
+  bio: This is Hannah's 2011 Wenatchee biography
+  role: crewmember
+
+evan_hsu_src_2010:
+  roster_id: 4
+  person_id: 2
+  bio: This is Evan's 2010 Siskiyou biography
+  role: crewmember
+
+dan_quinones_src_2010:
+  roster_id: 4
+  person_id: 1
+  bio: This is Dan's 2010 Siskiyou biography
+  role: crewmember
+
+cole_taggart_src_2010:
+  roster_id: 4
+  person_id: 3
+  bio: This is Cole's 2010 Siskiyou biography
+  role: crewmember
+
+cory_vinyard_src_2010:
+  roster_id: 4
+  person_id: 4
+  bio: This is Cory's 2010 Siskiyou biography
+  role: crewmember
+
+amy_kazmier_cor_2010:
+  roster_id: 5
+  person_id: 5
+  bio: This is Amy's 2010 Central Oregon biography
+  role: crewmember
+
+norm_sealing_cor_2010:
+  roster_id: 5
+  person_id: 6
+  bio: This is Norm's 2010 Central Oregon biography
+  role: crewmember
+
+andrew_hastings_cor_2010:
+  roster_id: 5
+  person_id: 7
+  bio: This is Andrew's 2010 Central Oregon biography
+  role: crewmember
+
+matt_mahoney_cor_2010:
+  roster_id: 5
+  person_id: 8
+  bio: This is Matt's 2010 Central Oregon biography
+  role: crewmember
+
+mike_davis_wvr_2010:
+  roster_id: 6
+  person_id: 9
+  bio: This is Mike's 2010 Wenatchee biography
+  role: crewmember
+
+garret_harasek_wvr_2010:
+  roster_id: 6
+  person_id: 10
+  bio: This is Garret's 2010 Wenatchee biography
+  role: crewmember
+
+amanda_stachowski_wvr_2010:
+  roster_id: 6
+  person_id: 11
+  bio: This is Amanda's 2010 Wenatchee biography
+  role: crewmember
+
+hannah_dewey_wvr_2010:
+  roster_id: 6
+  person_id: 12
+  bio: This is Hannah's 2010 Wenatchee biography
+  role: crewmember
+
+evan_hsu_cor_2009:
+  roster_id: 7
+  person_id: 2
+  bio: This is Evan's 2009 Central Oregon biography
+  role: crewmember
+
+amy_kazmier_cor_2009:
+  roster_id: 7
+  person_id: 5
+  bio: This is Amy's 2009 Central Oregon biography
+  role: crewmember
+
+norm_sealing_cor_2009:
+  roster_id: 7
+  person_id: 6
+  bio: This is Norm's 2009 Central Oregon biography
+  role: crewmember
+
+andrew_hastings_cor_2009:
+  roster_id: 7
+  person_id: 7
+  bio: This is Andrew's 2009 Central Oregon biography
+  role: crewmember

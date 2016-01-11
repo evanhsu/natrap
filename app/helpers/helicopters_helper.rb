@@ -1,0 +1,2 @@
+module HelicoptersHelper
+end

@@ -1,0 +1,21 @@
+<h1>Listing training_facilities</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @training_facilities.each do |training_facility| %>
+  <tr>
+    <td><%= link_to 'Show', training_facility %></td>
+    <td><%= link_to 'Edit', edit_training_facility_path(training_facility) %></td>
+    <td><%= link_to 'Destroy', training_facility, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Training facility', new_training_facility_path %>

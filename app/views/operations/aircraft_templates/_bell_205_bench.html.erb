@@ -1,0 +1,41 @@
+<% aircraft = "bell_205_bench" %>
+<% operation = vars[:operation] %>
+<table style="margin:0 auto 0 auto;">
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <% editable = vars[:spot].editable_by?(current_person) && vars[:editable] %>
+      <%= render("operations/#{vars[:action]}/spotter", vars.merge(:editable => editable)) %>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+      <% rappel = operation.rappel(:door => "left", :stick => 1) || Rappel.new({:stick => 1, :door => "left", :rappeller => Rappeller.new({:person => Person.new})}) %>
+      <% rappel_partial = (!operation.new_record? && rappel.new_record?) ? "blank_rappel" : "rappel" %>
+      <% editable = !rappel.new_record? ? rappel.editable_by?(current_person) && vars[:editable] : operation.editable_by?(current_person) && vars[:editable] %>
+      <%= render("operations/#{vars[:action]}/#{rappel_partial}", vars.merge(:title => "1st Stick", :rappel => rappel, :count => 1, :editable => editable)) %>
+    </td>
+    <td rowspan="3"><%= image_tag "schematics/bell_205_bench.png" %></td>
+    <td>
+      <% rappel = operation.rappel(:door => "right", :stick => 1) || Rappel.new({:stick => 1, :door => "right", :rappeller => Rappeller.new({:person => Person.new})}) %>
+      <% rappel_partial = (!operation.new_record? && rappel.new_record?) ? "blank_rappel" : "rappel" %>
+      <% editable = !rappel.new_record? ? rappel.editable_by?(current_person) && vars[:editable] : operation.editable_by?(current_person) && vars[:editable] %>
+      <%= render("operations/#{vars[:action]}/#{rappel_partial}", vars.merge(:title => "1st Stick", :rappel => rappel, :count => 2, :editable => editable)) %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <% rappel = operation.rappel(:door => "left", :stick => 2) || Rappel.new({:stick => 2, :door => "left", :rappeller => Rappeller.new({:person => Person.new})}) %>
+      <% rappel_partial = (!operation.new_record? && rappel.new_record?) ? "blank_rappel" : "rappel" %>
+      <% editable = !rappel.new_record? ? rappel.editable_by?(current_person) && vars[:editable] : operation.editable_by?(current_person) && vars[:editable] %>
+      <%= render("operations/#{vars[:action]}/#{rappel_partial}", vars.merge(:title => "2nd Stick", :rappel => rappel, :count => 3, :editable => editable)) %>
+    </td>
+    <td>
+      <% rappel = operation.rappel(:door => "right", :stick => 2) || Rappel.new({:stick => 2, :door => "right", :rappeller => Rappeller.new({:person => Person.new})}) %>
+      <% rappel_partial = (!operation.new_record? && rappel.new_record?) ? "blank_rappel" : "rappel" %>
+      <% editable = !rappel.new_record? ? rappel.editable_by?(current_person) && vars[:editable] : operation.editable_by?(current_person) && vars[:editable] %>
+      <%= render("operations/#{vars[:action]}/#{rappel_partial}", vars.merge(:title => "2nd Stick", :rappel => rappel, :count => 4, :editable => editable)) %>
+    </td>
+  </tr>
+</table>

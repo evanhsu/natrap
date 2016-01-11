@@ -1,0 +1,18 @@
+<% if current_person
+      admin_cid = current_person.current_crew.id if (current_crew && (current_person.has_authorization?(Authorizations::EDIT_OWN_CREW) or current_person.has_authorization?(Authorizations::EDIT_CREWS) or current_person.is_global_admin?))
+      cid = current_person.current_crew.id if current_crew
+  end %>
+
+<nav id="block_menu" role="navigation">
+    <ul>
+        <li><a href="/">Map</a></li>
+        <li><%= link_to_unless_current "Crew", crew_path(cid) if (cid && !admin_cid) %>
+            <%= link_to_unless_current "Crew", admin_crew_path(admin_cid) if admin_cid %>
+            <% if (!cid && !admin_cid) %>
+            <a>No Crew</a>
+            <% end %>
+        </li>
+        <li><a href="http://dandy.natrap.com">Dandy</a></li>
+        <li><a href="/staffing_levels">Staffing</a></li>
+    </ul>
+</nav>

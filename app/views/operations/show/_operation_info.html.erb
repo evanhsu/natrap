@@ -1,0 +1,29 @@
+<table style="margin:0 auto 0 auto">
+  <tr>
+    <td style="text-align:right" class="label">Date: </td>
+    <td style="text-align:left">
+      <% if editable %>
+        <%= ajax_in_place_form(operation, :date,
+                               calendar_date_select_tag("operation[date]", operation.date, :style => "width:5em")) %>
+      <% else %>
+        <%= operation.date %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:right" class="label">Type: </td>
+    <td style="text-align:left"><%= editable ? ajax_in_place_selection(operation, :operation_type, Operation::TYPES) : operation.operation_type %></td>
+  </tr>
+  <tr>
+    <td style="text-align:right" class="label">Incident #: </td>
+    <td style="text-align:left"><div style="width:200px"><%= editable ? ajax_in_place_text_field(operation, :incident_number, {}, :style => "width:9em") : operation.incident_number %></div></td>
+  </tr>
+  <tr>
+    <td style="text-align:right" class="label">Height: </td>
+    <td style="text-align:left"><%= editable ? ajax_in_place_text_field(operation, :height, {}, :style => "width:5em") : operation.height %></td>
+  </tr>
+  <tr>
+    <td style="text-align:right" class="label">Canopy Opening (sq. feet): </td>
+    <td style="text-align:left"><%= editable ? ajax_in_place_text_field(operation, :canopy_opening, {}, :style => "width:5em") : operation.canopy_opening %></td>
+  </tr>
+</table>

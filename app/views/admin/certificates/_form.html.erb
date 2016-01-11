@@ -1,0 +1,23 @@
+<div style="margin:0 auto 0 auto; text-align: center;">
+<%= form_for(@certificate, :url => @url,:html => {:multipart => true}) do |f| %>
+  <% if @certificate.errors.any? %>
+    <div id="error_explanation" style="margin:0 auto 0 auto;">
+      <h2><%= pluralize(@certificate.errors.count, "error") %> prohibited this certificate from being saved:</h2>
+      <ul>
+      <% @certificate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div><br />
+  <% end %>
+
+  <table style="border:2px solid #555555; margin: 0 auto 0 auto;">
+    <tr><td><strong>Course Name</strong><br /><i>e.g. S-212</i></td><td>:</td><td><%= f.text_field :name %><%= f.hidden_field :person_id, :value => @person.id %></td></tr>
+    <tr><td><strong>Year</strong><br /><i>e.g. <%= Time.now.year %></i></td><td>:</td><td><%= f.text_field :year %></td></tr>
+    <tr><td><strong>Upload</strong></td><td>:</td><td><%= f.file_field :image %></td></tr>
+    <tr><td colspan="3"><hr /></td></tr>
+    <tr><td colspan="2"></td><td><%= f.submit %></td></tr>
+
+  </table>
+<% end %>
+</div>

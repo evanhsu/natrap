@@ -1,0 +1,9 @@
+var container = $("<%= params[:container_id] %>");
+<% if(object.class.protected_attributes.entries.include?(params[:display_attribute]) or params[:display_attribute].blank?) %>
+  <% display_attribute = "" %>
+<% else %>
+  <% display_attribute = object.send(params[:display_attribute]) %>
+<% end %>
+container.down('form').hide();
+var editText = container.down('.edit_text');
+container.down('[data-text]').update("<%= display_attribute.blank? ? "N/A" : display_attribute %>").insert(editText).show();

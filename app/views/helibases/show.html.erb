@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @helibasis.name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @helibasis.city %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @helibasis.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @helibasis.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_helibasis_path(@helibasis) %> |
+<%= link_to 'Back', helibases_path %>

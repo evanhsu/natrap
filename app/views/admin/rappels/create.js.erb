@@ -1,0 +1,20 @@
+<% rappel_position = "#{@rappel.stick.to_s}_#{@rappel.door}" %>
+<% title = case @rappel.stick
+             when 1
+               "1st Stick"
+             when 2
+               "2nd Stick"
+             when 3
+               "3rd Stick"
+             else
+               "#{@rappel.stick}th Stick"
+           end %>
+<% error_container_id = rappel_position + "_errors" %>
+var rappelPosition = "<%= rappel_position %>";
+<% if @rappel.errors.any? %>
+  $("<%= error_container_id %>").update("<%= @rappel.errors.full_messages.join('<br \>') %>");
+<% else %>
+  $(rappelPosition + '_container').replace("<%= escape_javascript(render('operations/show/rappel', :title => title, :rappel => @rappel, :operation => @operation, :editable => true)) %>");
+  addListeners($(rappelPosition + '_container'));
+  addRappellerAutocompleters($(rappelPosition + '_container'));
+<% end %>

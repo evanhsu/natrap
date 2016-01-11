@@ -1,0 +1,477 @@
+
+#bottom_links {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size: 11px;
+letter-spacing:2px;
+color:#666;
+width:700px;
+background:transparent;
+margin:0 auto 0 auto; padding:0 0 25px 0;
+display:block;
+}
+
+a:link		{color:#063; text-decoration:none;}
+a:visited	{color:#063; text-decoration:none;}
+a:active	{color:#063; text-decoration:none;}
+a:hover		{color:#911; text-decoration:underline;}
+
+a:link img, a:visited img, a:active img {text-decoration:none; border:1px solid #ffffff;}
+a:hover img {text-decoration:none; border:1px solid #991111;}
+
+.acronym_in_list {
+display: inline;
+padding: 5px;
+}
+
+.button {
+font: bold 11px Arial;
+text-decoration: none;
+background-color: #EEEEEE;
+color: #333333;
+padding: 2px 6px 2px 6px;
+border-top: 1px solid #CCCCCC;
+border-right: 1px solid #333333;
+border-bottom: 1px solid #333333;
+border-left: 1px solid #CCCCCC;
+}
+
+h1 {
+font-size: 18px;
+font-weight:bold;
+display:inline;
+}
+
+h2 {
+font-size: 14px;
+font-weight:bold;
+display:inline;
+}
+
+h3 {
+font-size:12px;
+font-weight:bold;
+display:inline;
+}
+
+hr {
+border:none;
+background-color:#444;
+color:#444;
+width:100%;
+height:1px;
+}
+
+th.infobox {
+background-color:#88bbdd;
+font-weight: bold;
+font-size: 1.5em;
+text-align: left;
+padding: 2px 0 5px 5px;
+border-bottom: 2px solid #888888;
+}
+
+.notice {
+color: #336633;
+font-weight: bold;
+}
+
+.ajax_error_msg {
+color: #ff0000;
+font-size: 8pt;    
+}
+
+.alert {
+color: #CC5555;
+font-weight: bold;
+}
+
+.rappel_confirmation_status {
+text-align: left;
+}
+
+.confirmed {
+margin: 0 auto 0 0;
+font-size:0.8em;
+font-weight:bold;
+color: #888888;
+}
+.confirmed .name {
+color:#666666;
+}
+.unconfirmed {
+margin: 0 auto 0 0;
+font-size:0.8em;
+font-weight:bold;
+color: #aa3333;
+}
+
+.rappel_container {
+text-align:left;
+margin:0 auto 0 auto;
+border:2px dashed gray;
+padding:5px;
+width:250px;
+}
+
+.rappel_spotter_container {
+text-align:left;
+margin:0 auto 0 auto;
+border:2px dashed gray;
+padding:5px;
+width:150px;
+}
+
+.empty_rappel_container {
+margin:0 auto 0 auto;
+border:2px dashed gray;
+padding:5px;
+width:250px;
+height:200px;
+}
+
+.chart_cell {
+width:25%;
+background-color: #cccccc;
+text-align: center;
+}
+
+table.staffing_level_table {
+    font-size: 0.9em;
+    border-collapse: collapse;
+    border:2px solid #555555;
+    width: 100%;
+}
+
+table.staffing_level_table td {
+    font-size: 0.9em;
+}
+td.last_row_in_group {
+    border-bottom: 2px solid #555555;
+}
+
+table.form_table {
+margin:0 auto 0 auto;
+border-collapse:collapse;
+color:#333333;
+}
+
+table.form_table tr {
+background-color:#ccddcc;
+margin:0;
+padding:0;
+}
+
+table.form_table th {
+background-color:#aabbaa;
+font-size:1.1em;
+font-weight:bold;
+padding-top:5px;
+border-bottom:2px solid #555555;
+}
+
+table.form_table td {
+padding:2px;
+}
+
+table.form_table .label {
+font-weight:bold;
+}
+
+table.alternating_rows {
+text-align:center;
+}
+
+.alternating_rows th {
+background-color: #888888;
+border: 1px solid #999999;
+padding: 3px 5px 2px 5px;
+font-size: 1.0em;
+font-weight: bold;
+text-align:center;
+}
+
+tr.evn {
+background-color:#aaaaaa;
+}
+tr.odd {
+background-color:#dddddd;
+}
+tr.attention1 {
+background-color: #dddd00;
+}
+tr.attention2 {
+background-color: #ffbbbb;
+}
+
+.alternating_rows td {
+padding: 1px 2px 1px 2px;
+text-align:left;
+vertical-align: top;
+}
+
+.alternating_rows td a img {
+border:none;
+}
+
+small {
+font-size:0.8em;
+font-weight:normal;
+}
+
+.input_field {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:normal;
+color:#555555;
+border:2px solid #cccccc;
+text-transform:capitalize;
+}
+
+.error_msg {
+font-size:11px;
+color:#CC3300;
+}
+
+.sidebar_error_msg {
+font-size:14px;
+font-weight:bold;
+color:#ffffff;
+width: 100%;
+text-align: center;
+}
+
+form table td {
+text-align:left;
+padding:3px 2px 3px 2px;
+}
+
+.highlight_grey {
+font-weight:bold;
+color:#cccccc;
+}
+
+#login_result {
+font-family:Arial, Helvetica, sans-serif;
+color:#cccccc;
+font-size:12px;
+font-weight:bold;
+}
+
+.loginfield {
+font-family:Arial, Helvetica, sans-serif;
+font-size:10px;
+width:110px;
+}
+
+.form_button {
+background-color:#cccccc;
+border:2px solid #555555;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size:0.9em;
+color:#555555;
+margin:2px; padding:2px;
+}
+
+.form_button:hover {
+background-color:#aaccaa;
+border:2px solid #336633;
+color:#000000;
+}
+
+img.image_map {
+border:none;
+margin:0 auto 0 auto;
+}
+/*
+img.border {
+margin:5px; padding:0;
+border:1px solid #555;
+}
+*/
+.column {
+width:200px;
+float:left;
+display:block;
+text-align:justify;
+margin:10px;
+}
+
+td.thumb {
+font-size:9px;
+width:125px;
+overflow:hidden;
+padding-bottom:5px;
+vertical-align:top;
+}
+
+.thumb a {border:none; ;}
+.thumb a:link img {border:2px solid #444;}
+.thumb a:visited img {border:2px solid #444;}
+.thumb a:active img {border:2px solid #444;}
+.thumb a:hover img {border:2px solid #396;}
+
+.enlarged_image {
+border:2px solid #666;
+}
+
+#big_caption {
+font-size:20px;
+color:#666;
+display:inline;
+}
+
+.bio {
+width:90%;
+text-align:justify;
+margin:0 auto 0 auto;
+}
+
+.biopix_left {
+width:100px;
+height:100px;
+border:1px solid #000;
+margin:2px 5px 0 0;
+float:left;
+}
+
+.biopix_right {
+width:100px;
+height:100px;
+border:1px solid #000;
+margin:2px 0 0 5px;
+float:right;
+}
+
+.roster_thumbnail {border:none; margin:5px; padding:0px; float:left; width:104px; height:140px; font-size:0.9em; line-height:1em;}
+.roster_thumbnail .roster_thumbnail_crewmember_name {font-weight:bold;}
+.roster_thumbnail img {border:1px solid #555555; margin:0; padding:0px;}
+.roster_thumbnail a:link img,
+.roster_thumbnail a:visited img,
+.roster_thumbnail a:active img {border:2px solid #227799; margin:0; padding:0px;}
+.roster_thumbnail a:hover img {border:2px dashed #5599bb; margin:0; padding:0px;}
+
+.in_place_editor-enrollment-accounting {}
+.in_place_editor-enrollment-accounting .editor_ok_button {}
+.in_place_editor-enrollment-accounting .editor_cancel_link {}
+.in_place_editor-enrollment-accounting .editor_field {
+width: 5em;
+font-size: .9em;
+font-weight: bold;
+}
+
+.in_place_form_mouseover {
+background-color:#DDDDDD;
+}
+.in_place_form_mouseout {
+color:#555555;
+}
+
+.training_facility_profile {
+width: 300px;
+height: 300px;
+border: 2px solid #dddddd;
+float: left;
+text-align: left;
+margin: 25px;
+display: block;
+overflow: auto;
+}
+
+.training_facility_profile div {
+    background-color: #889944;
+    height: 2.5em;
+    width: 294px;
+    padding: 3px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/* CUSTOMIZE AUTOSUGGEST STYLE	*/
+/*#search-wrap input{width:150px; font-size:12px; color:#999999; padding:2px; border:solid 1px #999999;}8?
+
+/* remove the bullets, padding and margins from the lists */
+.results {
+margin:0; padding:0;
+display:block;
+list-style-type:none;
+overflow:visible;
+width:0; height:0;
+border:none;
+border-collapse:collapse;
+}
+
+/* use the table to position the dropdown list */
+.results table{
+position:absolute;
+border:none; margin:0;
+border-collapse:collapse;
+z-index:80;
+/*left:-1px;*/
+/*top:25px;*/
+}
+
+/* style all the links */
+.results a, .results :visited {
+display:block;
+font-size:11px;
+font-weight:normal;
+width:100%;
+margin:0px; padding:5px;
+color:#000;
+background:#949e7c;
+text-decoration:none;
+text-align:left;
+border-top:none;
+}
+/* style the links hover */
+.results li a:hover{
+color:#444;
+background:#d4d8bd;
+border:none;
+border-collapse:collapse;
+}
+
+.results ul {
+padding:0; margin:0;
+position:absolute;
+width:250px;
+height:0;
+border-top:1px solid #fff;
+list-style-type: inherit;
+}
+
+.results li{
+float:left;
+position:relative;
+z-index:100;
+border:1px solid #ffffff;
+list-style-type: inherit;
+display:block;
+width:100%;
+}
+
+.results_hidden {
+position:absolute;
+visibility:hidden;
+height:0; width:0;
+margin:0; padding:0;
+}
+
+.clearfloat {height:0px; visibility:hidden; clear:both;}
+
+a.crew_logo_thumbnail {font-size: 1em; font-weight: bold;}/* Crew Name text below a crew logo */
+a.crew_logo_thumbnail img {border:2px solid #ffffff; margin:2px;}
+a.crew_logo_thumbnail:hover {text-decoration: none; border:none;}
+a.crew_logo_thumbnail:hover img {border:2px dashed #666666;}
+
+
+
+
+/* testing Prototype autocompleter style */
+
+.autocomplete-w1 { position:absolute; top:4px; left:3px; /* IE6 fix: */ _background:none; _top:1px; }
+.autocomplete-w2 { padding:0 6px 6px 0; }
+.autocomplete { width:300px; border:1px solid #999; background:#FFF; cursor:default; text-align:left; max-height:350px; overflow:auto; margin:-6px 6px 6px -6px; /* IE specific: */ _height:350px;  _margin:0px 6px 6px 0; overflow-x:hidden; }
+.autocomplete .selected { background:#F0F0F0; }
+.autocomplete div { padding:2px 5px; white-space:nowrap; }
+.autocomplete strong { font-weight:normal; color:#3399FF; }

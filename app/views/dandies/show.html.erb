@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<% @dandy.each do |dandy| %>
+    Dandy #<%= dandy.id %> belongs to: <%= dandy.crews.collect {|c| c.name}.join(", ") %><br />
+<% end %>
+
+<%= link_to 'Edit', edit_dandy_path(@dandy) %> |
+<%= link_to 'Back', dandies_path %>

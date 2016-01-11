@@ -1,0 +1,16 @@
+<% title = case @rappel.stick
+             when 1
+               "1st Stick"
+             when 2
+               "2nd Stick"
+             when 3
+               "3rd Stick"
+             else
+               "#{@rappel.stick}th Stick"
+           end %>
+<% editable = current_person.has_authorization?(Authorizations::EDIT_OPERATIONS) && current_person.current_crew == @rappel.operation.crew %>
+var rappelPosition = "<%= @rappel.position %>";
+$(rappelPosition + '_confirmed').remove();
+$(rappelPosition + '_container').replace("<%= escape_javascript(render('operations/show/blank_rappel', :title => title, :rappel => @rappel, :operation => @rappel.operation, :editable => editable)) %>");
+addListeners($(rappel_position + '_container'));
+addRappellerAutocompleters($(rappel_position + '_container'));

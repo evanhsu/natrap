@@ -1,0 +1,29 @@
+<h1>Listing helibases</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @helibases.each do |helibasis| %>
+  <tr>
+    <td><%= helibasis.name %></td>
+    <td><%= helibasis.city %></td>
+    <td><%= helibasis.latitude %></td>
+    <td><%= helibasis.longitude %></td>
+    <td><%= link_to 'Show', helibasis %></td>
+    <td><%= link_to 'Edit', edit_helibasis_path(helibasis) %></td>
+    <td><%= link_to 'Destroy', helibasis, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Helibase', new_helibasis_path %>

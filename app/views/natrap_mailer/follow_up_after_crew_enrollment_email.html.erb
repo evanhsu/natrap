@@ -1,0 +1,39 @@
+<%
+@td_style = "font-size: 1.2em;border: 1px solid #98BF21;padding: 3px 7px 2px 7px;background-color: #A7C942;color: white;"
+@td_alt_style = "font-size:1.2em; border:1px solid #98BF21; padding:3px 7px 2px 7px; background-color:#EAF2D3; color:black;"
+@th_style = "font-size: 1.2em;border: 1px solid #98BF21;padding: 3px 7px 2px 7px;background-color: #666666;color: white;"
+@table_style = "width:100%; border:1px solid #000000; border-collapse:collapse;"
+%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    This message is from the NatRap Training Tracker (http://www.natrap.com) 
+    regarding <strong>the <%= @crew.name %></strong>.<br />
+    
+    <strong>These courses have been completed, but require followup:</strong><br />
+
+    <table style="<%= @table_style %>">
+      <tr>
+        <th style="<%= @th_style %> text-align:left;">Course</th>
+        <th style="<%= @th_style %> text-align:left;">Student</th>
+        <th style="<%= @th_style %> text-align:center;">Certificate?</th>
+        <th style="<%= @th_style %> text-align:center;">Travel?</th></tr>
+    <% @current_style = @td_style %>
+    <% @enrollments.each do |enrollment| %>
+        <% @current_style = (@current_style == @td_style ? @td_alt_style:@td_style) %>
+        <tr>
+          <td style="<%= @current_style %>"><%= link_to enrollment.scheduled_course.name, admin_enrollment_url(enrollment) %></td>
+          <td style="<%= @current_style %>"><%= enrollment.person.fullname %></td>
+          <td style="<%= @current_style %>"><%= enrollment.certificate_received ? "Yes":"" %></td>
+          <td style="<%= @current_style %>"><%= enrollment.travel_paid ? "Paid":"" %></td>
+        </tr>
+    <% end %>
+    </table>
+    <p>
+      <small><a href="http://www.natrap.com">http://www.natrap.com</a></small><br />
+    </p>
+  </body>
+</html>

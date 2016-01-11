@@ -1,0 +1,43 @@
+<h1>Listing helicopters</h1>
+
+<table>
+  <tr>
+    <th>Tailnumber</th>
+    <th>Model</th>
+    <th>Type</th>
+    <th>Contracttype</th>
+    <th>Flightrate</th>
+    <th>Dailyavailabilityrate</th>
+    <th>Pilotextstandbyrate</th>
+    <th>Driverextstandbyrate</th>
+    <th>Mechanicextstandbyrate</th>
+    <th>Servicetruckmileagerate</th>
+    <th>Hmgb</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @helicopters.each do |helicopter| %>
+  <tr>
+    <td><%= helicopter.tailnumber %></td>
+    <td><%= helicopter.model %></td>
+    <td><%= helicopter.type %></td>
+    <td><%= helicopter.contractType %></td>
+    <td><%= helicopter.flightRate %></td>
+    <td><%= helicopter.dailyAvailabilityRate %></td>
+    <td><%= helicopter.pilotExtStandbyRate %></td>
+    <td><%= helicopter.driverExtStandbyRate %></td>
+    <td><%= helicopter.mechanicExtStandbyRate %></td>
+    <td><%= helicopter.serviceTruckMileageRate %></td>
+    <td><%= helicopter.hmgb %></td>
+    <td><%= link_to 'Show', helicopter %></td>
+    <td><%= link_to 'Edit', edit_helicopter_path(helicopter) %></td>
+    <td><%= link_to 'Destroy', helicopter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Helicopter', new_helicopter_path %>

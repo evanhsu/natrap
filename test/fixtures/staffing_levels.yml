@@ -1,0 +1,60 @@
+one:
+  crew_id: 2
+  training_needs:
+  resource_1_name: N21HX
+  resource_1_detail: Bell 407
+  resource_1_location: Prineville, OR
+  resource_1_status: Available
+  resource_1_comment: HMGB Sealing
+  resource_1_hrap_surplus: 2
+  created_at: 2012-03-31 06:00:00
+
+two:
+  crew_id: 1
+  training_needs:
+  resource_1_name: C-GRNR
+  resource_1_detail: Bell 212HP
+  resource_1_location: GP, OR
+  resource_1_status: Available
+  resource_1_comment: HMGB Lyda
+  resource_1_hrap_surplus: 3
+  created_at: 2012-03-30 07:00:00
+
+three:
+  crew_id: 1
+  training_needs: Hsu CRWB(t), Uvodich HMGB(t), Sailer CRWB(t)
+  resource_1_name: C-GRNR
+  resource_1_detail: Bell 212HP
+  resource_1_location: Toketee, OR
+  resource_1_status: Available
+  resource_1_comment: HMGB Quinones
+  resource_1_hrap_surplus: 4
+  resource_2_name: C-FAHG
+  resource_2_detail: Bell 212HP
+  resource_2_location: Toketee, OR
+  resource_2_status: Available
+  resource_2_comment: HMGB Quinones
+  resource_2_hrap_surplus: 4
+  created_at: 2012-03-31 08:00:00
+
+four:
+  crew_id: 1
+  training_needs:
+  resource_1_name: C-GRNR
+  resource_1_detail: Bell 212HP
+  resource_1_location: Detroit, OR
+  resource_1_status: Available
+  resource_1_comment: HMGB Quinones
+  resource_1_hrap_surplus: 5
+  created_at: 2012-03-31 07:30:00
+
+five:
+  crew_id: 1
+  training_needs:
+  resource_1_name: C-GRNR
+  resource_1_detail: Bell 212HP
+  resource_1_location: Bend, OR
+  resource_1_status: Available
+  resource_1_comment: HMGB Quinones
+  resource_1_hrap_surplus: 3
+  created_at: 2012-03-29 13:00:00

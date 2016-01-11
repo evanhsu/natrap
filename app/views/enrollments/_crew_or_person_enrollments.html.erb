@@ -1,0 +1,48 @@
+<%#
+  This view can be called from either 'crews/enrollments.html.erb' or 'people/enrollments.html.erb'
+  depending on which set of enrollments are to be displayed.
+  There is different content for the top of the page depending on which view makes the render call to this file:
+    For people/enrollments, the 'enrollments/person_enrollments_header.html.erb' file is rendered.
+    For crews/enrollments, the 'enrollments/crew_enrollments_header.html.erb' file is rendered.
+%>
+
+<div id="date_filter" style="float:left; display:inline; width:75%; padding-top:0.7em; text-align: right;">
+  <%= form_tag("", :method => :get) do %>
+  Show dates between <%= text_field_tag :start, params[:start],:style => "width:6em" %> and <%= text_field_tag :end,params[:end],:style => "width:6em" %> <%= submit_tag "Filter" %>
+  <% end %>
+</div>
+<div style="clear:both; visibility:hidden; height: 0px;"></div>
+<table class="alternating_rows" style="width:100%; border:2px solid #555555;">
+  <tr>
+    <th style="width:4em;">Details</th>
+    <th style="width:7em;"><%= sort_link 'Date', "scheduled_courses.date_start" %></th>
+    <th><%= sort_link 'Course', "scheduled_courses.name" %></th>
+    <th><%= sort_link 'Facility', "scheduled_courses.training_facility.name" %></th>
+    <th style="width:6em;"><%= sort_link 'Status', "enrollments.status" %></th>
+    <th style="width:2em" title="Prework Received?"><%= image_tag('paperwork.png') %></th>
+    <th style="width:2em" title="Certificate Received?"><%= image_tag('awardribbon.png') %></th>
+    <th style="width:2em" title="Employee Travel Completed?"><%= image_tag('airplane_icon_bw.png', :title => "Employee Travel Completed?") %></th>
+  </tr>
+
+  <% item_count = 0%>
+<% @enrollments.each do |enrollment| %>
+  <% item_count += 1 %>
+  <% item_count % 2 == 0 ? evenodd = "class='evn'":evenodd = "class='odd'" %>
+  <tr <%= evenodd %><%= raw(enrollment.warnings({:output_as => "element_properties"})) %>>
+    <td style="text-align:center;"><%= link_to image_tag("magnifying_glass.png", :title => "View Details"), current_person.has_authorization?(Authorizations::EDIT_ENROLLMENTS) ?  admin_enrollment_path(enrollment) : enrollment_path(enrollment) %></td>
+    <td><%= enrollment.scheduled_course.date_start.blank? ? "Unknown":enrollment.scheduled_course.date_start.strftime('%m/%d/%Y') %></td>
+    <td style="text-align: left;"><%= enrollment.scheduled_course.name + " (" + enrollment.scheduled_course_id.to_s + ")" %></td>
+    <td style="text-align: left;"><%= enrollment.scheduled_course.training_facility.name %></td>
+    <td style="text-align:right"><%= enrollment.status %></td>
+    <% if editable %>
+      <td style="text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'prework_received') %></td>
+      <td style="text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'certificate_received') %></td>
+      <td style="text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'travel_paid') %></td>
+    <% else %>
+      <td style="text-align:center;"><%= boolean_image(enrollment.prework_received?) %></td>
+      <td style="text-align:center;"><%= boolean_image(enrollment.certificate_received?) %></td>
+      <td style="text-align:center;"><%= boolean_image(enrollment.travel_paid?) %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

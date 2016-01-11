@@ -1,0 +1,46 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cor_2013:
+  id: 9
+  crew_id: 2
+  year: 2013
+
+src_2013:
+  id: 8
+  crew_id: 1
+  year: 2013
+
+src_2011:
+  id: 1
+  crew_id: 1
+  year: 2011
+  
+cor_2011:
+  id: 2
+  crew_id: 2
+  year: 2011
+
+wvr_2011:
+  id: 3
+  crew_id: 3
+  year: 2011
+
+src_2010:
+  id: 4
+  crew_id: 1
+  year: 2010
+  
+cor_2010:
+  id: 5
+  crew_id: 2
+  year: 2010
+
+wvr_2010:
+  id: 6
+  crew_id: 3
+  year: 2010
+
+cor_2009:
+  id: 7
+  crew_id: 2
+  year: 2009

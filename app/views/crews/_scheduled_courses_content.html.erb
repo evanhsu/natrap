@@ -1,0 +1,73 @@
+<%= content_for :heading do %>
+  <%= @crew.name %>: Course Directory<br />
+  <%= link_to image_tag('plus.png', :width => "18px")+'Add a new course' , new_scheduled_course_path if editable %>
+<% end %>
+<div id="tabbed_menu" style="width:25%; float:left;">
+  <ul>
+    <li<%= @active_tab=="future" ? " class=current":""%>>
+      <%= link_to raw("<b>Upcoming</b>"), scheduled_courses_for_admin_crew_url(@crew.id,:start => Date.today.strftime('%m/%d/%Y')) if editable%>
+      <%= link_to raw("<b>Upcoming</b>"), scheduled_courses_for_crew_url(@crew.id,:start => Date.today.strftime('%m/%d/%Y')) unless editable%>
+    </li>
+    <li<%= @active_tab=="past" ? " class=current":""%>>
+      <%= link_to raw("<b>Past</b>"), scheduled_courses_for_admin_crew_url(@crew.id,:end => Date.today.strftime('%m/%d/%Y')) if editable%>
+      <%= link_to raw("<b>Past</b>"), scheduled_courses_for_crew_url(@crew.id,:end => Date.today.strftime('%m/%d/%Y')) unless editable%>
+    </li>
+  </ul>
+</div>
+<div id="date_filter" style="float:left; display:inline; width:75%; padding-top:0.7em; text-align: right;">
+  <%= form_tag("", :method => :get) do %>
+  Show dates between <%= text_field_tag :start, params[:start],:style => "width:6em" %> and <%= text_field_tag :end,params[:end],:style => "width:6em" %> <%= submit_tag "Filter" %>
+  <% end %>
+</div>
+<div style="clear:both; visibility:hidden; height: 0px;"></div>
+<table class="alternating_rows" style="width:100%; border:2px solid #555555;">
+  <tr>
+    <th style="width:1em;">&nbsp;</th>
+    <th style="width:10em;"><%= sort_link 'Course', "scheduled_courses.name" %></th>
+    <th style="width:auto;"><%= sort_link 'Date', "scheduled_courses.date_start" %></th>
+    <th style="width:10em;"><%= sort_link 'Training Facility', "training_facilities.name" %></th>
+    <th style="width:30em;"><table class="alternating_rows" style="width:100%;margin:0;padding:none;border:none;" ><tr>
+          <th style="width:20em;border:none;">Roster</th>
+          <th style="width:2em;border:none;margin:0 0 0 3px;" title="Prework Received?"><%= image_tag('paperwork.png') %></th>
+          <th style="width:2em;border:none;margin:0 0 0 3px;" title="Certificate Received?"><%= image_tag('awardribbon.png') %></th>
+          <th style="width:2em;border:none;margin:0 0 0 3px;" title="Employee Travel Completed?"><%= image_tag('airplane_icon_bw.png', :title => "Employee Travel Completed?") %></th>
+        </tr></table>
+    </th>
+  </tr>
+
+<% item_count = 0 %>
+<% @scheduled_courses.each do |scheduled_course| %>
+<% item_count += 1 %>
+<% item_count % 2 == 0 ? even_odd="class='evn'":even_odd="class='odd'" %>
+  <tr <%= even_odd %>>
+    <td style="text-align:center;"><%= link_to image_tag("magnifying_glass.png"), current_person.has_authorization?(Authorizations::EDIT_SCHEDULED_COURSES) ? admin_scheduled_course_path(scheduled_course) : scheduled_course_path(scheduled_course) %></td>
+    <td><%= scheduled_course.name + "(" + scheduled_course.id.to_s + ")" %></td>
+    <td><%= scheduled_course.date_start.blank? ? "Unknown":scheduled_course.date_start.to_s + ' thru ' + scheduled_course.date_end.to_s %></td>
+    <td style="text-align: left;"><%= link_to(scheduled_course.training_facility.name, training_facility_path(scheduled_course.training_facility)) if scheduled_course.training_facility %></td>
+    <td style="text-align: left;">
+	<table>
+        
+        <% enrollments_for_this_course = @enrollments.select{|e| e.scheduled_course_id == scheduled_course.id} %>
+        <% enrollments_for_this_course.each do |enrollment| %>
+        
+          <tr>
+            <td style="width:2em;text-align:center;"><%= link_to image_tag("magnifying_glass.png", :title => "View Details"), current_person.has_authorization?(Authorizations::EDIT_ENROLLMENTS) ?  admin_enrollment_path(enrollment) : enrollment_path(enrollment) %></td>
+            <td style="width:12em;text-align: left;"><%= link_to enrollment.person.firstname + ' ' + enrollment.person.lastname, person_path(enrollment.person) %></td>
+            <td style="width:6em;text-align:right"><%= enrollment.status %></td>
+            <% if editable %>
+              <td style="width:2.5em;text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'prework_received') %></td>
+              <td style="width:2.5em;text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'certificate_received') %></td>
+              <td style="width:2.5em;text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'travel_paid') %></td>
+            <% else %>
+              <td style="width:2.5em;text-align:center;"><%= boolean_image(enrollment.prework_received?) %></td>
+              <td style="width:2.5em;text-align:center;"><%= boolean_image(enrollment.certificate_received?) %></td>
+              <td style="width:2.5em;text-align:center;"><%= boolean_image(enrollment.travel_paid?) %></td>
+            <% end %>
+          </tr>
+        
+        <% end %>
+        </table>
+    </td>
+  </tr>
+<% end %>
+</table>

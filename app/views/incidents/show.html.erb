@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @incident.date %>
+</p>
+
+<p>
+  <b>Event type:</b>
+  <%= @incident.event_type %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @incident.number %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @incident.name %>
+</p>
+
+<p>
+  <b>Charge code:</b>
+  <%= @incident.charge_code %>
+</p>
+
+<p>
+  <b>Override:</b>
+  <%= @incident.override %>
+</p>
+
+<p>
+  <b>Acres:</b>
+  <%= @incident.acres %>
+</p>
+
+<p>
+  <b>Fuel models:</b>
+  <%= @incident.fuel_models %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @incident.description %>
+</p>
+
+<p>
+  <b>G cal event url:</b>
+  <%= @incident.g_cal_event_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_incident_path(@incident) %> |
+<%= link_to 'Back', incidents_path %>

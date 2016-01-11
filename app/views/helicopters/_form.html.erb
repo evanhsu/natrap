@@ -1,0 +1,61 @@
+<%= form_for(@helicopter) do |f| %>
+  <% if @helicopter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@helicopter.errors.count, "error") %> prohibited this helicopter from being saved:</h2>
+
+      <ul>
+      <% @helicopter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tailnumber %><br />
+    <%= f.text_field :tailnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :contractType %><br />
+    <%= f.text_field :contractType %>
+  </div>
+  <div class="field">
+    <%= f.label :flightRate %><br />
+    <%= f.text_field :flightRate %>
+  </div>
+  <div class="field">
+    <%= f.label :dailyAvailabilityRate %><br />
+    <%= f.text_field :dailyAvailabilityRate %>
+  </div>
+  <div class="field">
+    <%= f.label :pilotExtStandbyRate %><br />
+    <%= f.text_field :pilotExtStandbyRate %>
+  </div>
+  <div class="field">
+    <%= f.label :driverExtStandbyRate %><br />
+    <%= f.text_field :driverExtStandbyRate %>
+  </div>
+  <div class="field">
+    <%= f.label :mechanicExtStandbyRate %><br />
+    <%= f.text_field :mechanicExtStandbyRate %>
+  </div>
+  <div class="field">
+    <%= f.label :serviceTruckMileageRate %><br />
+    <%= f.text_field :serviceTruckMileageRate %>
+  </div>
+  <div class="field">
+    <%= f.label :hmgb %><br />
+    <%= f.text_field :hmgb %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

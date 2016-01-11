@@ -1,0 +1,7 @@
+<h1>Editing <%= @person.firstname %>'s Qualification</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', admin_qualification_path(@qualification) %> |
+<%= link_to "All #{@person.firstname}'s Qualifications", qualifications_for_admin_person_path(@person) %> |
+<%= link_to image_tag("trash.png"), [:admin, @qualification], :confirm => "Do you really want to remove this qualification?", :method => :delete %>

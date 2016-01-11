@@ -1,0 +1,91 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 10
+  tailnumber: N205RH
+  model: Bell 205
+  type_class: 2
+  contractType: EU
+  flightRate: 2035.82
+  dailyAvailabilityRate: 1302.30
+  pilotExtStandbyRate: 45.00
+  driverExtStandbyRate: 45.00
+  mechanicExtStandbyRate: 45.00
+  serviceTruckMileageRate: 3.72
+  hmgb: Tim Lyda
+  helibase_id: 1
+
+two:
+  id: 20
+  tailnumber: N109CH
+  model: BV-107
+  type_class: 1
+  contractType: EU
+  flightRate: 4024
+  dailyAvailabilityRate: 5022.12
+  pilotExtStandbyRate: 45
+  driverExtStandbyRate: 45
+  mechanicExtStandbyRate: 45
+  serviceTruckMileageRate: 3.72
+  hmgb: Ethan Makarowski
+  helibase_id: 1
+
+three:
+  id: 30
+  tailnumber: N45917
+  model: S-61
+  type_class: 1
+  contractType: EU
+  flightRate: 3544.88
+  dailyAvailabilityRate: 6011.72
+  pilotExtStandbyRate: 45
+  driverExtStandbyRate: 45
+  mechanicExtStandbyRate: 45
+  serviceTruckMileageRate: 3.72
+  hmgb: Justin Holloway
+  helibase_id: 1
+
+four:
+  id: 40
+  tailnumber: CGRNR
+  model: Bell 212
+  type_class: 2
+  contractType: EU
+  flightRate: 2035.82
+  dailyAvailabilityRate: 1302.30
+  pilotExtStandbyRate: 45.00
+  driverExtStandbyRate: 45.00
+  mechanicExtStandbyRate: 45.00
+  serviceTruckMileageRate: 3.72
+  hmgb: Dan Quinones
+  helibase_id: 2
+
+five:
+  id: 50
+  tailnumber: N125CH
+  model: BV-107
+  type_class: 1
+  contractType: EU
+  flightRate: 4024
+  dailyAvailabilityRate: 5022.12
+  pilotExtStandbyRate: 45
+  driverExtStandbyRate: 45
+  mechanicExtStandbyRate: 45
+  serviceTruckMileageRate: 3.72
+  hmgb: Matt Mills
+  helibase_id: 2
+
+six:
+  id: 60
+  tailnumber: N90286
+  model: Bell 206L3
+  type_class: 3
+  contractType: EU
+  flightRate: 800.21
+  dailyAvailabilityRate: 2300.72
+  pilotExtStandbyRate: 45
+  driverExtStandbyRate: 45
+  mechanicExtStandbyRate: 45
+  serviceTruckMileageRate: 3.72
+  hmgb: Amy Kazmier
+  helibase_id: 2

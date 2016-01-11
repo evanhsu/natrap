@@ -1,0 +1,27 @@
+#tabbed_menu ul {margin:0 auto 0 0; padding:0; list-style:none; display:table; white-space:nowrap; font-family: arial, verdana, sans-serif; font-size:11px;}
+#tabbed_menu li {display:table-cell; margin:0; padding:0;}
+#tabbed_menu a {float:left; color:#000; background: #ccc; margin:0 2px 0 0; padding:0 0 0 2px; text-decoration:none; letter-spacing:1px;}
+#tabbed_menu a b {float:left; display:block; background:transparent; padding:3px 16px 3px 12px;}
+#tabbed_menu a:hover {background: #66cc66; color:#fff; cursor:pointer;}
+#tabbed_menu .current a {background: #66cc66; color:#fff; border: 2px solid #555; border-bottom: none; position:relative; top: 2px; cursor:default;}
+#tabbed_menu {padding:2px 0 0px 0; background:#fff; margin:10px 0 0 0; text-align:left;} /* margin for this demo only */
+
+
+#left_sidebar ul {
+padding: 0 0 1.5em 0;
+margin: 0px;
+}
+
+#left_sidebar li {
+list-style-type: none;
+padding: 0 0 0 1.5em;
+margin: 0px;
+}
+
+#left_sidebar .left_sidebar_title {
+font-family:Arial, Helvetica, sans-serif;
+font-size:1.3em;
+font-weight:bold;
+color:#bbbbbb;
+padding:0;
+}

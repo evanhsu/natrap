@@ -1,0 +1,2 @@
+<%= render 'ajax_controls/success', :object => @rappel %>
+$("<%= @rappel.position + '_confirmed' %>").replace("<%= escape_javascript(render('operations/show/confirmation', :object => @rappel, :operation => @rappel.operation)) %>");

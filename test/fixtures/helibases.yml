@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Santiam Helibase
+  city: Santiam Junction, OR
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  id: 2
+  name: Oakridge Helibase
+  city: Oakridge, OR
+  latitude: 1.5
+  longitude: 1.5
+
+three:
+  id: 3
+  name: Glide Helibase
+  city: Glide, OR
+  latitude: 1.5
+  longitude: 1.5
+
+four:
+  id: 4
+  name: Rattle Helibase
+  city: Toketee, OR
+  latitude: 1.5
+  longitude: 1.5

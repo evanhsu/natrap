@@ -1,0 +1,37 @@
+<h1><%= @person.fullname %>'s Qualifications</h1>
+
+<div style="width:600px; margin:0 auto 0 auto;">
+  <table style="width:100%;border:none">
+    <tr>
+      <td style="text-align:left;"><%= editable ? (link_to "Back to Profile", admin_person_url(@person)):(link_to "Back to Profile",person_url(@person)) %></td>
+      <td style="text-align:right;"><%= link_to "Add a New Qualification", new_admin_person_qualification_url(@person) if editable %></td>
+    </tr>
+  </table>
+
+  <table class="alternating_rows" style="width:100%;border:2px solid #555555;">
+    <tr>
+      <th style="width:2em;">View</th>
+      <% if editable %>
+      <th style="width:2em;">Edit</th>
+      <% end %>
+      <th style="text-align:left;">Qualification</th>
+      <th style="width:2em;">Q/T</th>
+      <th style="width:5em;">Download Documentation</th>
+    </tr>
+
+    <% item_count = 0 %>
+  <% @qualifications.each do |qualification| %>
+    <% item_count += 1 %>
+    <% item_count % 2 == 0 ? evenodd = "class='evn'":evenodd = "class='odd'" %>
+    <tr <%= evenodd %>>
+      <td style="text-align:center;vertical-align: middle;"><%= link_to image_tag("magnifying_glass.png", :title => "View Details"), editable ?  admin_qualification_path(qualification) : qualification_path(qualification) %></td>
+      <% if editable %>
+      <td style="text-align:center;vertical-align: middle;"><%= link_to image_tag("edit.png", :title => "Edit"), edit_admin_qualification_path(qualification) %></td>
+      <% end %>
+      <td><%= qualification.acronym %> - <%= qualification.description %></td>
+      <td style="text-align:center;"><%= qualification.trainee? ? "T":"Q" %></td>
+      <td style="text-align:center;"><%= link_to image_tag("download.png", :title => "Download"), download_attachment_for_qualification_url(qualification) %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>

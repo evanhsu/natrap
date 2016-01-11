@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @irregularity.date %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @irregularity.author %>
+</p>
+
+<p>
+  <strong>Fire number:</strong>
+  <%= @irregularity.fire_number %>
+</p>
+
+<p>
+  <strong>Fire name:</strong>
+  <%= @irregularity.fire_name %>
+</p>
+
+<p>
+  <strong>Tailnumber:</strong>
+  <%= @irregularity.tailnumber %>
+</p>
+
+<p>
+  <strong>Operation:</strong>
+  <%= @irregularity.operation_id %>
+</p>
+
+<p>
+  <strong>Narrative:</strong>
+  <%= @irregularity.narrative %>
+</p>
+
+<%= link_to 'Edit', edit_irregularity_path(@irregularity) %> |
+<%= link_to 'Back', irregularities_path %>

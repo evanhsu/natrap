@@ -1,0 +1,59 @@
+               	<div class="player-controls">
+			<img id="roBoBackArrow" src="/images/back_arrow.png">
+			<span id="roBoTime">Loading...</span>
+			<img id="roBoForwardArrow" src="/images/forward_arrow.png">
+		</div>
+		<div class="header-row">
+			<div class="info-col-header-role">Role</div>
+			<div class="info-col-header-rank">#</div>
+			<div class="header">Available</div>
+			<div class="header">Unavailable</div>
+			<div class="header">Days Off</div>
+			<div class="header">Assigned</div>
+		</div>
+
+
+		<div id="unassigned-list" class="list">
+			<div id="crew_id"><%= @crew.id %></div>
+			<div id="roBoStateId"></div>
+			<div class="rowTemplate">
+				<div class="role-cell"><div class="editable"></div></div>
+                                <div class="rank-cell"><div class="editable"></div></div>
+				<div class="cell" data-status="available" data-col='0'></div>
+				<div class="cell" data-status="unavailable" data-col='1'></div>
+				<div class="cell" data-status="dayoff" data-col='2'></div>
+			</div>
+			<span class="draggableTemplate" data-person-id="0">
+				<img src="#" class="headshot" />
+				<span class="personName"></span>
+				<span class="personQuals"></span>
+			</span>
+
+		</div>
+
+		<div id="assigned-list" class="list">
+			<div class="rowTemplate">
+				<div class="cell" data-status="assigned" data-col='0'></div>
+			</div>
+		</div>
+
+		<br style="clear:both;" />
+		<hr />
+		<div id="new-person-form-container">
+			Add a Booster:<br />
+			<div>
+				
+				<%= image_tag("headshots/add_person.jpg", class: "headshot", style: "margin:0px;", id: "fake_file_upload_button") %>
+				<%= form_tag 	"add_booster_to_rotation_board", 
+						:as => :new_person,
+						:id => "booster_form",
+						:url => {:controller => "crews", :action => "create_rotation_board_state"} do |f| %>
+				<%= file_field_tag :headshot, style: "display: none" %>	
+				<%= text_field_tag :person_fullname, nil, :style => "width:168px;", :placeholder => "Name" %>
+				<%= text_area_tag :quals, nil, :style => "width:168px;height:57px", :placeholder => "Quals" %>
+				<%= hidden_field_tag "is_booster", true %>
+				<%= submit_tag "Add", class: "booster_save_button" %>
+				<% end %>
+			</div>
+		</div>
+		<br />

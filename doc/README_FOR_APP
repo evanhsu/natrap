@@ -1,0 +1,31 @@
+Use this README file to introduce your application and point to useful places in the API for learning more.
+Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+DEPLOYMENT TO DREAMHOST
+ -On the development machine, run:
+ 
+ 	bundle package
+ 	
+ -Upload files to the production server
+ -Ensure server has the 'bundler' gem installed in the correct folder, run:
+ 	
+ 	gem unpack bundler --target=vendor/bundle
+ 
+ -Install the gems required by your app by running:
+ 
+ 	bundle install --deployment
+
+-Troubleshooting
+ You may receive an error that the mysql adapter is missing. Running a 'Bundle show'
+ may confirm that your bundle is missing the mysql gem, even though it's
+ listed in the Gemfile.  Look in the Gemfile.lock for a line that specifies
+ which version of the mysql gem to use.  It may look like this:
+
+ mysql (2.8.1-x86-mingw32)
+
+ That line specifies that you want the Windows version of the mysql gem, because
+ 'bundle install' was run on a Windows machine which generated the Gemfile.lock
+ file.
+ When you deploy to a non-Windows production machine, leave your Gemfile.lock
+ file off the production machine. Once all your files are in place, run
+ 'bundle update' to create a new Gemfile.lock file.

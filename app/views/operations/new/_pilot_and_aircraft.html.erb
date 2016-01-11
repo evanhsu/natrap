@@ -1,0 +1,22 @@
+<table style="margin:0 auto 0 auto">
+  <tr>
+    <td style="text-align:right">
+      Pilot:&nbsp;
+    </td>
+    <td>
+      <%= text_field_tag :pilot_fullname, operation.pilot_fullname, :style => "width:10em", "data-autocomplete" => "/pilots/autocomplete.json", "data-autocomplete_container" => "pilot_autocomplete_container", "data-autocomplete_id_selector" => "operation_pilot_id" %>
+      <div id="pilot_autocomplete_container"></div>
+      <%= form_builder.hidden_field :pilot_id %>
+    </td>
+  </tr>
+  <tr><td style="text-align:right">Aircraft Type: </td>
+  <td>
+    <%= select_tag "aircraft_type_shortname", raw(AircraftType.shortnames_for_javascript_select(aircraft_type)) %>
+    <span id="aircraft_config_select">
+      <%= select_tag "aircraft_type_configuration", raw(aircraft_type.configurations_for_javascript_select(aircraft_type.configuration)) if aircraft_type.configurations %>
+    </span>
+    <%= hidden_field_tag "operation[aircraft_name_and_config]", aircraft_type.name_and_config %>
+  </td>
+  </tr>
+  <tr><td style="text-align:right">Tailnumber: </td><td><%= form_builder.text_field :aircraft_tailnumber, :style => "width:10em" %></td></tr>
+</table>

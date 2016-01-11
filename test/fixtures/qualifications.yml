@@ -1,0 +1,423 @@
+one:
+  id: 980190968
+  acronym: CFAL
+  trainee: 0
+  description: Faller Class C
+  date_initiated: 2010-06-01
+  date_qualified: 2010-06-01
+  document_file_name: C-Faller Chainsaw Card - Evan Hsu - 2010-06-22.pdf
+  document_content_type: application/pdf
+  document_file_size: 54069
+  document_updated_at: 2011-07-27 06:26:40
+  person_id: 2
+
+two:
+  id: 980190970
+  acronym: HMGB
+  trainee: 0
+  description: Helicopter Manager
+  date_initiated: 2010-10-20
+  date_qualified: 2010-06-01
+  document_file_name: Single Resource (CRWB, ENGB, HMGB) Coversheet - Evan Hsu.pdf
+  document_content_type: application/pdf
+  document_file_size: 116016
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 2
+
+three:
+  id: 980190971
+  acronym: RXB3
+  trainee: 0
+  description: Prescribed Burn Boss Type 3
+  date_initiated: 2010-06-22
+  date_qualified: 2010-11-10
+  document_file_name: RXB3.pdf
+  document_content_type: application/pdf
+  document_file_size: 1154096
+  document_updated_at: 2011-07-27 06:38:58
+  person_id: 1
+
+four:
+  acronym: ICT5
+  trainee: 0
+  description: Incident Commander Type 5
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 2
+
+five:
+  acronym: ICT4
+  trainee: 1
+  description: Incident Commander Type 4
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 2
+
+six:
+  acronym: WFR
+  trainee: 0
+  description: Wilderness First Responder
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 2
+
+seven:
+  acronym: HECM
+  trainee: 0
+  description: Helicopter Crewmember
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 2
+
+eight:
+  acronym: CRWB
+  trainee: 1
+  description: Crew Boss
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 2
+
+nine:
+  acronym: HERS
+  trainee: 1
+  description: Helicopter Rappel Spotter
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 2
+
+ten:
+  acronym: HEB2
+  trainee: 1
+  description: Helibase Manager Type 2
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 2
+
+eleven:
+  acronym: ABRO
+  trainee: 0
+  description: Air Base Radio Operator
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 2
+
+twelve:
+  acronym: ICT5
+  trainee: 0
+  description: Incident Commander Type 5
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 1
+
+thirteen:
+  acronym: ICT4
+  trainee: 0
+  description: Incident Commander Type 4
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 1
+
+fourteen:
+  acronym: ICT3
+  trainee: 0
+  description: Incident Commander Type 3
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 1
+
+fifteen:
+  acronym: HECM
+  trainee: 0
+  description: Helicopter Crewmember
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 1
+
+sixteen:
+  acronym: CRWB
+  trainee: 1
+  description: Crew Boss
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 1
+
+seventeen:
+  acronym: HERS
+  trainee: 0
+  description: Helicopter Rappel Spotter
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 1
+
+eighteen:
+  acronym: HEB2
+  trainee: 1
+  description: Helibase Manager Type 2
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 1
+
+nineteen:
+  acronym: DIVS
+  trainee: 0
+  description: Division Supervisor
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 1
+
+nineteen2:
+  acronym: HMGB
+  trainee: 0
+  description: Helicopter Manager
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 1
+
+twenty:
+  acronym: ICT5
+  trainee: 0
+  description: Incident Commander Type 5
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 15
+
+twentyone:
+  acronym: ICT4
+  trainee: 0
+  description: Incident Commander Type 4
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 15
+
+twentytwo:
+  acronym: HEB1
+  trainee: t
+  description: Helibase Manager Type 1
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 15
+
+twentythree:
+  acronym: HECM
+  trainee: 0
+  description: Helicopter Crewmember
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at:
+  person_id: 15
+
+twentyfour:
+  acronym: CRWB
+  trainee: 1
+  description: Crew Boss
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 15
+
+twentyfive:
+  acronym: HERS
+  trainee: 1
+  description: Helicopter Rappel Spotter
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 15
+
+twentysix:
+  acronym: HEB2
+  trainee: 0
+  description: Helibase Manager Type 2
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 15
+
+twentyseven:
+  acronym: ABRO
+  trainee: 0
+  description: Air Base Radio Operator
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 15
+
+twentyeight:
+  acronym: BFAL
+  trainee: 0
+  description: Faller Class B
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 15
+
+twentynine:
+  acronym: HMGB
+  trainee: 0
+  description: Helicopter Manager
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 15
+
+thirty:
+  acronym: CFAL
+  trainee: 0
+  description: Faller Class C
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 16
+
+thirtyone:
+  acronym: HMGB
+  trainee: 1
+  description: Helicopter Manager
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 16
+
+thirtytwo:
+  acronym: ICT5
+  trainee: 0
+  description: Incident Commander Type 5
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 16
+
+thirtythree:
+  acronym: HECM
+  trainee: 0
+  description: Helicopter Crewmember
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 16
+
+thirtyfour:
+  acronym: WFR
+  trainee: 0
+  description: Wilderness First Responder
+  date_initiated:
+  date_qualified:
+  document_file_name:
+  document_content_type:
+  document_file_size:
+  document_updated_at: 2011-07-27 06:36:11
+  person_id: 16
+

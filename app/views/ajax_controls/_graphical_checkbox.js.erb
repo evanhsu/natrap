@@ -1,0 +1,13 @@
+var container = $("<%= params[:container_id] %>");
+//toggle the value to be submitted to the database
+var input = container.down('[data-value]');
+input.value = (input.value == "true" ? "false" : "true");
+//hide the spinner
+container.down("[data-icon='loading']").hide();
+//show the appropriate icon
+var newIcon = container.down("input[data-icon='2']");
+var oldIcon = container.down("input[data-icon='1']");
+newIcon.show();
+newIcon.enable();
+newIcon.writeAttribute("data-icon", "1");
+oldIcon.writeAttribute("data-icon", "2");

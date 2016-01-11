@@ -1,0 +1,157 @@
+<%= form_for(@cost_sheet) do |f| %>
+  <% if @cost_sheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cost_sheet.errors.count, "error") %> prohibited this cost_sheet from being saved:</h2>
+
+      <ul>
+      <% @cost_sheet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :helicopterId %><br />
+    <%= f.text_field :helicopterId %>
+  </div>
+  <div class="field">
+    <%= f.label :helibaseId %><br />
+    <%= f.text_field :helibaseId %>
+  </div>
+  <div class="field">
+    <%= f.label :chargeCode %><br />
+    <%= f.text_field :chargeCode %>
+  </div>
+  <div class="field">
+    <%= f.label :override %><br />
+    <%= f.text_field :override %>
+  </div>
+  <div class="field">
+    <%= f.label :incidentNumber %><br />
+    <%= f.text_field :incidentNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :dailyAvailabilityRate %><br />
+    <%= f.text_field :dailyAvailabilityRate %>
+  </div>
+  <div class="field">
+    <%= f.label :pilotExtStandbyRate %><br />
+    <%= f.text_field :pilotExtStandbyRate %>
+  </div>
+  <div class="field">
+    <%= f.label :driverExtStandbyRate %><br />
+    <%= f.text_field :driverExtStandbyRate %>
+  </div>
+  <div class="field">
+    <%= f.label :mechanicExtStandbyRate %><br />
+    <%= f.text_field :mechanicExtStandbyRate %>
+  </div>
+  <div class="field">
+    <%= f.label :serviceTruckMileageRate %><br />
+    <%= f.text_field :serviceTruckMileageRate %>
+  </div>
+  <div class="field">
+    <%= f.label :hmgb %><br />
+    <%= f.text_field :hmgb %>
+  </div>
+  <div class="field">
+    <%= f.label :dailyAvailabilityQty %><br />
+    <%= f.text_field :dailyAvailabilityQty %>
+  </div>
+  <div class="field">
+    <%= f.label :pilotExtStandbyQty %><br />
+    <%= f.text_field :pilotExtStandbyQty %>
+  </div>
+  <div class="field">
+    <%= f.label :driverExtStandbyQty %><br />
+    <%= f.text_field :driverExtStandbyQty %>
+  </div>
+  <div class="field">
+    <%= f.label :mechanicExtStandbyQty %><br />
+    <%= f.text_field :mechanicExtStandbyQty %>
+  </div>
+  <div class="field">
+    <%= f.label :serviceTruckMileageQty %><br />
+    <%= f.text_field :serviceTruckMileageQty %>
+  </div>
+  <div class="field">
+    <%= f.label :dailyAvailabilityTotal %><br />
+    <%= f.text_field :dailyAvailabilityTotal %>
+  </div>
+  <div class="field">
+    <%= f.label :pilotExtStandbyTotal %><br />
+    <%= f.text_field :pilotExtStandbyTotal %>
+  </div>
+  <div class="field">
+    <%= f.label :driverExtStandbyTotal %><br />
+    <%= f.text_field :driverExtStandbyTotal %>
+  </div>
+  <div class="field">
+    <%= f.label :mechanicExtStandbyTotal %><br />
+    <%= f.text_field :mechanicExtStandbyTotal %>
+  </div>
+  <div class="field">
+    <%= f.label :serviceTruckMileageTotal %><br />
+    <%= f.text_field :serviceTruckMileageTotal %>
+  </div>
+  <div class="field">
+    <%= f.label :additionalCostDesc %><br />
+    <%= f.text_field :additionalCostDesc %>
+  </div>
+  <div class="field">
+    <%= f.label :additionalCostTotal %><br />
+    <%= f.text_field :additionalCostTotal %>
+  </div>
+  <div class="field">
+    <%= f.label :numPilots %><br />
+    <%= f.text_field :numPilots %>
+  </div>
+  <div class="field">
+    <%= f.label :numDrivers %><br />
+    <%= f.text_field :numDrivers %>
+  </div>
+  <div class="field">
+    <%= f.label :numMechanics %><br />
+    <%= f.text_field :numMechanics %>
+  </div>
+  <div class="field">
+    <%= f.label :pax %><br />
+    <%= f.text_field :pax %>
+  </div>
+  <div class="field">
+    <%= f.label :waterGallons %><br />
+    <%= f.text_field :waterGallons %>
+  </div>
+  <div class="field">
+    <%= f.label :cargoLbs %><br />
+    <%= f.text_field :cargoLbs %>
+  </div>
+  <div class="field">
+    <%= f.label :retardantGallons %><br />
+    <%= f.text_field :retardantGallons %>
+  </div>
+  <div class="field">
+    <%= f.label :foamGallons %><br />
+    <%= f.text_field :foamGallons %>
+  </div>
+  <div class="field">
+    <%= f.label :acresTreated %><br />
+    <%= f.text_field :acresTreated %>
+  </div>
+  <div class="field">
+    <%= f.label :psdBalls %><br />
+    <%= f.text_field :psdBalls %>
+  </div>
+  <div class="field">
+    <%= f.label :gelGallons %><br />
+    <%= f.text_field :gelGallons %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

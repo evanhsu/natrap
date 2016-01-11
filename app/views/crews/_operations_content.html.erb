@@ -1,0 +1,51 @@
+<% content_for :heading do %>
+  <%= @crew.name %>: Operations
+<% end %>
+
+<table style="width:100%; border:2px solid #555555; border-spacing:10px;">
+  <tr>
+    <td class="chart_cell"><img src="http://chart.apis.google.com/chart?chf=bg,s,A8A7A700|c,ls,90,EFEFEF,0.25,DDDDDD,0.25&chxr=0,0,50&chxt=y&chbh=r&chs=150x200&cht=bvg&chco=A2C180,3D7930&chd=s:f,d&chdl=Rappels+by+Crewmembers|Regional+Mean&chdlp=b&chtt=Crew+Rappels&chts=676767,15.0" width="150" height="200" alt="Crew Stats" /></td>
+    <td class="chart_cell"><img src="http://chart.apis.google.com/chart?chf=bg,s,67676700|c,ls,90,EFEFEF,0.25,DDDDDD,0.25&chxr=0,0,25&chxt=y&chbh=a&chs=150x200&cht=bvg&chco=7F7F32,D9CE66&chds=0,15,0,15&chd=t:12|10&chdl=Crew|Region&chdlp=b&chtt=Raps+Per+Person&chts=676767,15.5" width="150" height="200" alt="Raps Per Person" /></td>
+    <td class="chart_cell"><iframe width="250" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=213575943660714730504.00046f037f3a3cd634c1c&amp;ll=44.127858,-120.4525&amp;spn=3.089617,2.995&amp;t=h&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=213575943660714730504.00046f037f3a3cd634c1c&amp;ll=44.127858,-120.4525&amp;spn=3.089617,2.995&amp;t=h&amp;source=embed" style="color:#0000FF;text-align:left">Helitack POI List</a> in a larger map</small></td>
+    <td class="chart_cell"><img src="http://www.siskiyourappellers.com/scripts/fav_pos2.php?q=8,7,12,8,0,0,0,0,0,0" style="width:200px;height:200px;" /></td>
+  </tr>
+</table>
+<br />
+<table class="alternating_rows" style="width:100%; border:2px solid #555555;">
+  <tr>
+    <th style="width:1em"></th>
+    <th style="width:7em">Date</th>
+    <th style="width:10em">Incident Number</th>
+    <th style="width:10em">Location</th>
+    <th style="width:10em">Spotter</th>
+    <th>Rappellers</th>
+  </tr>
+
+  <% item_count = 0%>
+  <% @operations.each do |operation| %>
+    <% item_count += 1 %>
+    <% item_count % 2 == 0 ? evenodd = "class='evn'":evenodd = "class='odd'" %>
+    <tr <%= evenodd %>>
+      <td style="text-align:center;"><%= link_to image_tag("magnifying_glass.png", :title => "View Details"), editable ? admin_operation_path(operation) : operation_path(operation) %></td>
+      <td><%= operation.date %></td>
+      <td><%= incident_link(operation.incident_number) %></td>
+      <td><%= operation.location %></td>
+      <td><%= operation.spot.spotter_fullname %></td>
+      <% if rappellers = operation.rappellers and !rappellers.empty? %>
+        <% rappeller = rappellers.pop %>
+        <td><%= link_to rappeller.person.fullname, person_url(rappeller.person) %></td></tr>
+        <% first = true %>
+        <% rappellers.each do |rappeller| %>
+          <% item_count % 2 == 0 ? evenodd = "class='evn'":evenodd = "class='odd'" %>
+          <tr <%= evenodd %>>
+            <% if first %>
+            <td colspan="5" rowspan="<%= operation.rappellers.length %>">&nbsp;</td>
+            <% end %>
+            <td><%= link_to rappeller.person.fullname, person_url(rappeller.person) %></td>
+            <% first = false %>
+          </tr>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

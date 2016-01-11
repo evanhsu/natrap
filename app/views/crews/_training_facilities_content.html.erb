@@ -1,0 +1,25 @@
+<% content_for :heading do %>
+  Training Facilities
+<% end %>
+
+<% if editable %>
+<div style="text-align: left; width: 100%"><%= link_to "Add New Facility", new_admin_training_facility_url %></div>
+<% end %>
+
+<% @training_facilities.each do |facility| %>
+  <div class="training_facility_profile">
+    <div><%= facility.name %>
+        <% if editable %>
+          <span style="font-size:12px; font-weight: bold;">-- <%= link_to('Edit',edit_admin_training_facility_url(facility)) %></span>
+        <% end %>
+    </div>
+    <%= raw facility.address_two_line %>
+    <br /><br />
+    <%= facility.contact_name.blank? ? "":raw("#{facility.contact_name} <br />") %>
+    <%= facility.contact_email.blank? ? "":raw("#{facility.contact_email} <br />") %>
+    <%= facility.contact_phone.blank? ? "":raw("#{facility.contact_phone} <br />") %>
+    <br />
+    <%= facility.notes.blank? ? "":raw("Notes:<br />#{facility.notes}") %>
+  </div>
+<% end %>
+<div style="clear:both; visibility: hidden; height: 0;"></div>

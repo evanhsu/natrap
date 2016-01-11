@@ -1,0 +1,118 @@
+<% content_for :includes do %>
+    <%# javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" %>
+    <%# javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js" %>
+    <%= javascript_include_tag "jquery/jquery.min.js" %>
+    <%= javascript_include_tag "jquery/jquery-ui.js" %>
+    <%= javascript_include_tag "jquery/jquery.formatDateTime.min.js" %>
+    <%= javascript_include_tag :requisitions %>
+
+    <%= stylesheet_link_tag :requisitions %>
+<% end %>
+
+<div id="filters">
+    <table class="infobox" style="text-align:left;width:250px; float:left;">
+    <tr><th>Dates</th><tr>
+    <tr><td>Fiscal Year: (DROPDOWN)</td></tr>
+    </table>
+
+   <table class="infobox" style="text-align:left;width:250px; float:left;">
+    <tr><th>Cardholders</th><tr>
+    <tr><td>
+        <ul style="list-style-type:none;padding:0"><li>Evan</li>
+        <li>Dan</li>
+        <li>Tim</li>
+        <li>Jonah</li>
+        </ul>
+    </td></tr>
+    </table> 
+
+   <table class="infobox" style="text-align:left;width:250px; float:left;">
+    <tr><th>Settings</th><tr>
+    <tr><td><a href="#" id="openCardholdersLink">+Cardholders</a></td></tr>
+    <tr><td><a href="#" id="openCategoriesLink">+Spending Categories</a></td></tr>
+    <tr><td><a href="#" id="openPrivilegesLink">+Access Privileges</a></td></tr>
+    </table>
+</div>
+
+<br style="clear:both;" />
+
+<!--<a href="#" id="openNewRequisitionLink"><%= image_tag "plus.png" %><br />Add new Requisition</a>-->
+<div style="text-align:left;">
+    <%= link_to image_tag("plus.png",style: "vertical-align:middle;"), new_crew_requisition_url(@crew) %>
+    <%= link_to "New Requisition", new_crew_requisition_url(@crew), style: "font-size:2em;font-weight:bold;vertical-align:center;" %>
+</div>
+
+<div id="requisition_list">
+    <table class="alternating-row-colors">
+    <tr class="header"><th style="width: 40px;">ID</th>
+        <th style="width: 70px;">Date</th>
+        <th style="width: 180px;">Vendor</th>
+        <th>Description</th>
+        <th style="width: 50px;">Card</th>
+        <th style="width: 30px;">S#</th>
+        <th style="width: 50px;">Charge Code</th>
+        <th style="width: 30px;">Override</th>
+        <th style="width: 80px;">Amount</th>
+        <th style="width: 20px;"><%= image_tag("received.png") %></th>
+        <th style="width: 20px;"><%= image_tag("reconciled.png") %></th>
+        <th style="width: 20px;">IMG</th>
+    </tr>
+<% @requisitions.each do |r| %>
+    <tr class="<%= cycle("odd","even") %>">
+        <td style="text-align: right;"><%= r.id %></td>
+        <td style="text-align: left;"><%= r.date.strftime("%m/%d/%Y") %></td>
+        <td style="text-align: left;"><%= r.vendor_info %></td>
+        <td style="text-align: left;"><%= r.description %></td>
+        <td><%= r.cardholder %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="text-align: right;"><%= number_to_currency(r.amount) %></td>
+        <td><%=  %></td>
+        <td><%=  %></td>
+        <td><%=  %></td>
+    </tr>
+<% end %>
+</table>
+
+</div> 
+<!--
+<div id="newRequisitionWindow" class="transparentWindow">
+    <div class="transparentWindowCanvas">
+        <h2>Enter a New Requisition</h2><br />
+This form needs to submit via AJAX and then provide some feedback to the user about whether it was successful or not.
+Error messages should appear in the "error_explanation" div.
+A successful POST should result in this transparent window closing and the list of requisitions to refresh (via AJAX).
+
+Need to create the AJAX URL to receive this form submission. It should be "Requisitions#create".
+Need to create/confirm the route to the Requisitions#create action is accessible.
+Need to enforce access permissions on the #create action.
+    </div>
+    <a href="#" class="closeTransparentWindowLink">Close Window</a>
+</div>
+-->
+<div id="cardholdersWindow" class="transparentWindow">
+    <div class="transparentWindowCanvas">
+        This is the cardholdersWindow
+
+        
+    </div>
+    <a href="#" class="closeTransparentWindowLink">Close Window</a>
+</div>
+
+<div id="categoriesWindow" class="transparentWindow">
+    <div class="transparentWindowCanvas">
+        This is the categoriesWindow
+
+    </div>
+    <a href="#" class="closeTransparentWindowLink">Close Window</a>
+</div>
+
+<div id="privilegesWindow" class="transparentWindow">
+    <div class="transparentWindowCanvas">
+        This is the privilegesWindow
+
+    </div>
+    <a href="#" class="closeTransparentWindowLink">Close Window</a>
+</div>
+

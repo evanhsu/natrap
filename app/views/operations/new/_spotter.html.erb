@@ -1,0 +1,18 @@
+<% spotter = spot.spotter.person %>
+
+<div style="text-align:left;margin:0 auto 0 auto;width:12em;border:2px dashed gray;padding:5px" class="rappel_container" id="spotter_container">
+  Spotter<br />
+  <%= image_tag spotter.headshot.url, :onerror => "this.src='/images/headshots/missing.jpg'" %><br />
+  Name:<br />
+  <% error_wrapper operation, :spot do %>
+    <% error_wrapper spot, :base do %>
+      <% text_field_tag :spotter_fullname, @spotter_fullname, :id => 'spotter_fullname',
+                        :style => "width:98%", "data-rappeller_autocomplete" => "true",
+                        "data-autocomplete_container" => "spotter_fullname_autocomplete_container",
+                        "data-autocomplete_service_url" => "/rappel_spotters/autocomplete.json" %>
+    <% end %>
+  <% end %>
+  <div id='spotter_fullname_autocomplete_container'></div>
+  <%= hidden_field_tag "operation[spot_attributes][rappel_spotter_id]", spotter.id, "data-id_field" => true %>
+  <%= text_field_tag "operation[spot_attributes][comments]", "", :style => "width:98%", "data-prompt" => "Comments" %>
+</div>

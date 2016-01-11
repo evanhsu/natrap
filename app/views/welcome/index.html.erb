@@ -1,0 +1,87 @@
+<% content_for :includes do %>
+<style>
+#content {
+    margin-top: 0px;
+}
+.continuous-scroll-section {
+    width: 100%;
+    margin: 0px;
+    padding: 50px 5px 50px 5px;
+    min-height: 150px;
+    border-bottom: 4px dashed #555555;
+    text-align: center;
+}
+.continuous-scroll-section h1 {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto 25px auto;
+}
+.continuous-scroll-section .textblock {
+    width: 500px;
+    color: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: verdana, sans-serif;
+    margin: 0 auto 0 auto;
+    text-align: justify;
+}
+.continuous-scroll-section img {
+    text-align: center;
+    margin: 0 auto 0 auto;
+    width: 900px;
+    height: auto;
+    border: 2px solid #666666;
+}
+.evenrow {
+   background-color: #ffffff; 
+}
+.oddrow {
+   background-color: #559955;
+}
+</style>
+<% end %>
+
+<% content_for :unstickyheader do %>
+	<div style="font-size:100px; color:white; font-weight:bold; position:absolute; bottom:0px;">USFS Rappellers</div>
+	<span style="font-size:45px; color:gray;">Records & Statistics</span>
+<% end %>
+
+<% content_for :stickyheader do %>
+<% end %>
+
+<% content_for :stickyalias do %>
+This is the alias
+<% end %>
+
+
+<%# content_for :content do %>
+        <div class="continuous-scroll-section evenrow">
+            <h1>Available to Everyone</h1>
+            <div class="textblock">No eAuth. No Active Directory. No Lotus WebID. No NAP account.<br />
+This site is available to every fire crew to help with the administrative record-keeping that they never trained us for.  Whether you have an engine, a handcrew, a helicopter, or an IMT - you're invited to sign up for a private record-keeping space that you can selectively share with only the people you want, whether they have a LincPass or not.</div>
+        </div>
+        <div class="continuous-scroll-section oddrow">
+            <h1>Records Management</h1>
+            <div class="textblock">Consolidate your administrative overhead and enable your entire leadership team to access your record-keeping system in the cloud.  You can't trust a spreadsheet once two people each have their own copy, so you're probably keeping a master copy on your own computer, forcing you to do all of the data entry yourself.  Stop doing that.<br />
+By moving to a cloud-based record-keeping system, you'll be able to deligate administrative tasks more efficiently, provide administrative experience to other members of your crew, and ensure that you're always looking at the most up-to-date info.</div>
+<br />
+	    <%= image_tag "crew-page.JPG" %>
+        </div>
+
+       <div class="continuous-scroll-section" style="background-color:#99cc99;">
+            <h1>Accessible Anywhere</h1><br />
+            <div class="textblock">Blah blah blah blah blah blah bla blah blah blah blah blah bla blah blah blah blah blah bla blah blah blah blah blah bla blah blah blah blah blah bla blah blah blah blah blah blahh blah blah blah blah blah blahh blah blah blah blah blah bla blah bla blah blah blah blah blah bla blah bla blah blah blah blah blah bla blah blah</div> 
+        </div>
+        <div class="continuous-scroll-section" style="background-color:#559955;">
+            <h1>Easy Inventory</h1><br />
+            <%= image_tag "inventory-page.JPG" %><br />
+            <div class="textblock">The inventory tracker is built into every crew account and allows a stripped-down system for entering what you have, where you got it, and who it's been issued to.</div>
+        </div>
+        <div class="continuous-scroll-section" style="background-color:#99cc99;">
+            <h1>Simplify Budget</h1><br />
+            <%= image_tag "budget-page.JPG" %><br />
+            <div class="textblock">The Budget Helper offers a centralized location for all your cardholders to enter their purchases, store receipts and supply orders, and track expenditures from different charge codes.</div>
+        </div>
+<%# end %>  
+

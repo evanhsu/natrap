@@ -1,0 +1,12 @@
+
+one:
+  id: 1
+  operation_id: 1
+  rappel_spotter_id: 1
+  comments: some comments
+
+two:
+  id: 2
+  operation_id: 2
+  rappel_spotter_id: 2
+  comments: spot number 2

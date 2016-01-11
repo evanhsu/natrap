@@ -1,0 +1,33 @@
+<h1>Region <%= @region_id %></h1>
+<hr style="width:90%; color:#555555; border:none; height:2px;" />
+
+<% if @crews.size == 0 %>
+  <b>There are no crews to display!</b>
+<% end %>
+
+<% item_count = 0 %>
+<% first_loop = true %>
+<table style="margin:0 auto 0 auto;">
+<% @crews.each do |crew| %>
+  <%  admin_link = @current_user.current_crew.nil? ? false:(@current_user.current_crew.id == crew.id) && current_person.has_authorization?(Authorizations::EDIT_OWN_CREW) %>
+  <!--<div style="float:left; width:225px; height:225px; margin:0em; border:none; font-weight:bold;">-->
+  <% if(first_loop || (item_count % 3 == 0)) %>
+    <tr>
+  <% end %>
+  
+      <td><%= link_to((image_tag crew.logo.url, :class => "crew_logo_thumbnail")+raw("<br />")+crew.name, admin_link ? admin_crew_url(crew.id):crew_url(crew.id), :class => "crew_logo_thumbnail") %></td>
+
+  <% if((item_count+1) % 3 == 0) %>
+    </tr>
+  <% end %>
+
+  <% item_count = item_count + 1 %>
+  <% first_loop = false %>
+  <!--</div>-->
+<% end %>
+</table>
+
+<!--<div style="clear:both; height:0px; visibility:hidden;">.</div>-->
+<br />
+
+<%= link_to 'New Crew', new_crew_path %>

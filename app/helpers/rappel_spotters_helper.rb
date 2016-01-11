@@ -1,0 +1,2 @@
+module RappelSpottersHelper
+end

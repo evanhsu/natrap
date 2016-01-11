@@ -1,0 +1,61 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+src_mailing:
+  crew_id: 1
+  address_type: mailing_address
+  address: 657 Flaming Rd\nGrants Pass, OR 97526
+
+src_phone:
+  crew_id: 1
+  address_type: phone
+  address: (541) 471-6891
+
+src_airport:
+  crew_id: 1
+  address_type: airport_identifier
+  address: 3s8
+
+src_latitude:
+  crew_id: 1
+  address_type: latitude
+  address: N42.50639
+
+src_longitude:
+  crew_id: 1
+  address_type: longitude
+  address: W123.38243
+
+cor:
+  crew_id: 2
+  address_type: mailing_address
+  address: 4550 Airport Way\nPrineville, OR 97754
+
+cor_airport:
+  crew_id: 2
+  address_type: airport_identifier
+  address: s39
+
+wvr:
+  crew_id: 3
+  address_type: mailing_address
+  address: 12345 IDunno Rd\nEast Wenatchee, WA 99999
+
+wvr_airport:
+  crew_id: 3
+  address_type: airport_identifier
+  address: eat
+
+ssrc:
+  crew_id: 4
+  address_type: mailing_address
+  address: 5983 Sled Rd.\nEnterprise, OR 88888
+
+frc:
+  crew_id: 5
+  address_type: mailing_address
+  address: 8543 Frazier Way\nLa Grande, OR 88888
+
+mrc:
+  crew_id: 6
+  address_type: mailing_address
+  address: 254 Airport Way\n John Day, OR 97754

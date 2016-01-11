@@ -1,0 +1,17 @@
+<%= form_for(@dandy) do |f| %>
+  <% if @dandy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dandy.errors.count, "error") %> prohibited this dandy from being saved:</h2>
+
+      <ul>
+      <% @dandy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

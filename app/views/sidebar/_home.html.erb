@@ -1,0 +1,19 @@
+<%  if current_person
+      
+      # Check if current user can view/edit/neither staffing levels
+      if(current_person.has_authorization?(Authorizations::EDIT_STAFFING_LEVELS) || current_person.is_global_admin?)
+        sl = true
+      elsif(current_person.has_authorization?(Authorizations::VIEW_STAFFING_LEVELS))
+        sl = false
+      end
+    end
+%>
+
+<ul class="sidebar_section">
+  <li class="left_sidebar_title">Home</li>
+  <li><%= link_to_unless_current "National Map", root_url %></li>
+  <% unless sl.nil? %>
+  <li><%= link_to_unless_current "Current Staffing", sl ? admin_staffing_levels_path : staffing_levels_path %></li>
+  <% end %>
+  
+</ul>

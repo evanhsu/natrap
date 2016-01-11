@@ -1,0 +1,40 @@
+<h1>Listing rosters</h1>
+
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Crew</th>
+    <th>Year</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rosters.each do |roster| %>
+  <tr>
+    <td><%= roster.person_id %></td>
+    <td><%= roster.crew_id %></td>
+    <td><%= roster.year %></td>
+    <td><%= link_to 'Show', roster %></td>
+    <td><%= link_to 'Edit', edit_roster_path(roster) %></td>
+    <td><%= link_to 'Destroy', roster, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+  <table style="width:100%;">
+    <tr><th class="infobox">Roster (<%= @requested_year %>) %></th></tr>
+    <tr><td style="text-align: left; vertical-align: top;">
+            <% @rosters.each do |roster_line| %>
+              <div class="roster_thumbnail">
+                <%= link_to image_tag(roster_line.person.headshot.url),person_url(roster_line.person) %>
+                <span class="roster_thumbnail_crewmember_name"><%= roster_line.person.fullname %></span><br />
+                3 Ops/10 Total<br />
+              </div>
+            <% end %>
+    </td></tr>
+  </table>
+<br />
+
+<%= link_to 'New Roster', new_roster_path %>

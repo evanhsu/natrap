@@ -1,0 +1,2 @@
+module RappellersHelper
+end

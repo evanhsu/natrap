@@ -1,0 +1,303 @@
+#Each user's password is their last name, lowercase
+#If user's last name is fewer than 6 chars, the password is their last name twice
+#Password hashing algorithm:
+# salt = sha1(unix_epoch_at_moment_of_account_creation)
+# password_hash = sha1(salt + password)
+
+#Dan Quinones is the Base Manager for the Siskiyou Rappel Crew (crewmember)
+dan_quinones:
+  id: 1
+  iqcs_num: "00000010532"
+  firstname: Dan
+  lastname: Quinones
+  gender: male
+  birthdate: 1977-12-05
+  username: srcquinones@gmail.com
+  encrypted_password: 365e098fd417ec3faa6f038807a5a06d544d0ee7
+  headshot_file_name: 1.jpg
+  has_purchase_card: 1
+  created_at: 2010-5-12 13:00:00
+  updated_at:
+  salt: 2ab02e631343dd0c2c86c286f715e1150df9359f
+  account_type: crew_admin
+  authorizations: edit_enrollments, edit_scheduled_courses, edit_own_crew, view_crews, edit_certificates, edit_qualifications, edit_operations, edit_people, create_people, edit_training_facilities
+  last_login:
+  account_crew_id: 1
+
+#Evan Hsu is a Squad Boss on the Siskiyou Rappel Crew (crewmember)
+#password: hsuhsuhsu
+evan_hsu:
+  id: 2
+  iqcs_num: "00000020320"
+  firstname: Evan
+  lastname: Hsu
+  gender: male
+  birthdate: 1983-07-10
+  username: evanhsu@gmail.com
+  encrypted_password: 8f48f62b8fab84af1a15f8e8716ad5c026b26791
+  headshot_file_name: 2.jpg
+  has_purchase_card: 0
+  created_at: 2010-07-01 08:00:00
+  updated_at:
+  salt: ea8e43579ea41a1258ea7e82b3af38f039f0766a
+  account_type: global_admin
+  authorizations: edit_enrollments, edit_scheduled_courses, edit_crews, edit_own_crew, edit_certificates, edit_qualifications, edit_operations, edit_people, create_people, edit_training_facilities
+  last_login:
+  account_crew_id: 1
+
+#Tim Lyda is a crew_admin on the Siskiyou Rappel Crew (crewmember)
+#password: lydalydalyda
+tim_lyda:
+  id: 15
+  iqcs_num: "00000048139"
+  firstname: Tim
+  lastname: Lyda
+  gender: male
+  birthdate: 1971-09-16
+  username: tim@lyda.com
+  encrypted_password: 4c75159bacfa1e75df09a3a0d2187366dc322468
+  headshot_file_name: 
+  has_purchase_card: 1
+  created_at: 2013-01-18 08:00:00
+  updated_at:
+  salt: ea8e43579ea41a1258ea7e82b3af38f039f0766a
+  account_type: crew_admin
+  authorizations: edit_enrollments, edit_scheduled_courses, edit_own_crew, edit_certificates, edit_qualifications, edit_operations, edit_people, create_people, edit_training_facilities
+  last_login:
+  account_crew_id: 1
+
+
+#Nick Sailer is a crewmember on the Siskiyou Rappel Crew (crewmember)
+#password: sailersailersailer
+nick_sailer:
+  id: 16
+  iqcs_num: "00000128559"
+  firstname: Nick
+  lastname: Sailer
+  gender: male
+  birthdate: 1980-09-18
+  username: nick@sailer.com
+  encrypted_password: 0fc4513d1e185867e88212eed2f573366372e5b3
+  headshot_file_name: 
+  has_purchase_card: 0
+  created_at: 2013-01-18 08:00:00
+  updated_at:
+  salt: ea8e43579ea41a1258ea7e82b3af38f039f0766a
+  account_type: crewmember
+  authorizations: edit_enrollments, edit_scheduled_courses, edit_own_crew, edit_certificates, edit_qualifications, edit_operations, edit_people, create_people, edit_training_facilities
+  last_login:
+  account_crew_id: 1
+
+#Cole Taggart is a crewmember of the Siskiyou Rappel Crew (crewmember)
+cole_taggart:
+  id: 3
+  iqcs_num: "00000051187"
+  firstname: Cole
+  lastname: Taggart
+  gender: male
+  birthdate: 1985-07-15
+  username: ctaggart
+  encrypted_password: 40f4c3f4ef0b47f5020918ac1e4b8b61c36dc73f
+  headshot_file_name: 3.jpg
+  has_purchase_card: 0
+  created_at: 2010-06-05 09:30:00
+  updated_at:
+  salt: a76c0cab798201ad904d5546818bc68ff2cc28a0
+  account_type: crewmember
+  authorizations: view_enrollments, view_scheduled_courses, view_crews, view_operations
+  last_login:
+  account_crew_id: 1
+
+#Cory Vinyard is a crewmember of the Siskiyou Rappel Crew (crewmember)
+cory_vinyard:
+  id: 4
+  iqcs_num: "00000011904"
+  firstname: Cory
+  lastname: Vinyard
+  gender: male
+  birthdate: 1978-08-22
+  username: cvinyard
+  encrypted_password: fb8c9515dfa1d43e1565f419a9be1ec074891596
+  headshot_file_name: 4.jpg
+  has_purchase_card: 0
+  created_at: 2010-06-10 10:01:00
+  updated_at:
+  salt: dbc3a0e97645a6f407315d190c0234ee470cfdad
+  account_type: crewmember
+  authorizations: view_enrollments, view_scheduled_courses
+  last_login:
+  account_crew_id: 1
+
+#Amy Kazmier is the Base Manager of the Central Oregon Rappellers (crewmember)
+amy_kazmier:
+  id: 5
+  iqcs_num: "00000157433"
+  firstname: Amy
+  lastname: Kazmier
+  gender: female
+  birthdate: 1968-03-12
+  username: akazmier
+  encrypted_password: dbf77287a1874f7b606b5f322f6121286d8aea24
+  headshot_file_name: 
+  has_purchase_card: 1
+  created_at: 2010-06-10 10:02:00
+  updated_at:
+  salt: fddb0fb62a7fe77273874f4d4d09400118c58047
+  account_type: crewmember
+  authorizations: edit_enrollments, edit_scheduled_courses, edit_own_crew, view_crews, edit_certificates, edit_qualifications, edit_operations
+  last_login:
+  account_crew_id: 2
+
+#Norm Sealing is the Assistant Manager of the Central Oregon Rappellers (crewmember)
+norm_sealing:
+  id: 6
+  iqcs_num: "00000827390"
+  firstname: Norm
+  lastname: Sealing
+  gender: male
+  birthdate: 1969-06-03
+  username: nsealing
+  encrypted_password: b34b816c1ea066c8986c63847ae7202875bcbad2
+  headshot_file_name: 
+  has_purchase_card: 1
+  created_at: 2010-06-10 10:03:00
+  updated_at:
+  salt: 2b3e445ca02c1dd0b8a374256b6f81068ddb8640
+  account_type: crewmember
+  authorizations: edit_enrollments, edit_scheduled_courses, edit_own_crew, view_crews, edit_certificates, edit_qualifications, edit_operations
+  last_login:
+  account_crew_id: 2
+
+#Andrew Hastings is a crewmember of the Central Oregon Rappellers (crewmember)
+andrew_hastings:
+  id: 7
+  iqcs_num: "00000026335"
+  firstname: Andrew
+  lastname: Hastings
+  gender: male
+  birthdate: 1986-09-15
+  username: ahastings
+  encrypted_password: 14a796a3facabd153b29c56de074ce4356444b25
+  headshot_file_name: 7-original.jpg
+  has_purchase_card: 0
+  created_at: 2010-06-10 10:04:00
+  updated_at:
+  salt: 576d98a9dc5cd41321e8595fe6573a7e96494ad0
+  account_type: crewmember
+  authorizations: view_enrollments, view_scheduled_courses, view_operations, view_crews
+  last_login:
+  account_crew_id: 2
+
+#Matt Mahoney is a crewmember of the Central Oregon Rappellers (crewmember)
+matt_mahoney:
+  id: 8
+  iqcs_num: "00000079541"
+  firstname: Matt
+  lastname: Mahoney
+  gender: male
+  birthdate: 1983-05-18
+  username: mmahoney
+  encrypted_password: 26a617ae83dc94e53a0f326e5328e7af64527f82
+  headshot_file_name: 
+  has_purchase_card: 0
+  created_at: 2010-06-10 10:05:00
+  updated_at:
+  salt: 469c289d2381f6cdabd034e5581c8356854d38a8
+  account_type: crewmember
+  authorizations: view_enrollments, view_scheduled_courses
+  last_login:
+  account_crew_id: 2
+
+#Mike Davis is the Base Manager of the Wenatchee Valley Rappellers
+mike_davis:
+  id: 9
+  iqcs_num: "00000099273"
+  firstname: Mike
+  lastname: Davis
+  gender: male
+  birthdate: 1968-11-20
+  username: mdavis
+  encrypted_password: 9e9e9db492e22b48866acc546c8f94eaa4f5e871
+  headshot_file_name: 
+  has_purchase_card: 1
+  created_at: 2010-06-10 10:06:00
+  updated_at:
+  salt: 2b149038b2e16cbb051fe52fd006fe0553e1405b
+  account_type: crewmember
+  authorizations: edit_enrollments, edit_scheduled_courses, edit_own_crew, edit_certificates, edit_qualifications, edit_operations
+  last_login:
+  account_crew_id: 3
+
+#Garrett Harasek is an Assistant Manager for the Wenatchee Valley Rappellers
+garret_harasek:
+  id: 10
+  iqcs_num: "00000739463"
+  firstname: Garrett
+  lastname: Harasek
+  gender: male
+  birthdate: 1971-05-04
+  username: gharrasek
+  encrypted_password: e765c72f8b17d59c0b6baee9ced19d5cda8d60af
+  headshot_file_name: 
+  has_purchase_card: 1
+  created_at: 2010-06-10 10:07:00
+  updated_at:
+  salt: b42cbf23de7bd8baca91f246b4588da7d49862d0
+  account_type: crewmember
+  authorizations: edit_enrollments, edit_scheduled_courses, edit_own_crew, edit_certificates, edit_qualifications, edit_operations
+  last_login:
+  account_crew_id: 3
+
+#Amanda Stachowski is a crewmember of the Wenatchee Valley Rappellers
+amanda_stachowski:
+  id: 11
+  iqcs_num: "00000356921"
+  firstname: Amanda
+  lastname: Stachowski
+  gender: female
+  birthdate: 1985-12-01
+  username: astachowski
+  encrypted_password: f2dc9f0a3a2e59345df4d727284efa685d3a582f
+  headshot_file_name: 
+  has_purchase_card: 0
+  created_at: 2010-06-10 10:08:00
+  updated_at:
+  salt: f1097691462f0d3ca87324ef41241df20f162e88
+  account_type: crewmember
+  authorizations: view_enrollments, view_scheduled_courses
+  last_login:
+  account_crew_id: 3
+
+#Hannah Dewey is a crewmember of the Wenatchee Valley Rappellers
+hannah_dewey:
+  id: 12
+  iqcs_num: "00000047820"
+  firstname: Hannah
+  lastname: Dewey
+  gender: female
+  birthdate: 1984-05-12
+  username: hdewey
+  encrypted_password: 379dd7901e35af393469c710eb962046979c3475
+  headshot_file_name: 
+  has_purchase_card: 0
+  created_at: 2010-06-10 10:09:00
+  updated_at:
+  salt: 177a14735d1dc6f819f23b84787b2873a8bbf4c6
+  account_type: crewmember
+  authorizations: view_enrollments, view_scheduled_courses
+  last_login:
+  account_crew_id: 3
+
+#a pilot
+pilot1:
+  id: 13
+  firstname: Maverick
+  lastname: McGunner
+  gender: male
+
+#another pilot
+pilot2:
+  id: 14
+  firstname: Ice
+  lastname: Man
+  gender: male

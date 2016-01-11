@@ -1,0 +1,8 @@
+<% cargo_letdowns = operation.cargo_letdowns or [nil] %>
+<% cargo_letdowns.each do |cargo_letdown| %>
+  <table>
+    <%= fields_for "operation[cargo_letdowns_attributes][]", cargo_letdown do |cargo_letdown_form| %>
+
+    <% end %>
+  </table>
+<% end %>

@@ -1,0 +1,2 @@
+<%= collection_select(:scheduled_course, :training_facility_id, TrainingFacility.find_all_by_crew_id(@current_person.current_crew.id), :id, :name) %>
+<%= link_to("Add a New Facility", '#', render_partial_options("training_facility_fields", :method => "update")) %>

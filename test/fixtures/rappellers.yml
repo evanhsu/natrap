@@ -1,0 +1,89 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  id: 1
+  person_id: 1
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+two:
+  id: 2
+  person_id: 2
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+three:
+  id: 3
+  person_id: 3
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+four:
+  id: 4
+  person_id: 4
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+five:
+  id: 5
+  person_id: 5
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+six:
+  id: 6
+  person_id: 6
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+seven:
+  id: 7
+  person_id: 7
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+eight:
+  id: 8
+  person_id: 8
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+nine:
+  id: 9
+  person_id: 9
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+ten:
+  id: 10
+  person_id: 10
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+eleven:
+  id:  11
+  person_id: 11
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008
+
+twelve:
+  id: 12
+  person_id: 12
+  proficiency_offset: 0
+  operational_offset: 0
+  rookie_year: 2008

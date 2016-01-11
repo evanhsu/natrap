@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  priority: 1
+  name: MyString
+  crew_id: 1
+  qualification: MyString
+  available: false
+
+two:
+  priority: 1
+  name: MyString
+  crew_id: 1
+  qualification: MyString
+  available: false

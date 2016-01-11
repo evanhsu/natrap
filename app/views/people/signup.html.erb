@@ -1,0 +1,31 @@
+<div style="width:<%= @person.errors.any? ? "600px":"500px" %>; margin:0 auto 0 auto; text-align: center;">
+  <h1>Create an Account</h1>
+<%= form_for(@person, :html => {:multipart => true, :style => "width:100%; "}) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation" style="margin:0 auto 0 auto;">
+      <h2>Your account was not created for the following <%= pluralize(@person.errors.count, "reason") %>:</h2>
+      <ul style="width:400px; margin:0 auto 0 auto;">
+      <% @person.errors.full_messages.each do |msg| %>
+        <li style="text-align:left;"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div><br />
+  <% end %>
+
+
+  <table style="border:2px solid #555555; margin: 0 auto 0 auto;">
+    <tr><td>First Name <i style="font-size:0.8em;color:red;">(Required)</i></td><td>:</td><td><%= f.text_field :firstname %></td></tr>
+    <tr><td>Last Name <i style="font-size:0.8em;color:red;">(Required)</i><td>:</td><td><%= f.text_field :lastname %></td></tr>
+    <tr><td>IQCS Number<br /></td><td>:</td><td><%= f.text_field :iqcs_num %></td></tr>
+    <tr><td>Gender</td><td>:</td><td><%= f.text_field :gender %></td></tr>
+    <tr><td>Birthdate</td><td>:</td><td><%= f.text_field :birthdate %></td></tr>
+    <tr><td>Profile Photo<br /></td><td>:</td><td><%= f.file_field :headshot %></td></tr>
+    <tr><td colspan="3"><hr /></td></tr>
+    <tr><td style="width:150px">Email <i style="font-size:0.8em;color:red;">(Required)</i><br />
+            <i style="font-size:0.8em;color:red;">This will be your username</i></td><td>:</td><td><%= f.text_field :username %></td></tr>
+    <tr><td colspan="3" style="font-size:0.9em;font-style: italic;">You will receive an email with your username and password once you click the 'Create Account' button.</td></tr>
+    <tr><td colspan="3"><hr /></td></tr>
+    <tr><td colspan="2"></td><td><%= f.submit "Create Account" %></td></tr>
+  </table>
+<% end %>
+</div>

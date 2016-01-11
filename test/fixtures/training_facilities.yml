@@ -1,0 +1,113 @@
+
+COCC_Redmond_src:
+  id: 1
+  name: COCC Redmond (SRC)
+  address: 2030 SE College Loop\nRedmond, OR 97756
+  contact_name: Paula Simone
+  contact_phone: 541-383-7270
+  contact_email: evanhsu@gmail.com
+  notes: Most fire classes will be held in Room C. Obtain parking permits from Paula Simone.
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 1
+
+CFPA_src:
+  id: 2
+  name: Coos Bay Fire Protection Association (SRC)
+  address: 63612 Fifth Rd.\nCoos Bay, OR 97420
+  contact_name: 
+  contact_phone: 541-267-3161
+  contact_email: evanhsu@gmail.com
+  notes: 
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 1
+
+RAC_src:
+  id: 3
+  name: Redmond Air Center (SRC)
+  address: 2222 Airport Rd\nRedmond, OR 97756
+  contact_name:
+  contact_phone: 541-333-3333
+  contact_email: evanhsu@gmail.com
+  notes:
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 1
+
+
+COCC_Redmond_cor:
+  id: 4
+  name: COCC Redmond (COR)
+  address: 2030 SE College Loop\nRedmond, OR 97756
+  contact_name: Paula Simone
+  contact_phone: 541-383-7270
+  contact_email: evanhsu@gmail.com
+  notes: Most fire classes will be held in Room C. Obtain parking permits from Paula Simone.
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 2
+
+CFPA_cor:
+  id: 5
+  name: Coos Bay Fire Protection Association (COR)
+  address: 63612 Fifth Rd.\nCoos Bay, OR 97420
+  contact_name:
+  contact_phone: 541-267-3161
+  contact_email: evanhsu@gmail.com
+  notes:
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 2
+
+RAC_cor:
+  id: 6
+  name: Redmond Air Center (COR)
+  address: 2222 Airport Rd\nRedmond, OR 97756
+  contact_name:
+  contact_phone: 541-333-3333
+  contact_email: evanhsu@gmail.com
+  notes:
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 2
+
+
+COCC_Redmond_wvr:
+  id: 7
+  name: COCC Redmond (WVR)
+  address: 2030 SE College Loop\nRedmond, OR 97756
+  contact_name: Paula Simone
+  contact_phone: 541-383-7270
+  contact_email: evanhsu@gmail.com
+  notes: Most fire classes will be held in Room C. Obtain parking permits from Paula Simone.
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 3
+
+CFPA_wvr:
+  id: 8
+  name: Coos Bay Fire Protection Association (WVR)
+  address: 63612 Fifth Rd.\nCoos Bay, OR 97420
+  contact_name:
+  contact_phone: 541-267-3161
+  contact_email: evanhsu@gmail.com
+  notes:
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 3
+
+RAC_wvr:
+  id: 9
+  name: Redmond Air Center (WVR)
+  address: 2222 Airport Rd\nRedmond, OR 97756
+  contact_name:
+  contact_phone: 541-333-3333
+  contact_email: evanhsu@gmail.com
+  notes:
+  created_at: 2010-11-28 19:01:37
+  updated_at:
+  crew_id: 3
+
+
+

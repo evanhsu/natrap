@@ -1,0 +1,512 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  serial_number: 89757583
+  type: AccountableItem
+  category: gps
+  description: Garmin Vista Color
+  crew_id: 1
+  comments: Zagg
+
+two:
+  serial_number: 89757587
+  type: AccountableItem
+  category: gps
+  description: Garmin Vista Color
+  crew_id: 1
+  comments: Zagg
+
+three:
+  serial_number: 118194527
+  type: AccountableItem
+  category: gps
+  description: Garmin 60CSX
+  crew_id: 1
+  comments: 2GB SD / Zagg / West Topo
+
+four:
+  serial_number: 118194514
+  type: AccountableItem
+  category: gps
+  description: Garmin 60CSX
+  crew_id: 1
+  comments: 2GB SD / Zagg / West Topo
+
+five:
+  serial_number: 118386532
+  type: AccountableItem
+  category: gps
+  description: Garmin 60CSX
+  crew_id: 1
+  comments: 2GB SD / Zagg / West Topo
+
+six:
+  serial_number: 118169822
+  type: AccountableItem
+  category: gps
+  description: Garmin 60CSX
+  crew_id: 1
+  comments: 2GB SD / Zagg / West Topo
+
+seven:
+  serial_number: 18z014026
+  type: AccountableItem
+  category: gps
+  description: Garmin Colorado 400t
+  crew_id: 1
+  comments:
+
+rappel_harness_in_service:
+  serial_number: SRC-008
+  type: RappelEquipment
+  category: rappel_harness
+  description: HR-2
+  crew_id: 1
+  comments:
+  condition: good
+
+nine:
+  serial_number: SRC-009
+  type: RappelEquipment
+  category: rappel_harness
+  description: HR-2
+  crew_id: 1
+  comments:
+  condition: good
+
+ten:
+  serial_number: SRC-010
+  type: RappelEquipment
+  category: rappel_harness
+  description: HR-2
+  crew_id: 1
+  comments:
+  condition: good
+
+eleven:
+  serial_number: SRC-011
+  type: RappelEquipment
+  category: rappel_harness
+  description: HR-2
+  crew_id: 1
+  comments:
+  condition:
+
+twelve:
+  serial_number: SRC-012
+  type: RappelEquipment
+  category: rappel_harness
+  description: HR-2
+  crew_id: 1
+  comments:
+  condition: good
+
+thirteen:
+  serial_number: SRC-013
+  type: RappelEquipment
+  category: rappel_harness
+  description: HR-2
+  crew_id: 1
+  comments:
+  condition: good
+
+rappel_rope_in_service1:
+  serial_number: SRC-013
+  type: RappelEquipment
+  category: rope
+  color:
+  size:
+  description: Descent Control 1/2" Braided Nylon
+  condition: good
+  comments: This is a comment
+  crew_id: 1
+  status: in-service
+  use_offset: a12b10
+  in_service_date: 2010-05-13
+  retired_date:
+  retired_category:
+  retired_reason:
+  item_source:
+  quantity:
+  restock_trigger:
+  restock_to_level:
+  checked_out_to_id:
+  
+
+rappel_rope_in_service2:
+  serial_number: SRC-015
+  type: RappelEquipment
+  category: rope
+  color:
+  size:
+  description: Descent Control 1/2" Braided Nylon
+  condition: good
+  comments: This is a comment
+  crew_id: 1
+  status: in-service
+  use_offset: a27b24
+  in_service_date: 2009-06-17
+  retired_date:
+  retired_category:
+  retired_reason:
+  item_source:
+  quantity:
+  restock_trigger:
+  restock_to_level:
+  checked_out_to_id:
+
+sixteen:
+  serial_number: SRC-020
+  type: RappelEquipment
+  category: rope
+  description: Descent Control 1/2" Braided Nylon
+  crew_id: 1
+  comments:
+  condition: new
+  use_offset: a0b0
+  in_service_date: 2011-01-1
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+rappel_rope_retired:
+  serial_number: SRC-022
+  type: RappelEquipment
+  category: rope
+  description: Descent Control 1/2" Braided Nylon
+  crew_id: 1
+  comments:
+  condition:
+  use_offset: a182b200
+  in_service_date: 2007-06-21
+  retired_date: 2010-10-16
+  retired_category: use
+  retired_reason: 200 uses on end B
+  status: retired
+
+eighteen:
+  serial_number: SRC-023
+  type: RappelEquipment
+  category: rope
+  description: Descent Control 1/2" Braided Nylon
+  crew_id: 1
+  comments:
+  condition:
+  use_offset: a122b141
+  in_service_date: 2008-04-29
+  retired_date: 2010-7-10
+  retired_category: field_damage
+  retired_reason: Excessive glazing
+  status: retired
+
+descent_device_in_service:
+  serial_number: SRC-003
+  type: RappelEquipment
+  category: descent_device
+  description: Sky Genie
+  crew_id: 1
+  comments:
+  condition: good
+  use_offset: 39
+  in_service_date: 2006-05-14
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+twenty:
+  serial_number: SRC-005
+  type: RappelEquipment
+  category: descent_device
+  description: Sky Genie
+  crew_id: 1
+  comments:
+  condition: good
+  use_offset: 51
+  in_service_date: 2006-05-18
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+descent_device_retired:
+  serial_number: SRC-006
+  type: RappelEquipment
+  category: descent_device
+  description: Sky Genie
+  crew_id: 1
+  comments:
+  condition:
+  use_offset: 39
+  in_service_date: 2007-06-15
+  retired_date: 2009-8-20
+  retired_category: field_damage
+  retired_reason: Deep groove
+  status: retired
+
+twentytwo:
+  serial_number: COR-013
+  type: RappelEquipment
+  category: descent_device
+  description: Sky Genie
+  crew_id: 2
+  comments:
+  condition:
+  use_offset: 42
+  in_service_date: 2008-05-15
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+twentythree:
+  serial_number: COR-018
+  type: RappelEquipment
+  category: descent_device
+  description: Sky Genie
+  crew_id: 2
+  comments:
+  condition:
+  use_offset: 29
+  in_service_date: 2008-05-18
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+twentyfour:
+  serial_number: COR-022
+  type: RappelEquipment
+  category: descent_device
+  description: Sky Genie
+  crew_id: 2
+  comments:
+  condition:
+  use_offset: 39
+  in_service_date: 2008-06-17
+  retired_date: 2009-8-25
+  retired_category: field_damage
+  retired_reason: Deep groove
+  status: retired
+
+letdown_line_in_service:
+  serial_number: COR-001
+  type: RappelEquipment
+  category: letdown_line
+  description: 1"x250' tubular nylon webbing
+  crew_id: 2
+  comments:
+  condition:
+  use_offset: a23b19
+  in_service_date: 2008-05-18
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+twentysix:
+  serial_number: COR-002
+  type: RappelEquipment
+  category: letdown_line
+  description: 1"x250' tubular nylon webbing
+  crew_id: 2
+  comments:
+  condition:
+  use_offset: a29b28
+  in_service_date: 2008-05-20
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+twentyseven:
+  serial_number: SRC-008
+  type: RappelEquipment
+  category: letdown_line
+  description: 1"x250' tubular nylon webbing
+  crew_id: 1
+  comments:
+  condition:
+  use_offset: a119b126
+  in_service_date: 2008-06-18
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+twentyeight:
+  serial_number: SRC-009
+  type: RappelEquipment
+  category: letdown_line
+  description: 1"x250' tubular nylon webbing
+  crew_id: 1
+  comments:
+  condition:
+  use_offset: a86b77
+  in_service_date: 2008-06-20
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+twentynine:
+  serial_number: COR-132
+  type: RappelEquipment
+  category: rope
+  description: Descent Control 1/2" Braided Nylon
+  crew_id: 2
+  comments:
+  condition:
+  use_offset: a122b141
+  in_service_date: 2008-04-29
+  retired_date: 2010-7-10
+  retired_category: field_damage
+  retired_reason: Excessive glazing
+  status: retired
+
+thirty:
+  serial_number: COR-146
+  type: RappelEquipment
+  category: rope
+  description: Descent Control 1/2" Braided Nylon
+  crew_id: 2
+  comments:
+  condition:
+  use_offset: a4b7
+  in_service_date: 2010-07-22
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+thirty:
+  serial_number: COR-150
+  type: RappelEquipment
+  category: rope
+  description: Descent Control 1/2" Braided Nylon
+  crew_id: 2
+  comments:
+  condition:
+  use_offset: a23b26
+  in_service_date: 2009-08-22
+  retired_date:
+  retired_category:
+  retired_reason:
+  status: in-service
+
+thirtyone:
+  serial_number: COR-001
+  type: AccountableItem
+  category: sleeping bag
+  description: North Face Blue Kazoo
+  crew_id: 2
+  color: blue
+  size: regular
+  comments:
+  item_source:
+  checked_out_to_id:
+
+thirtytwo:
+  serial_number: COR-002
+  type: AccountableItem
+  category: sleeping bag
+  description: North Face Blue Kazoo
+  crew_id: 2
+  color: blue
+  size: regular
+  comments:
+  item_source:
+  checked_out_to_id:
+
+thirtythree:
+  serial_number: COR-003
+  type: AccountableItem
+  category: sleeping bag
+  description: North Face Blue Kazoo
+  crew_id: 2
+  color: blue
+  size: XL
+  comments:
+  item_source:
+  checked_out_to_id:
+
+accountable_item:
+  serial_number: SRC-001
+  type: AccountableItem
+  category: sleeping bag
+  description: North Face Blue Kazoo
+  crew_id: 1
+  color: blue
+  size: regular
+  comments: This item is a sleeping bag
+  item_source:
+  checked_out_to_id:
+
+thirtyfive:
+  serial_number: SRC-002
+  type: AccountableItem
+  category: sleeping bag
+  description: North Face Blue Kazoo
+  crew_id: 1
+  color: blue
+  size: regular
+  comments:
+  item_source:
+  checked_out_to_id:
+
+thirtysix:
+  serial_number: SRC-001
+  type: AccountableItem
+  category: headlamp
+  description: Petzl Tikka
+  crew_id: 1
+  color: black
+  size:
+  comments:
+  item_source:
+  checked_out_to_id:
+
+thirtyseven:
+  serial_number: SRC-002
+  type: AccountableItem
+  category: headlamp
+  description: Petzl Tikka
+  crew_id: 1
+  color: black
+  size:
+  comments:
+  item_source:
+  checked_out_to_id:
+
+bulk_item:
+  type: BulkItem
+  category: Batteries
+  description: Case of AA Batteries (144 ea)
+  crew_id: 1
+  color:
+  size: AA
+  quantity: 8
+  restock_trigger: 2
+  restock_to_level: 6
+  item_source: www.this-is-a-fake-battery-website.com
+  comments: This is a comment
+  checked_out_to_id:
+
+thirtynine:
+  type: BulkItem
+  category: Batteries
+  description: Flagging
+  crew_id: 1
+  color: pink
+  size: Roll
+  quantity: 20
+  restock_trigger: 10
+  restock_to_level: 20
+  item_source: www.this-is-a-fake-flagging-website.com
+  comments: This is a comment
+  checked_out_to_id:

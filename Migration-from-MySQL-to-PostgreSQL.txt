@@ -1,0 +1,90 @@
+This is a list of steps taken to move data from a MySQL database for a Rails app into a PostreSQL database (in a Windows environment).
+
+STEP 1:
+  Download the mysql c-connector library from http://dev.mysql.com/downloads/connector/c/
+  Extract the library to c:\mysql-connector-c-noinstall-6.0.2-win32\
+
+STEP 2:
+  Uninstall any existing 'mysql' gem
+
+STEP 3:
+  Install the 'mysql' gem using --platform=ruby and --with-mysql-dir to point to the connector library you downloaded.
+
+STEP 4:
+  Copy the file c:\mysql-connector-c-noinstall-6.0.2-win32\lib\libmysql.dll into your Ruby/bin path.
+
+STEP 5:
+  Install the 'pg' gem (PostreSQL adapter)
+
+STEP 6:
+  Install the 'valkyrie' gem to copy from the mysql database into the postgresql database
+
+Look at the console log below for the commands issued to install the mysql gem and execute the valkyrie command
+------------------------------------------------------------------------------------------------------------------------
+
+
+>>C:\Users\Evan\Documents\htdocs\natrap>gem uninstall mysql
+
+Select gem to uninstall:
+ 1. mysql-2.8.1-x86-mingw32
+ 2. mysql-2.9.1-x86-mingw32
+ 3. mysql-2.9.1
+ 4. All versions
+> 4
+Successfully uninstalled mysql-2.8.1-x86-mingw32
+Successfully uninstalled mysql-2.9.1-x86-mingw32
+Successfully uninstalled mysql-2.9.1
+
+
+>>C:\Users\Evan\Documents\htdocs\natrap>gem install mysql --platform=ruby -- --with-mysql-dir=C:/mysql-connector-c-noinstall-6.0.2-win32
+Fetching: mysql-2.9.1.gem (100%)
+Temporarily enhancing PATH to include DevKit...
+Building native extensions with: '--with-mysql-dir=C:/mysql-connector-c-noinstall-6.0.2-win32'
+This could take a while...
+Successfully installed mysql-2.9.1
+Parsing documentation for mysql-2.9.1
+Installing ri documentation for mysql-2.9.1
+Done installing documentation for mysql after 0 seconds
+1 gem installed
+
+C:\Users\Evan\Documents\htdocs\natrap>gem list mysql
+
+*** LOCAL GEMS ***
+
+mysql (2.9.1)
+
+C:\Users\Evan\Documents\htdocs\natrap>valkyrie mysql://natrap:natdevpass@localhost/natrap_dev postgres://postgres:dev@localhost/natrap-db
+Transferring 31 tables:
+aircraft_types: 100% |=========================================| Time: 00:00:00
+cargo_letdowns: 100% |=========================================| Time: 00:00:00
+certificates:   100% |=========================================| Time: 00:00:00
+cost_sheets:    100% |=========================================| Time: 00:00:00
+crew_addresses: 100% |=========================================| Time: 00:00:00
+crews:          100% |=========================================| Time: 00:00:00
+enrollments:    100% |=========================================| Time: 00:00:00
+helibases:      100% |=========================================| Time: 00:00:00
+helicopters:    100% |=========================================| Time: 00:00:00
+incident_roste: 100% |=========================================| Time: 00:00:00
+incidents:      100% |=========================================| Time: 00:00:00
+items:          100% |=========================================| Time: 00:00:00
+log_entries:    100% |=========================================| Time: 00:00:01
+operations:     100% |=========================================| Time: 00:00:00
+people:         100% |=========================================| Time: 00:00:00
+person_address: 100% |=========================================| Time: 00:00:00
+pilots:         100% |=========================================| Time: 00:00:00
+qualifications: 100% |=========================================| Time: 00:00:00
+rappel_spotter: 100% |=========================================| Time: 00:00:00
+rappellers:     100% |=========================================| Time: 00:00:00
+rappels:        100% |=========================================| Time: 00:00:00
+ro_bo_position: 100% |=========================================| Time: 00:00:00
+ro_bo_states:   100% |=========================================| Time: 00:00:00
+rostered_peopl: 100% |=========================================| Time: 00:00:00
+rosters:        100% |=========================================| Time: 00:00:00
+scheduled_cour: 100% |=========================================| Time: 00:00:00
+schema_migrati: 100% |=========================================| Time: 00:00:00
+spots:          100% |=========================================| Time: 00:00:00
+staffing_level: 100% |=========================================| Time: 00:00:00
+training_facil: 100% |=========================================| Time: 00:00:00
+training_prior: 100% |=========================================| Time: 00:00:00
+
+C:\Users\Evan\Documents\htdocs\natrap>

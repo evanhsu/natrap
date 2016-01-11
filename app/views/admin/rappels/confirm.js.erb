@@ -1,0 +1,2 @@
+<% rappel_position = "#{@rappel.stick}_#{@rappel.door}" %>
+$("<%= rappel_position + '_confirmed' %>").update("<%= escape_javascript(render('operations/show/confirmation', :object => @rappel, :operation => @rappel.operation)) %>");

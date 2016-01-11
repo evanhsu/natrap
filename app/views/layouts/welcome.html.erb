@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html style="width:100%;">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>National Rappellers</title>
+
+<!-- <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">-->
+<meta name="Author" content="Evan & Tyler Hsu" />
+<meta name="Keywords" content="fire, wildland, firefighting, suppression, helicopter, aviation, rappel, rappelling, rappeller, rapel, rapell, rapeller, repeller, repelling, records, history" />
+<meta name="Description" content="The National Rappel Website. This site is an information hub for all of the federal helicopter rappel crews." />
+
+<%= favicon_link_tag %>
+<%= csrf_meta_tag %>
+<%= stylesheet_link_tag "stickymenu", "jquery.qtip" %>
+
+<%#= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" %>
+<%#= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js" %>
+<%= javascript_include_tag "jquery/jquery.min.js" %>
+<%= javascript_include_tag "jquery/jquery-ui.js" %>
+<%= javascript_include_tag "jquery_ujs" %>
+<%= javascript_include_tag "stickyheader.js" %>
+<%= javascript_include_tag "2tiermenubar.js" %>
+
+<%#= javascript_include_tag "region_map" %>
+<%#= javascript_include_tag "doubletaptogo" %>
+<%#= javascript_include_tag "listeners" %>
+
+<%= yield :includes %>
+</head>
+
+<body>
+	<div id="unstickyheader" style="height:500px;width:100%;position:relative; background: url('/images/backgrounds/banner4.jpg') no-repeat #000000;">
+		<%= yield :unstickyheader %>
+	</div>
+    	<div id="stickyheader">
+		<%#= yield :stickyheader %>
+		<%= render "sidebar/top_menu" %>
+	</div>
+	<div id="stickyalias">
+		<%= yield :stickyalias %>
+	</div>
+	<div id="content">
+		<%= yield %>
+	</div>
+
+</body>
+</html>

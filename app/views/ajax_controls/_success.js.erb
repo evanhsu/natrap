@@ -1,0 +1,12 @@
+var container = $("<%= params[:container_id] %>");
+var errorContainer = $(container.readAttribute('data-error_container'));
+<% if object.errors.any? %>
+  errorContainer.update("<%= object.errors.full_messages.join('<br \>') %>");
+<% else %>
+  errorContainer.update('');
+  if(container.readAttribute('data-ajax_in_place_form')) {
+    <%= render 'ajax_controls/in_place_form', :object => object %>
+  } else if(container.readAttribute('data-ajax_checkbox')) {
+    <%= render 'ajax_controls/graphical_checkbox', :object => object %>
+  }
+<% end %>

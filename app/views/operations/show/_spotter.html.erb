@@ -1,0 +1,23 @@
+<%= render 'operations/show/confirmation', :object => spot, :operation => spot.operation %>
+<div class="rappel_spotter_container" id="spotter_container">
+  <span class="label">Spotter</span><br />
+  <%= image_tag spot.spotter.person.headshot.url, :style => "margin-top:5px", :onerror => "this.src='/images/headshots/missing.jpg'" %><br />
+  <% if editable %>
+    <div id="spotter_errors" class="ajax_error_msg"></div>
+    <%= ajax_in_place_form(spot, :spotter_fullname,
+                           text_field_tag("spotter_fullname", spot.spotter.person.fullname,
+                                          :style => "width:98%",
+                                          "data-rappeller_autocomplete" => "true",
+                                          "data-autocomplete_service_url" => "/rappel_spotters/autocomplete.json",
+                                          "data-autocomplete_width" => "180",
+                                          "data-autocomplete_container" => "spotter_fullname_autocomplete_container") +
+                           hidden_field_tag("spot[rappel_spotter_id]", spot.spotter.id, "data-id_field" => true),
+                           {:display_attribute => :spotter_fullname}, {"data-error_container" => "spotter_errors"}) %>
+    <div id='spotter_fullname_autocomplete_container'></div>
+  <% else %>
+    <%= spot.spotter.person.fullname %>
+  <% end %>
+  <br />
+  <span class="label">Comments:</span><br />
+  <%= editable ? ajax_in_place_text_field(spot, :comments) : spot.comments %>
+</div>

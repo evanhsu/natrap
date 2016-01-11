@@ -1,0 +1,236 @@
+<html>
+	<head>
+		<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" %>
+		<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js" %>
+		<%= javascript_include_tag "jquery/jquery.formatDateTime.min.js" %>
+		<%= javascript_include_tag "jquery/jquery-touch-punch/jquery.ui.touch-punch.min.js" %>
+                <%= javascript_include_tag "jeditable.min.js" %>
+		<%= javascript_include_tag "rotation_board" %>
+		<script type="text/javascript">
+			window.addEventListener('load',
+			function() {
+				//Add click behavior to the "Add New Booster headshot placeholder image
+				$("#fake_file_upload_button").click(function() {$("#headshot").click();});
+				//$("#booster_form").submit(function(e) {
+				//	e.preventDefault();
+				//});
+			}, false);
+
+		</script>
+
+		<style>
+			body {
+				width: 1225px;
+				min-height: 500px;
+				margin: 0px;
+				padding: 0px;
+				border: 5px solid #666666;
+				background-image: url("/images/backgrounds/robo_bg.jpg");
+				background-repeat: no-repeat;
+				background-size: 1235px;
+			}
+			.cell {
+				background: none;
+				display: inline-block;
+				width: 250px;/* +2px border = 252px */
+				height: 80px;/* +2px border = 82px */
+				border: 1px dashed #555555;
+				margin: 3px;
+				padding: 0px;
+				vertical-align: middle;
+			}
+			.row {
+				/*background-color: #aaaaaa;*/
+			}
+			.headshot {
+				float: left;
+				height: 78px;
+				width: 78px;
+				margin-right: 0.3em;
+				border-right: 2px solid #777777;
+			}
+/*			.headshot:after {
+				clear:left;
+			}
+*/			.personName {
+				float: left;
+				font-size: 1em;
+				font-weight: bold;
+			}
+/*			.personName:after {
+				content:"\A";
+				white-space:pre;
+			}
+*/			.personQuals {
+				float: left;
+				font-size: 0.5em;
+				font-weight: normal;
+				width: 160px;
+				word-wrap: break-word;
+			}
+			.list {
+				float: left;
+				display: inline-block;
+				list-style-type: none;
+				margin: 0px;
+				padding: 0px;
+			}
+			#unassigned-list {
+				border-right: 4px solid #000000;
+			}
+			.quals {
+				display: block;
+				/* float: left; */
+				font-size: 0.5em;
+				font-weight: normal;
+			}
+			.draggable {
+				width: 248px; /* +2px border = 250px */
+				height: 78px; /* +2px border = 80px */
+				display: block;
+				background: #eeeeee;
+				border: 1px solid black;
+				font-size: 1.2em;
+				font-weight: bold;
+				margin: 0px;
+				padding: 0px;
+				overflow: hidden;
+				cursor: pointer;
+				text-align:left;
+			}
+			.draggableTemplate {
+				display: none;
+			}
+			.player-controls {
+				width: 100%;
+				text-align: center;
+				font-size: 2em;
+				font-weight: bold;
+				display: table;
+			}
+			#roBoTime {
+				line-height:50px;
+				vertical-align:top;
+			}
+			.header-row {
+				background-color: #888888;
+				opacity: 0.8;
+			}
+			.header {
+				display: inline-block;
+				width: 252px;
+                                height: 30px;
+				margin: 3px;
+				padding: 0px;
+				font-weight: bold;
+				font-size: 2em;
+				line-height: 30px;
+				float: none;
+				border:none;
+				text-align: center;
+				border: none;
+				vertical-align: middle;
+			}
+                        .role-cell {
+				display: inline-block;
+                                float:left;
+				width: 100px;/* +2px border = 252px */
+				height: 80px;/* +2px border = 82px */
+				margin: 3px;
+                                text-align: center;
+                                overflow:hidden;
+
+                        }
+                        .rank-cell {
+                                display: table-cell;
+                                vertical-align: middle;
+                                float:left;
+                                height: 50px;
+                                width: 50px;
+                                margin: 3px;
+                                position: relative;
+                                top: 13px;
+                                text-align: center;
+                                border:2px dashed #999999;
+                                border-radius: 31px;
+                        }
+                        .role-cell div {
+                                width: 96px;
+                                height:76px;
+                                border: 2px solid black;
+                                margin: auto;
+                                padding: 0px;
+                                display: inline-block;
+                                font-size:18px;
+                                font-weight: bold;
+                        }
+                        .rank-cell div {
+                                width: 50px;
+                                height:50px;
+                                line-height:50px;
+                                display: inline-block;
+                                margin: auto;
+                                padding: 0px;
+                                border: 2px solid black;
+                                border-radius: 31px;
+                                font-weight: bold;
+                                font-size: 2em;
+                                position: relative;
+                                top: -2px;
+                                left: -2px;
+                                background-color: #bbbbbb;
+                        }
+                        .rank-cell div:empty, .role-cell div:empty {
+                                border:none;
+                                background:none;
+                        }
+                        .editable {
+                                font-weight: bold;
+                        }
+                        .info-col-header-role, .info-col-header-rank {
+				display: inline-block;
+                                border: none;
+                                vertical-align: middle;
+                                width: 100px;
+                                height: 30px;
+                                margin: 3px;
+                                padding: 0px;
+                                font-weight: bold;
+                                font-size: 1.5em;
+                                line-height: 30px;
+                                float: none;
+                                text-align: center;
+			}
+                        .info-col-header-rank {
+                                width: 50px;
+                        }
+			.rowTemplate, #crew_id, #roBoStateId {
+				display: none;
+			}
+			#new-person-form-container {
+				font-family:verdana,sans-serif;
+				font-size:1.4em;
+				margin-left:170px;
+				width: 250px;	
+			}
+			#new-person-form-container div {
+				border:1px dashed #888888;
+				height:78px;
+				background-color:white;	
+			}
+			#new-person-form-container .booster_save_button {
+				width: 78px;
+				height:78px;
+				position: relative;
+				left: 250px;
+				top: -78px;
+				font-family: Verdana,sans-serif;
+				font-size: 1.4em;
+			}
+		</style>
+                <%= yield :includes %>
+	</head>
+	<body>
+          <%= content_for?(:content) ? yield(:content) : yield %>
+        </body>
+  </html

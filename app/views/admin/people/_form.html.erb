@@ -1,0 +1,50 @@
+<div style="margin:0 auto 0 auto; text-align: center;">
+<%= form_for([:admin,@person], :html => {:multipart => true}) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation" style="margin:0 auto 0 auto;">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+      <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div><br />
+  <% end %>
+
+
+  <table style="border:2px solid #555555; margin: 0 auto 0 auto;">
+    <tr><td>First Name<br /></td><td>:</td><td><%= f.text_field :firstname %></td></tr>
+    <tr><td>Last Name</td><td>:</td><td><%= f.text_field :lastname %></td></tr>
+    <tr><td>IQCS Number<br /><i style="font-size:0.8em;color:red;">Must include this to track rappel stats</i></td><td>:</td><td><%= f.text_field :iqcs_num %></td></tr>
+    <tr><td>Gender</td><td>:</td><td><%= f.text_field :gender %></td></tr>
+    <tr><td>Birthdate</td><td>:</td><td><%= f.text_field :birthdate %></td></tr>
+    <tr><td>Purchase Card?</td><td>:</td><td><%= f.check_box :has_purchase_card %></td></tr>
+    <tr><td>Profile Photo<br /></td><td>:</td><td><%= image_tag(@person.headshot.url, :style => "border: 2px solid #555555") %><br /><%= f.file_field :headshot %></td></tr>
+    <tr><td colspan="3"><hr /></td></tr>
+    <% if @show_account_type %>
+    <tr><td>Account Type</td><td>:</td><td><%= select("person", "account_type", options_for_select(Authorizations::ACCOUNT_TYPES[1,2],@person.account_type)) %></td></tr>
+    <% else %>
+    <tr><td>Account Type (Locked)</td><td>:</td><td><%= f.text_field :account_type, :readonly => true %></td></tr>
+    <% end %>
+    <% if @show_email_field %>
+    <tr><td>Email<br /><i style="font-size:0.8em;color:red;">This will be the account username</i></td><td>:</td><td><%= f.text_field :username %></td></tr>
+    <% end %>
+    <% if @show_password_field %>
+    <tr><td>Password</td><td>:</td><td><%= f.password_field :password, :placeholder => "Unchanged" %></td></tr>
+    <% end %>
+    <% if @show_password_reset %>
+    <tr><td>Reset Password?</td><td>:</td><td><%= check_box_tag :reset_password %></td></tr>
+    <% end %>
+    <% if @show_destroy %>
+    <tr><td>Delete Account</td><td>:</td><td><%= link_to "Delete Account", destroy_login_for_admin_person_path(@person), :confirm => "Are you sure?" %></td></tr>
+    <% end %>
+    <tr><td colspan="3"><hr /></td></tr>
+    <tr><td colspan="2"></td>
+      <td>
+        <%= hidden_field_tag 'roster_id', @roster.id unless @roster.nil? %>
+        <%= f.submit %>
+      </td>
+    </tr>
+  </table>
+<% end %>
+</div>

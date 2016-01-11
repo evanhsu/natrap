@@ -1,0 +1,37 @@
+<%= "Admin" if editable %>
+<table class="staffing_level_table">
+  <tr style="border:2px solid #555555; background-color: #dddddd;">
+    <th style="text-align: left; width: 150px;">Crew Info</th>
+    <th style="border-left: 1px dotted #555555; width:40px;">HRAP Surplus</th>
+    <th style="width:150px;">Aircraft ID<br />or Resource Assignment</th>
+    <th style="width:75px;">Location</th>
+    <!--<th style="width:75px;">Status</th>-->
+    <th>Notes</th>
+    <th style="">Training</th>
+    <th style="width: 100px;">Updated</th>
+  </tr>
+  <% @staffing_levels.each do |crew| %>
+
+  <% rows = [] %>
+  <% (1..6).each do |r| %>
+    <% rows.push(r) unless crew.send("resource_"+r.to_s+"_name").blank? %>
+  <% end %>
+
+  <% rows.each do |r| %>
+  <tr>
+    <% if r == rows[0] %>
+      <td rowspan="<%= rows.length %>" class="last_row_in_group" style="text-align: left;"><%= crew.crew.name %></td>
+    <% end %>
+    <td style="border-left: 1px dotted #555555;"<%= " class=last_row_in_group" if r == rows.last %>><%= crew.send("resource_"+r.to_s+"_hrap_surplus") %></td>
+    <td<%= " class=last_row_in_group" if r == rows.last %> style="text-align:left;"><%= crew.send("resource_"+r.to_s+"_name") %> (<%= crew.send("resource_"+r.to_s+"_detail") %>)</td>
+    <td<%= " class=last_row_in_group" if r == rows.last %>><%= crew.send("resource_"+r.to_s+"_location") %></td>
+    <!--<td<%= " class=last_row_in_group" if r == rows.last %>><%= crew.send("resource_"+r.to_s+"_status") %></td>-->
+    <td<%= " class=last_row_in_group" if r == rows.last %>><%= crew.send("resource_"+r.to_s+"_comment") %></td>
+    <% if r == rows[0] %>
+      <td rowspan="<%= rows.length %>" class="last_row_in_group"><%= crew.training_needs %></td>
+      <td rowspan="<%= rows.length %>" class="last_row_in_group"><%= crew.created_at.in_time_zone(Time.zone).strftime("%d-%b-%Y %H:%M %Z") %></td>
+    <% end %>
+  </tr>
+<% end %>
+<% end %>
+</table>

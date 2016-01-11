@@ -1,0 +1,16 @@
+<%= content_for :heading do %>
+  Training Courses for <%= @person.fullname %>
+<% end %>
+
+<div id="tabbed_menu" style="width:25%; float:left;">
+  <ul>
+    <li<%= @active_tab=="future" ? " class=current":""%>>
+      <%= link_to raw("<b>Upcoming</b>"), enrollments_for_admin_person_url(@person.id,:start => Date.today.strftime('%m/%d/%Y')) if editable %>
+      <%= link_to raw("<b>Upcoming</b>"), enrollments_for_person_url(@person.id,:start => Date.today.strftime('%m/%d/%Y')) unless editable %>
+    </li>
+    <li<%= @active_tab=="past" ? " class=current":""%>>
+      <%= link_to raw("<b>Past</b>"), enrollments_for_admin_person_url(@person.id,:end => Date.today.strftime('%m/%d/%Y')) if editable %>
+      <%= link_to raw("<b>Past</b>"), enrollments_for_person_url(@person.id,:end => Date.today.strftime('%m/%d/%Y')) unless editable %>
+    </li>
+  </ul>
+</div>

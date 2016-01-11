@@ -1,0 +1,2 @@
+<%= render 'ajax_controls/success', :object => @spot %>
+$('spotter_confirmed').replace("<%= escape_javascript(render('operations/show/confirmation', :object => @spot, :operation => @spot.operation)) %>");

@@ -1,0 +1,17 @@
+<% if current_person
+    pid = current_person.id
+    admin_cid = current_person.current_crew.id if (current_crew && (current_person.has_authorization?(Authorizations::EDIT_OWN_CREW) or current_person.has_authorization?(Authorizations::EDIT_CREWS) or current_person.is_global_admin?))
+    cid = current_person.current_crew.id if current_crew
+    rid = current_person.current_crew.region if current_crew
+ %>
+
+<ul class="sidebar_section">
+  <li class="left_sidebar_title">Personal</li>
+  <li><%= link_to_unless_current "My Profile", admin_person_path(pid) %></li>
+  <li><%= link_to_unless_current "My Region", region_path(rid) if current_crew %></li>
+  <li><%= link_to_unless_current "My Crew", crew_path(cid) if (cid && !admin_cid) %>
+      <%= link_to_unless_current "My Crew", admin_crew_path(admin_cid) if admin_cid %></li>
+  <li><%= link_to_unless_current "My Courses", enrollments_for_admin_person_url(pid) %></li>
+</ul>
+
+<% end %>

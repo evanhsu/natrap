@@ -1,0 +1,47 @@
+<% content_for :includes do %>
+  <%= javascript_include_tag "autocomplete" %>
+<% end %>
+
+<div class="error_msg"><%= flash[:error] %></div>
+
+  <table style="width:100%;">
+    <tr><th class="infobox"><%= Crew.find(params[:id]).name %><br />Roster (<%= @requested_year %>)</th></tr>
+    <tr><td style="text-align: left; vertical-align: top;">
+            <% @rostered_people.each do |roster_person| %>
+              <div class="roster_thumbnail">
+                <%= link_to image_tag(roster_person.person.headshot.url, :style=>"height:100px; width:100px;"),editable ? admin_person_url(roster_person.person):person_url(roster_person.person) %>
+                <span class="roster_thumbnail_crewmember_name"><%= roster_person.person.fullname %></span><br />
+                <%= link_to 'Remove', roster_person, :confirm => 'Are you sure?', :method => :delete %><br />
+              </div>
+            <% end %>
+
+            <div class="roster_thumbnail" style="height:150px">
+                <%= link_to image_tag("headshots/add_person.jpg"),'#' %>
+                <%= form_for @new_rostered_person, :as => :rostered_person, :url => {:controller => "rostered_person", :action => "create"} do |f| %>
+                     <%= text_field_tag :person_fullname, nil, :style => "width:100px;", :placeholder => "Name",
+                     "data-autocomplete_on_select" => "(function(name,id){document.getElementById('rostered_person_person_id').writeAttribute('value',id)})",
+                     "data-autocomplete" => "/people/autocomplete.json",
+                     "data-autocomplete_container" => "rostered_person_fullname_autocomplete_container",
+                     "data-autocomplete_width" => "200",
+                     "data-autocomplete_on_suggest" => "(function(){document.getElementById('add_submit').style.display = 'inherit'; document.getElementById('create_button').style.display = 'none';})",
+                     "data-autocomplete_on_empty_suggestions" => "(function(){document.getElementById('add_submit').style.display = 'none'; document.getElementById('create_button').style.display = 'inherit';})",
+                     "onKeyUp" => "Autocomplete.instances[0].el.value == '' ? document.getElementById('create_button').writeAttribute('value',\"Create New Person\") : document.getElementById('create_button').writeAttribute('value',\"Create '\"+Autocomplete.instances[0].el.value+\"'\")"
+                     %>
+                  <div id='rostered_person_fullname_autocomplete_container'></div>
+                  <%= f.hidden_field :person_id %>
+                  <%= f.hidden_field :roster_id %>
+                  <%= hidden_field_tag 'roster_id', @roster.id %>
+                  <input type="button" value="Add Person" id="add_submit" onClick="document.getElementById('rostered_person_new').submit();" />
+                  <input type="button" value="Create Person" id="create_button" onClick="self.location='<%= new_admin_person_path %>?name='+Autocomplete.instances[0].el.value+'&roster_id=<%= @roster.id %>'" style="display:none;"/>
+                <% end %>
+
+            </div>
+    </td></tr>
+    <tr><th class="infobox" style="font-size: 1em;"><%= link_to "Delete Entire Roster", @roster, :controller => 'rosters', :method => :delete %> |
+                            <%= link_to "Create a New Person", new_admin_person_url(:roster_id => @roster.id) %>
+    </th></tr>
+  </table>
+
+
+<br />
+

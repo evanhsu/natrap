@@ -1,0 +1,43 @@
+<h1>Qualifications</h1><br />
+<h2><%= "#{@crew.name} (#{@requested_year})" %></h2><br />
+
+<div style="width:100%; overflow:scroll;">
+<table class="alternating_rows" style="border:2px solid #555555; margin: 0 auto 0 auto;">
+  <tr>
+    <th>Crewmembers</th>
+  <% @crew_quals_order.each do |qual| %>
+    <th><%= qual %></th>
+  <% end %>
+  </tr>
+  <% row = 0 %>
+  <% @crewmembers.each do |crewmember| %>
+  <% row += 1 %>
+  <tr class="<%= (row % 2 == 0 ? "evn":"odd") %>">
+    <td><%= link_to crewmember.fullname, editable ? admin_person_url(crewmember):person_url(crewmember) %></td>
+
+    <% @crew_quals_order.each do |qual| %>
+    <td style="text-align: center;">
+      <% if crewmember.is_qualified_as?(qual) %>
+      Q
+      <% elsif crewmember.is_a_trainee?(qual) %>
+      t
+      <% end %>
+    </td>
+    <% end %>
+
+  </tr>
+  <% end %>
+  <tr>
+    <th>Totals</th>
+    <% @crew_quals_order.each do |qual| %>
+    <th><%= qual %></th>
+  <% end %>
+  </tr>
+  <tr class="odd">
+    <td><%= @crewmembers.count %> crewmembers</td>
+    <% @crew_quals_order.each do |qual| %>
+    <td><%= "#{@crew_quals[qual]['qualified']}Q, #{@crew_quals[qual]['trainee']}t" %></td>
+    <% end %>
+  </tr>
+</table>
+</div>

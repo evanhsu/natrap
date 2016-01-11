@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Crew:</b>
+  <%= @crew_address.crew_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @crew_address.type %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @crew_address.address %>
+</p>
+
+
+<%= link_to 'Edit', edit_crew_address_path(@crew_address) %> |
+<%= link_to 'Back', crew_addresses_path %>

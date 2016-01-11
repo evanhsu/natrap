@@ -1,0 +1,86 @@
+<% content_for :includes do %>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false" type="text/javascript"></script>
+  <%= javascript_include_tag "google_maps" %>
+<% end %>
+
+<div style="float:left; margin-left:1em; width:47%; border: 2px solid #888888;">
+  <table style="width:100%;">
+    <tr><th class="infobox">Scheduled Course</th></tr>
+    <tr><td style="text-align: left;">
+        <span style="font-weight: bold;"><%= @scheduled_course.name %></span><br />
+        <% if @scheduled_course.date_start.blank? %>
+        Date Unknown<br />
+        <% else %>
+        <%= @scheduled_course.date_start.strftime('%m/%d/%Y') %> - <%= @scheduled_course.date_end.strftime('%m/%d/%Y') %><br />
+        <!--<%= @scheduled_course.date_start.strftime('%H:%M') %> to <%=  @scheduled_course.date_end.strftime('%H:%M') %>-->
+        <% end %>
+
+        <% if editable %>
+          <%= link_to 'Edit Course Info',edit_scheduled_course_path(@scheduled_course) %>
+        <% end %>
+        </td>
+    </tr>
+  </table>
+</div>
+
+<div style="float:right; margin:0 1em 0 0; width:47%; height:25em; border: 2px solid #888888;" id="history">
+  <table style="width:100%;height:100%">
+    <tr style="height:2em"><th class="infobox">History</th></tr>
+    <tr style="height:100%">
+      <td style="width:100%;text-align:left">
+        <div style="overflow:scroll;height:100%;width:100%" id="scheduled_course_history_content">
+          <% @log_messages.each do |msg| %>
+          <%= raw(msg.timestamped_comment) %><br />
+          <% end %>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div style="height:0px; visibility:hidden; clear:left;"></div>
+
+<div style="float:left; margin:1em 0 0 1em; width:47%; border: 2px solid #888888;">
+  <table style="width:100%;">
+    <tr><th class="infobox">Location</th></tr>
+    <tr><td style="text-align:left;">
+          <%= @scheduled_course.training_facility.name %><br />
+          <%= raw @scheduled_course.training_facility.address_two_line %><br />
+          <%= insert_google_map :center => @scheduled_course.training_facility.address_one_line, :width => "100%", :height => "300px", :zoom => 13, :mapTypeId => "roadmap", :info_window_content => "<a href=\"asdf\">GO!</a>" %>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<% if editable %>
+<div style="float:right; margin:1em 1em 0 0; width:47%; border: 2px solid #888888;">
+  <table style="width:100%;">
+    <tr><th class="infobox">Enroll a Student</th></tr>
+    <tr>
+      <td style="width:100%;text-align:left;">
+        <%= form_for(Enrollment.new) do |f| %>
+            <%= f.hidden_field "scheduled_course_id", :value => @scheduled_course.id %>
+            <% current_students = @scheduled_course.people %>
+            <% enrollable_people = @scheduled_course.crew.people(:year => Time.now.year) - current_students %>
+            <%= collection_select(:enrollment, :person_id, enrollable_people, :id, :fullname, {:prompt => "Select a crewmember"}) %> <%= f.submit "Enroll" %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>
+<% end %>
+
+<div style="height:0px; visibility:hidden; clear:both;"></div>
+
+<div style="float:none; margin:1em 1em 0 1em; width:auto; border:2px solid #888888;">
+  <table style="width:100%;">
+    <tr><th class="infobox">Students Enrolled</th></tr>
+    <tr><td>
+        <ul>
+        <% @people_enrolled.each do |person| %>
+          <%= render "scheduled_courses/enrollment", :person => person, :editable => editable %>
+        <% end %>
+        </ul>
+    </td></tr>
+  </table>
+</div>

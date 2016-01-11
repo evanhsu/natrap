@@ -1,0 +1,73 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  incident_id: 1
+  role: ict4
+  qt: q
+  start_date: 2011-06-25
+  end_date: 2011-06-27
+  person_id: 1
+
+two:
+  incident_id: 1
+  role: hecm
+  qt: q
+  start_date: 2011-06-25
+  end_date: 2011-06-27
+  person_id: 2
+
+three:
+  incident_id: 1
+  role: ict4
+  qt: t
+  start_date: 2011-06-25
+  end_date: 2011-06-27
+  person_id: 3
+
+four:
+  incident_id: 2
+  role: ict4
+  qt: t
+  start_date: 2011-06-29
+  end_date: 2011-07-05
+  person_id: 3
+
+five:
+  incident_id: 2
+  role: ict4
+  qt: q
+  start_date: 2011-06-29
+  end_date: 2011-07-05
+  person_id: 6
+
+six:
+  incident_id: 2
+  role: fft1
+  qt: q
+  start_date: 2011-06-29
+  end_date: 2011-07-03
+  person_id: 2
+
+seven:
+  incident_id: 2
+  role: hecm
+  qt: q
+  start_date: 2011-06-29
+  end_date: 2011-07-05
+  person_id: 3
+
+eight:
+  incident_id: 3
+  role: ict5
+  qt: q
+  start_date: 2011-07-10
+  end_date: 2011-07-11
+  person_id: 3
+
+nine:
+  incident_id: 3
+  role: cfal
+  qt: q
+  start_date: 2011-07-10
+  end_date: 2011-07-11
+  person_id: 2

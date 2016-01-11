@@ -1,0 +1,40 @@
+<table style="margin:0 auto 0 auto">
+  <tr>
+    <td style="text-align:right" class="label">Pilot: </td>
+    <td style="text-align:left">
+      <% if editable %>
+        <%= ajax_in_place_form(operation, :pilot_fullname,
+                               text_field_tag("pilot_fullname", operation.pilot_fullname,
+                                              :style => "width:10em",
+                                              "data-autocomplete" => "/pilots/autocomplete.json",
+                                              "data-autocomplete_container" => "pilot_autocomplete_container",
+                                              "data-autocomplete_id_selector" => "operation_pilot_id",
+                                              "data-autocomplete_width" => "200") +
+                               hidden_field_tag("operation[pilot_id]", operation.pilot_id, :id => "operation_pilot_id"),
+                               {:display_attribute => :pilot_fullname}) %>
+        <div id="pilot_autocomplete_container"></div>
+      <% else %>
+        <%= operation.pilot_fullname %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:right" class="label">Aircraft Type: </td>
+    <td style="text-align:left">
+      <% if editable %>
+        <%= ajax_in_place_form(operation, "aircraft_shortname",
+                               select_tag("aircraft_type_shortname", raw(AircraftType.shortnames_for_javascript_select(aircraft_type))) +
+                               raw("<span id='aircraft_config_select'>") +
+                               (aircraft_type.configurations ? select_tag("aircraft_type_configuration", raw(aircraft_type.configurations_for_javascript_select(aircraft_type.configuration))) : "") +
+                               raw("</span>") +
+                               hidden_field_tag("operation[aircraft_name_and_config]", aircraft_type.name_and_config),
+                               :display_attribute => :aircraft_shortname) %>
+      <% else %>
+        <%= aircraft_type.shortname %>
+      <% end %>
+    </td>
+  <tr>
+    <td style="text-align:right" class="label">Tailnumber: </td>
+    <td style="text-align:left"><div style="width:100px"><%= editable ? ajax_in_place_text_field(operation, :aircraft_tailnumber, :style => "width:10em") : operation.aircraft_tailnumber %></div></td>
+  </tr>
+</table>

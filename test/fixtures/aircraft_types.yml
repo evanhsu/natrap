@@ -1,0 +1,61 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+bell_205_bench:
+  id: 1
+  shortname: Bell 205
+  fullname: bell 205 bench
+  configuration: bench
+  image_file_name: bell_205_bench.png
+
+bell_205_hellhole:
+  id: 2
+  shortname: Bell 205
+  fullname: bell 205 hellhole
+  configuration: hellhole
+  image_file_name: bell_205_hellhole.png
+
+bell_206:
+  id: 3
+  shortname: Bell 206
+  fullname: Bell 206
+  image_file_name: bell_206.png
+
+bell_210_bench:
+  id: 4
+  shortname: Bell 210
+  fullname: Bell 210
+  configuration: bench
+  image_file_name: bell_210_bench.png
+
+bell_210_hellhole:
+  id: 5
+  shortname: Bell 210
+  fullname: Bell 210
+  configuration: hellhole
+  image_file_name: bell_210_hellhole.png
+
+bell_212_bench:
+  id: 6
+  shortname: Bell 212
+  fullname: Bell 212
+  configuration: bench
+  image_file_name: bell_212_bench.png
+
+bell_212_hellhole:
+  id: 7
+  shortname: Bell 212
+  fullname: Bell 212
+  configuration: hellhole
+  image_file_name: bell_212_hellhole.png
+
+bell_407:
+  id: 8
+  shortname: Bell 407
+  fullname: Bell 407
+  image_file_name: bell_407.png
+
+astar_b3:
+  id: 9
+  shortname: Astar B3
+  fullname: Astar B3
+  image_file_name: astar_b3.png

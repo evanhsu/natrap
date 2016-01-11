@@ -1,0 +1,40 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  date: 2011-06-25
+  event_type: wf
+  complexity: 4
+  number: wa-owf-000384
+  name: The Turtow-Burfer
+  charge_code: p6ek2a
+  override: 0623
+  acres: 5
+  fuel_models: 1,2,3
+  description: Steep terrain. Poor radio reception. Used bucket drops.
+
+two:
+  id: 2
+  date: 2010-06-29
+  event_type: wf
+  complexity: 4
+  number: or-rsf-000475
+  name: The Big One
+  charge_code: p6ek2r
+  override: 0610
+  acres: 100
+  fuel_models: 1,3,4
+  description: Ordered 20-person crew, NW Regulars. They were good.
+
+three:
+  id: 3
+  date: 2010-07-10
+  event_type: wf
+  complexity: 5
+  number: or-rsf-000479
+  name: The Blueberry Fire
+  charge_code: p6ek2r
+  override: 0610
+  acres: 0.25
+  fuel_models: 1,3
+  description: Used CFAL for 65-inch white fir, lightning strike.

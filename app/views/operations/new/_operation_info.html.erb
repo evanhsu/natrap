@@ -1,0 +1,14 @@
+<table style="margin:0 auto 0 auto">
+  <tr>
+    <td style="text-align:right">Date:</td>
+    <td>
+      <% error_wrapper operation, :date do %>
+        <% calendar_date_select_tag "operation[date]", operation.date, :style => "width:5em" %>
+      <% end %>
+    </td>
+  </tr>
+  <tr><td style="text-align:right">Type: </td><td><%= select :operation, :operation_type, Operation::TYPES %></td></tr>
+  <tr><td style="text-align:right">Incident #: </td><td><%= form_builder.text_field :incident_number, :style => "width:8em" %></td></tr>
+  <tr><td style="text-align:right">Height:</td><td><%= form_builder.text_field :height, :style => "width:5em" %></td></tr>
+  <tr><td style="text-align:right">Canopy Opening (sq. feet): </td><td><%= form_builder.text_field :canopy_opening, :style => "width:5em" %></td></tr>
+</table>

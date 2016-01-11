@@ -1,0 +1,50 @@
+<% content_for :includes do %>
+  <%= javascript_include_tag "operations_form" %>
+  <%= javascript_include_tag "autocomplete" %>
+<% end %>
+<% aircraft_type = operation.aircraft_type || AircraftType.first %>
+<% spot = (operation.spot || Spot.new(:spotter => RappelSpotter.new(:person => Person.new))) %>
+<% editable ||= false %>
+<% locals = {:operation => operation, :aircraft_type => aircraft_type, :spot => spot, :action => action, :editable => editable} %>
+<% locals[:form_builder] = form if form %>
+<% CalendarDateSelect.format = :iso_date %>
+
+<% if action == "new" || editable %>
+  <% Dir.new("#{Rails.root}/app/views/operations/aircraft_templates").each do |item| %>
+    <% next if item[0] != "_" %>
+    <% item = item.reverse.chop.reverse.gsub(/\..*/, "") %>
+    <% partial_for_dynamic_render "operations/aircraft_templates/#{item}", :vars => locals %>
+  <% end %>
+<% end %>
+
+<div style="width:20em;">
+  <% if operation.errors.any? %>
+    <span class="error_explanation">
+      <%= pluralize(operation.errors.count, "error") %> occurred (see below).
+    </span><br /><br />
+  <% end %>
+  <table class="form_table">
+
+    <tr><th style="text-align:left">Operation Info</th></tr>
+    <tr><td>
+      <%= render "operations/#{action}/operation_info", locals.merge(:editable => operation.editable_by?(current_person) && locals[:editable]) %>
+    </td></tr>
+
+    <tr><th style="text-align:left">Pilot & Aircraft</th></tr>
+    <tr><td>
+      <%= render "operations/#{action}/pilot_and_aircraft", locals.merge(:editable => operation.editable_by?(current_person) && locals[:editable]) %>
+    </td></tr>
+
+    <tr><th style="text-align:left">Rappeller Configuration</th></tr>
+    <tr><td id='rappeller_configuration'>
+      <%= render "operations/aircraft_templates/#{aircraft_type.name_and_config.gsub(" ", "_")}", :vars => locals %>
+    </td></tr>
+
+    <tr><th style="text-align:left">Letdown Lines</th></tr>
+    <tr><td>
+      <%= render "operations/#{action}/letdown_lines", locals.merge(:editable => operation.editable_by?(current_person) && locals[:editable]) %>
+    </td></tr>
+
+    <tr colspan="3"><td style="text-align:center"><%= form.submit if action == "new" %></td></tr>
+  </table>
+</div>

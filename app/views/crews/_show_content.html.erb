@@ -1,0 +1,95 @@
+<div style="width:700px; margin:10px auto 0 10px;">
+  <div style="border: 2px solid #888888; overflow: hidden; width:100%; margin: 0 auto 0 auto;">
+    <table style="width:100%;">
+      <tr><th class="infobox">Available History <%= link_to '[Add a Year]', new_roster_url(:crew_id => @crew.id), {:style => "font-size:0.5em"} if editable %></th></tr>
+      <tr><td style="text-align:left;">
+          <% @years_with_info.each do |y| %>
+            <%= link_to y, crew_url(@crew.id).concat("?year=#{y}"), :style => "font-weight:bold;" unless editable %>
+            <%= link_to y, admin_crew_url(@crew.id).concat("?year=#{y}"), :style => "font-weight:bold;" if editable %> |
+          <% end %>
+      </td></tr>
+    </table>
+  </div>
+  <br />
+  <div style="border: 2px solid #888888; overflow: hidden; width:400px; margin:0; float:left;">
+    <table style="width:100%;">
+      <tr><th colspan="2" class="infobox">Crew Info</th></tr>
+      <tr><td style="text-align:left; vertical-align:top; width:200px"><%= image_tag @crew.logo.url, :width => "200px", :height => "200px" %></td>
+          <td style="text-align: left; vertical-align: top;">
+            <span style="font-weight:bold;"><%= @crew.name %></span><br />
+            Region <%= @crew.region %><br />
+            <%= raw(@crew.address.gsub(/\\n/,"<br />")) %><br />
+            <br />
+            Airport: <% if(@crew.address("airport_identifier").nil?) %>
+                      Unknown
+                     <% else %>
+                      <a href="http://skyvector.com/airport/<%= @crew.address("airport_identifier") %>" target="_blank"><%= @crew.address("airport_identifier").upcase %></a>
+                     <% end %>
+                     <br />
+
+            Lat: <%= @crew.address("latitude") %><br />
+            Lon: <%= @crew.address("longitude") %><br />
+            <br />
+            <a href="#">View Map</a>
+          </td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="border: 2px solid #888888; overflow:hidden; width:286px; float:left; margin:0 -4px 0 10px;">
+    <table style="width:100%;">
+      <tr><th class="infobox">Rappel Stats (<%= @requested_year %>)</th></tr>
+      <tr><td style="text-align: left; vertical-align: top;">
+            Total Rappels: 183<br />
+            Operationals: 71<br />
+            Operationals-per-person: 4.8<br />
+            <%= link_to "View Rappel History", operations_for_crew_url(@crew.id) %>
+      </td></tr>
+    </table>
+  </div>
+
+  <div style="border: 2px solid #888888; overflow: hidden; width:286px; float:left; margin:10px -4px 0 10px;">
+    <table style="width:100%;">
+      <tr><th colspan="6" class="infobox"><%= link_to "Crew Quals (#{@requested_year})", (editable ? qualifications_for_admin_crew_url(@crew):qualifications_for_crew_url(@crew)) %></th></tr>
+      <% cols = 3 %>
+      <% count = 0 %>
+      <% qty = 0 %>
+      <% @order_of_quals.each do |title| %>
+        <% qty = @quals_to_display[title] %>
+        <% if(count % cols == 0) %>
+          <% if count > 0 %>
+            </tr>
+          <% end %>
+          <tr>
+        <% end %>
+        <% if Qualification::WITHOUT_TRAINEES.include?(title[0..3]) %>
+            <td style="text-align:right;"><%= title %>:</td><td style="text-align:left;"><%= qty['qualified'] %></td>
+        <% else %>
+            <td style="text-align:right;"><%= title %>/t:</td><td style="text-align:left;"><%= "#{qty['qualified']}/#{qty['trainee']}" %></td>
+        <% end %>
+        <% count += 1 %>
+      <% end %>
+      <% if((count-1) % cols != 0) %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="clearfloat">&nbsp;</div>
+
+  <div style="border: 2px solid #888888; overflow:hidden; width:100%; margin:10px auto 0 auto;">
+    <table style="width:100%;">
+      <tr><th class="infobox">Roster (<%= @requested_year %>) - <%= @crewmembers.count %> Personnel <%= link_to '[Modify this Roster]', roster_for_admin_crew_url({:year => @requested_year}), {:style => "font-size:0.5em"} if editable %></th></tr>
+      <tr><td>
+              <% @crewmembers.each do |crewmember| %>
+                <div class="roster_thumbnail">
+                  <%= link_to image_tag(crewmember.headshot.url, :style=>"height:100px; width:100px"),(editable || crewmember == current_person ? admin_person_url(crewmember):person_url(crewmember)) %>
+                  <span class="roster_thumbnail_crewmember_name"><%= crewmember.fullname %></span><br />
+                  3 Ops/10 Total<br />
+                </div>
+              <% end %>
+      </td></tr>
+    </table>
+  </div>
+  
+</div>

@@ -1,0 +1,154 @@
+
+<!-- START LEFT COLUMN -->
+<div style="width:48%; float:left; margin-left:1em;">
+
+  <div style="border: 2px solid #888888; overflow: hidden;">
+    <table style="width:100%;">
+      <tr><th colspan="2" class="infobox">ID</th></tr>
+      <tr><td style="text-align:left; width: 100px;"><%= image_tag @person.headshot.url %></td>
+          <td style="text-align: left; vertical-align: top;">
+            <span style="font-weight:bold;"><%= @person.fullname %></span><br />
+            <%= (@person.username + "<br />").html_safe unless @person.username.blank? %>
+            EmplID: <%= @person.iqcs_num %><br /><br />
+            <%= link_to("Edit Profile", edit_admin_person_url(@person)) if editable %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:1em; border: 2px solid #888888; overflow: hidden;">
+    <table style="width:100%;">
+      <tr><th colspan="5" class="infobox"><%= link_to "Rappel Summary",operations_for_person_url(@person) %></th></tr>
+      <tr>
+        <td style="text-align: left; vertical-align: top;">
+          Coming Soon!
+          <!--
+          <table>
+            <tr><td colspan="2"><strong>All-Time Totals</strong></td>
+                <td style="width:3em;"></td>
+                <td colspan="2"><strong>This Year Totals</strong></td>
+            </tr>
+            <tr>
+              <td>Rappels:</td><td>63</td>
+              <td></td>
+              <td>Rappels:</td><td>4</td>
+            </tr>
+            <tr>
+              <td>Operationals:</td><td>16</td>
+              <td></td>
+              <td>Operationals:</td><td>2</td>
+            </tr>
+            <tr><td colspan="5"><%= link_to "View Rappel History",operations_for_person_url(@person) %></td></tr>
+          </table>
+          -->
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:1em; border: 2px solid #888888; overflow: hidden;">
+    <table style="width:100%;">
+      <tr><th colspan="2" class="infobox">Recent Fires</th></tr>
+      <tr><td colspan="2" style="text-align:left;">Coming Soon!</td>
+      <!--
+      <tr>
+        <td style="text-align: left; vertical-align: top;">
+          <table>
+            <tr>
+              <th>Date</th><th>Incident #</th><th>Name</th>
+            </tr>
+            <tr>
+              <td>7/14/2011</td><td>OR-SRF-000213</td><td>The Goose Nest Fire</td>
+            </tr>
+            <tr>
+              <td>7/29/2011</td><td>OR-SRF-000218</td><td>The Westmantooth Fire</td>
+            </tr>
+            <tr>
+              <td>8/7/2011</td><td>OR-SRF-000353</td><td>The Butternut Fire</td>
+            </tr>
+-->
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div><!-- END LEFT COLUMN -->
+
+<!-- RIGHT COLUMN -->
+<div style="width:48%; float:left; margin-left:1em;">
+
+  <div style="border: 2px solid #888888; overflow: hidden;">
+    <table style="width:100%;">
+      <tr><th colspan="2" class="infobox"><%= link_to "Qualifications", @qualification_admin ? qualifications_for_admin_person_url(@person) : qualifications_for_person_url(@person) %></th></tr>
+      <tr><td style="text-align: left; vertical-align: top;">
+            <ul style="list-type:none;padding-left:0;">
+              <% @qualifications.each do |qualification| %>
+                <% qt_status = qualification.trainee? ? "t" : "Q" %>
+                <li class="acronym_in_list"><%= link_to qualification.acronym + "(" + qt_status + ")",@qualification_admin ? admin_qualification_url(qualification) : qualification_url(qualification) %></li>
+              <% end %>
+            </ul>
+          </td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:1em; border: 2px solid #888888; overflow: hidden;">
+    <table style="width:100%;">
+      <tr><th colspan="2" class="infobox"><%= link_to "Certificates", @certificate_admin ? certificates_for_admin_person_url(@person) : certificates_for_person_url(@person) %></th></tr>
+      <tr><td style="text-align: left; vertical-align: top;">
+            <ul style="list-type:none;padding-left:0;">
+              <% @certificates.each do |certificate| %>
+              <li style="display:inline; padding: 5px;"><%= link_to certificate.name, @certificate_admin ?  admin_certificate_url(certificate) : certificate_url(certificate) %></li>
+            <% end %>
+            </ul>
+          </td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:1em; border: 2px solid #888888; overflow: hidden; min-width: 325px;">
+    <table style="width:100%;">
+      <tr><th colspan="2" class="infobox"><%= link_to "Upcoming Courses", @enrollment_admin ? enrollments_for_admin_person_url(@person) : enrollments_for_person_url(@person) %></th></tr>
+      <tr>
+        <td style="text-align: left; vertical-align: top;">
+
+          <table class="alternating_rows" style="width:100%;">
+            <tr>
+              <th style="width:2em;"></th>
+              <th style="width:6em;"><%= sort_link 'Date', "scheduled_courses.date_start" %></th>
+              <th><%= sort_link 'Course', "scheduled_courses.name" %></th>
+              <th style="width:auto;"><%= sort_link 'Status', "enrollments.status" %></th>
+              <th style="width:2em" title="Prework Received?"><%= image_tag('paperwork.png') %></th>
+              <th style="width:2em" title="Certificate Received?"><%= image_tag('awardribbon.png') %></th>
+              <th style="width:2em" title="Employee Travel Completed?"><%= image_tag('airplane_icon_bw.png', :title => "Employee Travel Completed?") %></th>
+            </tr>
+
+            <% item_count = 0 %>
+          <% @enrollments.each do |enrollment| %>
+            <% item_count += 1 %>
+            <% item_count % 2 == 0 ? evenodd = "class='evn'":evenodd = "class='odd'" %>
+            <tr <%= evenodd %><%= raw(enrollment.warnings({:output_as => "element_properties"})) %>>
+              <td style="text-align:center;"><%= link_to image_tag("magnifying_glass.png", :title => "View Details"), @enrollment_admin ?  admin_enrollment_path(enrollment) : enrollment_path(enrollment) %></td>
+              <td><%= enrollment.scheduled_course.date_start.nil? ? "Unknown":enrollment.scheduled_course.date_start.strftime('%m/%d/%Y') %></td>
+              <td style="text-align: left;"><%= enrollment.scheduled_course.name %></td>
+              <td style="text-align:right"><%= enrollment.status %></td>
+              <% if @enrollment_admin %>
+                <td style="text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'prework_received') %></td>
+                <td style="text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'certificate_received') %></td>
+                <td style="text-align:center;"><%= ajax_graphical_checkbox(enrollment, 'travel_paid') %></td>
+              <% else %>
+                <td style="text-align:center;"><%= boolean_image(enrollment.prework_received?) %></td>
+                <td style="text-align:center;"><%= boolean_image(enrollment.certificate_received?) %></td>
+                <td style="text-align:center;"><%= boolean_image(enrollment.travel_paid?) %></td>
+              <% end %>
+            </tr>
+          <% end %>
+          </table>
+
+
+        </td>
+      </tr>
+    </table>
+  </div>
+</div><!-- END RIGHT COLUMN -->
+
+<div style="display:none; clear:both;"></div>

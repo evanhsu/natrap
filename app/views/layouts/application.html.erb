@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NatRap</title>
+
+<!-- <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">-->
+<meta name="Author" content="Evan & Tyler Hsu" />
+<meta name="Keywords" content="fire, wildland, firefighting, suppression, helicopter, aviation, rappel, rappelling, rappeller, rapel, rapell, rapeller, repeller, repelling, records, history" />
+<meta name="Description" content="The National Rappel Website. This site is an information hub for all of the federal helicopter rappel crews." />
+
+<%= favicon_link_tag %>
+<%= csrf_meta_tag %>
+<%= stylesheet_link_tag "main_style", "page_layout", "menus" %>
+
+<%= javascript_include_tag "application" %>
+
+<%# These javascripts all rely on Prototype, which has been functionally replaced by jQuery throughout most of this site. Pages that still complain about needing Prototype will need these javascripts added in the VIEW inside a 'content_for :includes' block %>
+<%# javascript_include_tag "prototype" %>
+<%# javascript_include_tag "autocomplete" %>
+<%# javascript_include_tag "effects" %>
+<%# javascript_include_tag "dragdrop" %>
+<%# javascript_include_tag "controls" %>
+<%# javascript_include_tag "rails" %>
+
+<%# javascript_include_tag "google_maps" %>
+<%# javascript_include_tag "listeners" %>
+
+
+<%= yield :includes %>
+</head>
+
+  <body>
+  <!--<div id="banner"><%= link_to image_tag("raprec_banner_right.jpg", :style => "border: none", :alt => "FedRap Home"), root_url %></div>-->
+  <div id="banner" style="background: url('/images/raprec_banner_right.jpg') no-repeat right top; height:175px;">
+    <%= image_tag("raprec_banner_left.png", :style => "margin: 0 auto 0 50px; float:none;") %>
+  </div>
+  <div class="two_column_outer_wrapper">
+    <div class="two_column_inner_wrapper">
+      <div class="right_column_wrapper">
+        <div class="right_column">
+          <div id="location_bar">
+            <%= yield :location_bar %>
+          </div><!-- END location_bar -->
+          <div id="content" style="text-align:center;">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <% if content_for?(:heading) %>
+              <div style="width:100%;text-align:left;"><h1><%= yield :heading %></h1></div>
+            <% end %>
+            <%= content_for?(:content) ? yield(:content) : yield %>
+          </div><!-- END content -->
+        </div><!-- END right_column -->
+      </div><!-- END "right_column_wrapper" -->
+      <div id="left_sidebar">
+        <%= render "sidebar/sidebar" %>
+      </div><!-- END left_sidebar -->
+    </div><!-- END "two_column_inner_wrapper" -->
+  </div><!-- END "two_column_outer_wrapper" -->
+  <% if content_for?(:dynamic_elements) %>
+    <div id="dynamic_elements">
+      <%= yield :dynamic_elements %>
+    </div>
+  <% end %>
+</body>
+</html>

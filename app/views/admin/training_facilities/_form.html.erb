@@ -1,0 +1,34 @@
+<%= form_for(@training_facility) do |f| %>
+  <% if @training_facility.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training_facility.errors.count, "error") %> prohibited this training_facility from being saved:</h2>
+
+      <ul>
+      <% @training_facility.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table style="border:2px solid #555555; margin: 0 auto 0 auto; width:350px;">
+  <tr><td style="width:50px;">Facility Name<br /></td><td>:</td><td><%= f.text_field :name, :style => "width:95%;", :placeholder => "Example: COCC Redmond Campus" %></td></tr>
+  <tr><td>Address</td><td>:</td><td><%= f.text_field :address, :style => "width:95%;" %></td></tr>
+  <tr><td>Contact Person</td><td>:</td><td><%= f.text_field :contact_name, :style => "width:95%;", :placeholder => "John Doe" %></td></tr>
+  <tr><td>Email</td><td>:</td><td><%= f.text_field :contact_email, :style => "width:95%;", :placeholder => "johndoe@domain.com" %></td></tr>
+  <tr><td>Phone</td><td>:</td><td><%= f.text_field :contact_phone, :style => "width:95%;", :placeholder => "123-456-7890" %></td></tr>
+  <tr><td>Notes</td><td>:</td><td><%= f.text_area :notes, :size => "35x6", :style => "width:95%;" %></td></tr>
+  
+    <% if @global_admin %>
+      <tr><td>Crew</td><td>:</td><td>
+      <%= f.text_field :crew_id, :style => "width:95%;", :value => @crew.id %>
+      </td></tr>
+    <% else %>
+      <%= f.hidden_field :crew_id, :value => @crew.id %>
+    <% end %>
+
+  <tr><td colspan="3"><hr /></td></tr>
+  <tr><td colspan="2"></td><td style="text-align:right;"><%= f.submit %></td></tr>
+</table>
+
+<% end %>

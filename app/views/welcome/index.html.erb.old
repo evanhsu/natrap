@@ -1,0 +1,71 @@
+<div class="error_msg"><%= flash[:error] %></div>
+<br />
+<!--
+<nav id="nav" role="navigation">
+	<a href="#nav" title="Show navigation">Show navigation</a>
+	<a href="#" title="Hide navigation">Hide navigation</a>
+	<ul class="clearfix">
+		<li><a href="?home">Home</a></li>
+		<li class="active">
+			<a href="?blog"><span>Blog</span></a>
+			<ul>
+				<li><a href="?design">Design</a></li>
+				<li><a href="?html">HTML</a></li>
+				<li><a href="?css">CSS</a></li>
+				<li><a href="?javascript">JavaScript</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="?work"><span>Work</span></a>
+			<ul>
+				<li><a href="?webdesign">Web Design</a></li>
+				<li><a href="?typography">Typography</a></li>
+				<li><a href="?frontend">Front-End</a></li>
+			</ul>
+		</li>
+		<li><a href="?about">About</a></li>
+	</ul>
+</nav>
+-->
+<div style="width:100%; text-align:center;">
+  <img src="/images/rap_base_map.png" usemap="#Map" id="region_image_map" class="image_map" />
+</div>
+
+  <map name="Map" id="Map">
+    <area shape="circle" coords="145,86,13" alt="wenatchee"  />
+    <div class="tooltiptext"><a href="http://wenatchee.rappellers.us" style="color:#FFFFFF;">Wenatchee Valley Rappellers</a></div>
+
+    <area shape="circle" coords="80,207,13" alt="Siskiyou Rappellers" />
+    <div class="tooltiptext"><a href="http://siskiyou.rappellers.us" style="color:#FFFFFF;">Siskiyou Rappellers</a></div>
+
+    <area shape="circle" coords="114,175,13" alt="Central Oregon Rappellers" />
+    <div class="tooltiptext"><a href="http://centraloregon.rappellers.us" style="color:#FFFFFF;">Central Oregon Rappellers</a></div>
+
+    <area shape="circle" coords="150,176,13" alt="Malheur Rappel Crew" />
+    <div class="tooltiptext"><a href="http://malheur.rappellers.us" style="color:#FFFFFF;">Malheur Rappel Crew</a></div>
+
+    <area shape="circle" coords="166,160,13" alt="Blue Mountain Rappel Crew" />
+    <div class="tooltiptext"><a href="http://bluemountain.rappellers.us" style="color:#FFFFFF;">Blue Mountain Rappel Crew</a></div>
+
+    <area shape="circle" coords="187,149,13" alt="Sled Springs Rappel Crew" />
+    <div class="tooltiptext"><a href="http://sledsprings.rappellers.us" style="color:#FFFFFF;">Sled Springs Rappel Crew</a></div>
+
+    <area shape="circle" coords="220,164,13" alt="Price Valley Rappellers" />
+    <div class="tooltiptext"><a href="http://www.sisksiyourappellers.com" style="color:#FFFFFF;">Price Valley Rappellers</a></div>
+
+    <area shape="circle" coords="262,165,13" alt="Salmon Rappel Crew" />
+    <div class="tooltiptext"><a href="http://www.sisksiyourappellers.com" style="color:#FFFFFF;">Salmon Rappel Crew</a></div>
+
+    <area shape="circle" coords="221,193,13" alt="Lucky Peak Rappel Crew" />
+    <div class="tooltiptext"><a href="http://www.sisksiyourappellers.com" style="color:#FFFFFF;">Lucky Peak Rappel Crew</a></div>
+
+    <area shape="circle" coords="322,138,13" alt="Gallatin Rappel Crew" />
+    <div class="tooltiptext"><a href="http://www.sisksiyourappellers.com" style="color:#FFFFFF;">Gallatin Rappellers</a></div>
+
+    <area shape="circle" coords="76,243,13" alt="Scott Valley Rappel Crew" />
+    <div class="tooltiptext"><a href="http://www.sisksiyourappellers.com" style="color:#FFFFFF;">Scott Valley Rappel Crew</a></div>
+
+    <area shape="circle" coords="149,390,13" alt="Sierra Rappellers" />
+    <div class="tooltiptext"><a href="http://www.sisksiyourappellers.com" style="color:#FFFFFF;">Sierra Rappellers</a></div>
+    
+  </map>

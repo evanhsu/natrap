@@ -1,0 +1,14 @@
+<% content_for :includes do %>
+    <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" %>
+    <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js" %>
+    <%= javascript_include_tag "jquery/jquery.formatDateTime.min.js" %>
+    <%= javascript_include_tag :requisitions %>
+
+    <%= stylesheet_link_tag :requisitions %>
+<% end %>
+
+<h1>New Requisition</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', requisitions_for_crew_path(@crew) %>

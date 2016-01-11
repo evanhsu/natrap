@@ -1,0 +1,96 @@
+html {
+margin:0; padding:0;
+background-color:#949e7c;
+}
+
+body {
+margin:10px auto 0px auto;
+padding:0;
+width:90%;
+min-width: 950px;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+text-align:left;
+}
+
+/* for Internet Explorer */
+/*\*/
+* html body {
+height: 600px;
+}
+/**/
+
+#content {
+margin:10px; padding-right:15px;
+background:none;
+}
+
+#location_bar {
+height:20px;
+padding:0.5em 1em 0.2em 1em;
+font-size:1.1em;
+color:#cccccc;
+background-color:#000000;
+}
+
+#location_bar a:link, #location_bar a:visited, #location_bar a:active {text-decoration:none; color:#cccccc;}
+#location_bar a:hover {text-decoration:none; color:#cccccc; font-weight:bold;}
+
+.two_column_outer_wrapper {
+position:relative;
+clear:both;
+float:left;
+width:100%;
+overflow:hidden;
+background-color: #8c8478;
+border-left: 2px solid #555555;     /* Border along left side of left-sidebar*/
+border-bottom: 2px solid #555555;   /* Border along very bottom of page content*/
+border-right:2px solid #555555;     /* The right-side border below the banner*/
+}
+
+.two_column_inner_wrapper {
+float:left;
+width:200%;
+min-height: 600px;
+position:relative;
+left:200px;
+background:#ffffff;
+border-left:2px solid #555555;  /* Border along right side of left-sidebar*/
+}
+
+.right_column_wrapper {
+float:right;
+width:50%;
+position:relative;
+right:200px;
+padding-bottom:1em;
+}
+
+.right_column {
+margin:0 0 0 200px;
+position:relative;
+right:100%;
+overflow:hidden;
+}
+
+#banner {
+clear:both;
+float:left;
+width:100%;
+border:2px solid #555555;
+height:175px;
+background-color:#f1f1f1;
+overflow: hidden;
+}
+
+#banner img {
+float: right;
+}
+
+#left_sidebar {
+float:left;
+width:170px;
+position:relative;
+right:185px;
+background-color: #8c8478;
+}

@@ -1,0 +1,259 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+hb1_day1_helicopter1:
+  date: 2014-07-25
+  helicopterId: 10
+  chargeCode: P6H8A5
+  override: 0618
+  incidentNumber: OR-WIF-140090
+  flight_hour_rate: 2035.82
+  dailyAvailabilityRate: 1302.30
+  pilotExtStandbyRate: 45.00
+  driverExtStandbyRate: 45.00
+  mechanicExtStandbyRate: 45.00
+  serviceTruckMileageRate: 3.72
+  ron_rate: 123.00
+  hmgb: Tim Lyda
+  flight_hour_qty: 3
+  dailyAvailabilityQty: 1
+  pilotExtStandbyQty: 5
+  driverExtStandbyQty: 5
+  mechanicExtStandbyQty: 5
+  serviceTruckMileageQty: 0
+  num_ron_people: 3
+  flight_hour_total: 6107.46
+  dailyAvailabilityTotal: 0
+  pilotExtStandbyTotal: 225
+  driverExtStandbyTotal: 225
+  mechanicExtStandbyTotal: 225
+  serviceTruckMileageTotal: 0
+  ron_total: 369.00
+  additionalCostDesc: 
+  additionalCostTotal: 0
+  grandTotal: 7151.46
+  numPilots: 1
+  numDrivers: 1
+  numMechanics: 1
+  pax: 0
+  waterGallons: 2300
+  cargoLbs: 3800
+  retardantGallons: 0
+  foamGallons: 0
+  acresTreated: 0
+  psdBalls: 0
+  gelGallons: 0
+
+hb1_day1_helicopter2:
+  date: 2014-07-25
+  helicopterId: 20
+  chargeCode: P6H8A5
+  override: 0618
+  incidentNumber: OR-WIF-140090
+  flight_hour_rate: 4024
+  dailyAvailabilityRate: 5022.12
+  pilotExtStandbyRate: 45.00
+  driverExtStandbyRate: 45.00
+  mechanicExtStandbyRate: 45.00
+  serviceTruckMileageRate: 3.72
+  ron_rate: 123.00
+  hmgb: Ethan Makarowski
+  flight_hour_qty: 5.2
+  dailyAvailabilityQty: 1
+  pilotExtStandbyQty: 5
+  driverExtStandbyQty: 5
+  mechanicExtStandbyQty: 5
+  serviceTruckMileageQty: 0
+  num_ron_people: 6
+  flight_hour_total: 26115.02
+  dailyAvailabilityTotal: 0
+  pilotExtStandbyTotal: 225
+  driverExtStandbyTotal: 225
+  mechanicExtStandbyTotal: 225
+  serviceTruckMileageTotal: 0
+  ron_total: 738
+  additionalCostDesc:
+  additionalCostTotal: 0
+  grandTotal: 27528.02
+  numPilots: 3
+  numDrivers: 1
+  numMechanics: 2
+  pax: 0
+  waterGallons: 18300
+  cargoLbs: 0
+  retardantGallons: 0
+  foamGallons: 0
+  acresTreated: 0
+  psdBalls: 0
+  gelGallons: 0
+
+hb1_day1_helicopter3:
+  date: 2014-07-25
+  helicopterId: 30
+  chargeCode: P6H8A5
+  override: 0618
+  incidentNumber: OR-WIF-140090
+  flight_hour_rate: 3544.88
+  dailyAvailabilityRate: 6011.72
+  pilotExtStandbyRate: 45.00
+  driverExtStandbyRate: 45.00
+  mechanicExtStandbyRate: 45.00
+  serviceTruckMileageRate: 3.72
+  ron_rate: 123.00
+  hmgb: Justin Holloway
+  flight_hour_qty: 4.6
+  dailyAvailabilityQty: 1
+  pilotExtStandbyQty: 5
+  driverExtStandbyQty: 5
+  mechanicExtStandbyQty: 5
+  serviceTruckMileageQty: 0
+  num_ron_people: 5
+  flight_hour_total: 16306.45
+  dailyAvailabilityTotal: 0
+  pilotExtStandbyTotal: 225
+  driverExtStandbyTotal: 225
+  mechanicExtStandbyTotal: 225
+  serviceTruckMileageTotal: 0
+  ron_total: 615
+  additionalCostDesc:
+  additionalCostTotal: 0
+  grandTotal: 17596.45
+  numPilots: 2
+  numDrivers: 1
+  numMechanics: 2
+  pax: 0
+  waterGallons: 14800
+  cargoLbs: 0
+  retardantGallons: 0
+  foamGallons: 0
+  acresTreated: 0
+  psdBalls: 0
+  gelGallons: 0
+
+hb1_day2_helicopter1:
+  date: 2014-07-26
+  helicopterId: 10
+  chargeCode: P6H8A5
+  override: 0618
+  incidentNumber: OR-WIF-140090
+  flight_hour_rate: 2035.82
+  dailyAvailabilityRate: 1302.30
+  pilotExtStandbyRate: 45.00
+  driverExtStandbyRate: 45.00
+  mechanicExtStandbyRate: 45.00
+  serviceTruckMileageRate: 3.72
+  ron_rate: 123.00
+  hmgb: Tim Lyda
+  flight_hour_qty: 6.3
+  dailyAvailabilityQty: 1
+  pilotExtStandbyQty: 5
+  driverExtStandbyQty: 5
+  mechanicExtStandbyQty: 5
+  serviceTruckMileageQty: 0
+  num_ron_people: 3
+  flight_hour_total: 12825.67
+  dailyAvailabilityTotal: 0
+  pilotExtStandbyTotal: 225
+  driverExtStandbyTotal: 225
+  mechanicExtStandbyTotal: 225
+  serviceTruckMileageTotal: 0
+  ron_total: 369.00
+  additionalCostDesc:
+  additionalCostTotal: 0
+  grandTotal: 13869.67
+  numPilots: 1
+  numDrivers: 1
+  numMechanics: 1
+  pax: 0
+  waterGallons: 5200
+  cargoLbs: 800
+  retardantGallons: 0
+  foamGallons: 0
+  acresTreated: 0
+  psdBalls: 0
+  gelGallons: 0
+
+hb1_day2_helicopter2:
+  date: 2014-07-26
+  helicopterId: 20
+  chargeCode: P6H8A5
+  override: 0618
+  incidentNumber: OR-WIF-140090
+  flight_hour_rate: 4024
+  dailyAvailabilityRate: 5022.12
+  pilotExtStandbyRate: 45.00
+  driverExtStandbyRate: 45.00
+  mechanicExtStandbyRate: 45.00
+  serviceTruckMileageRate: 3.72
+  ron_rate: 123.00
+  hmgb: Ethan Makarowski
+  flight_hour_qty: 7.1
+  dailyAvailabilityQty: 1
+  pilotExtStandbyQty: 5
+  driverExtStandbyQty: 5
+  mechanicExtStandbyQty: 5
+  serviceTruckMileageQty: 0
+  num_ron_people: 6
+  flight_hour_total: 28570.40
+  dailyAvailabilityTotal: 0
+  pilotExtStandbyTotal: 225
+  driverExtStandbyTotal: 225
+  mechanicExtStandbyTotal: 225
+  serviceTruckMileageTotal: 0
+  ron_total: 738
+  additionalCostDesc:
+  additionalCostTotal: 0
+  grandTotal: 29983.40
+  numPilots: 3
+  numDrivers: 1
+  numMechanics: 2
+  pax: 0
+  waterGallons: 34200
+  cargoLbs: 0
+  retardantGallons: 0
+  foamGallons: 0
+  acresTreated: 0
+  psdBalls: 0
+  gelGallons: 0
+
+hb1_day2_helicopter3:
+  date: 2014-07-26
+  helicopterId: 30
+  chargeCode: P6H8A5
+  override: 0618
+  incidentNumber: OR-WIF-140090
+  flight_hour_rate: 3544.88
+  dailyAvailabilityRate: 6011.72
+  pilotExtStandbyRate: 45.00
+  driverExtStandbyRate: 45.00
+  mechanicExtStandbyRate: 45.00
+  serviceTruckMileageRate: 3.72
+  ron_rate: 123.00
+  hmgb: Justin Holloway
+  flight_hour_qty: 5.9
+  dailyAvailabilityQty: 1
+  pilotExtStandbyQty: 5
+  driverExtStandbyQty: 5
+  mechanicExtStandbyQty: 5
+  serviceTruckMileageQty: 0
+  num_ron_people: 5
+  flight_hour_total: 20914.79
+  dailyAvailabilityTotal: 0
+  pilotExtStandbyTotal: 225
+  driverExtStandbyTotal: 225
+  mechanicExtStandbyTotal: 225
+  serviceTruckMileageTotal: 0
+  ron_total: 615
+  additionalCostDesc:
+  additionalCostTotal: 0
+  grandTotal: 22204.79
+  numPilots: 2
+  numDrivers: 1
+  numMechanics: 2
+  pax: 0
+  waterGallons: 30400
+  cargoLbs: 0
+  retardantGallons: 0
+  foamGallons: 0
+  acresTreated: 0
+  psdBalls: 0
+  gelGallons: 0

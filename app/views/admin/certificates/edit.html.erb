@@ -1,0 +1,7 @@
+<h1>Edit This Certificate</h1>
+<br /><br />
+<%= render 'form' %>
+
+<%= link_to 'Show', @certificate %> |
+<%= link_to 'Back', certificates_path %> |
+<%= link_to image_tag("trash.png"), @certificate, :confirm => "Do you really want to delete this certificate?", :method => :delete %>

@@ -1,0 +1,91 @@
+<h1>Listing cost_sheets</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Helicopterid</th>
+    <th>Helibaseid</th>
+    <th>Chargecode</th>
+    <th>Override</th>
+    <th>Incidentnumber</th>
+    <th>Dailyavailabilityrate</th>
+    <th>Pilotextstandbyrate</th>
+    <th>Driverextstandbyrate</th>
+    <th>Mechanicextstandbyrate</th>
+    <th>Servicetruckmileagerate</th>
+    <th>Hmgb</th>
+    <th>Dailyavailabilityqty</th>
+    <th>Pilotextstandbyqty</th>
+    <th>Driverextstandbyqty</th>
+    <th>Mechanicextstandbyqty</th>
+    <th>Servicetruckmileageqty</th>
+    <th>Dailyavailabilitytotal</th>
+    <th>Pilotextstandbytotal</th>
+    <th>Driverextstandbytotal</th>
+    <th>Mechanicextstandbytotal</th>
+    <th>Servicetruckmileagetotal</th>
+    <th>Additionalcostdesc</th>
+    <th>Additionalcosttotal</th>
+    <th>Numpilots</th>
+    <th>Numdrivers</th>
+    <th>Nummechanics</th>
+    <th>Pax</th>
+    <th>Watergallons</th>
+    <th>Cargolbs</th>
+    <th>Retardantgallons</th>
+    <th>Foamgallons</th>
+    <th>Acrestreated</th>
+    <th>Psdballs</th>
+    <th>Gelgallons</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cost_sheets.each do |cost_sheet| %>
+  <tr>
+    <td><%= cost_sheet.date %></td>
+    <td><%= cost_sheet.helicopterId %></td>
+    <td><%= cost_sheet.helibaseId %></td>
+    <td><%= cost_sheet.chargeCode %></td>
+    <td><%= cost_sheet.override %></td>
+    <td><%= cost_sheet.incidentNumber %></td>
+    <td><%= cost_sheet.dailyAvailabilityRate %></td>
+    <td><%= cost_sheet.pilotExtStandbyRate %></td>
+    <td><%= cost_sheet.driverExtStandbyRate %></td>
+    <td><%= cost_sheet.mechanicExtStandbyRate %></td>
+    <td><%= cost_sheet.serviceTruckMileageRate %></td>
+    <td><%= cost_sheet.hmgb %></td>
+    <td><%= cost_sheet.dailyAvailabilityQty %></td>
+    <td><%= cost_sheet.pilotExtStandbyQty %></td>
+    <td><%= cost_sheet.driverExtStandbyQty %></td>
+    <td><%= cost_sheet.mechanicExtStandbyQty %></td>
+    <td><%= cost_sheet.serviceTruckMileageQty %></td>
+    <td><%= cost_sheet.dailyAvailabilityTotal %></td>
+    <td><%= cost_sheet.pilotExtStandbyTotal %></td>
+    <td><%= cost_sheet.driverExtStandbyTotal %></td>
+    <td><%= cost_sheet.mechanicExtStandbyTotal %></td>
+    <td><%= cost_sheet.serviceTruckMileageTotal %></td>
+    <td><%= cost_sheet.additionalCostDesc %></td>
+    <td><%= cost_sheet.additionalCostTotal %></td>
+    <td><%= cost_sheet.numPilots %></td>
+    <td><%= cost_sheet.numDrivers %></td>
+    <td><%= cost_sheet.numMechanics %></td>
+    <td><%= cost_sheet.pax %></td>
+    <td><%= cost_sheet.waterGallons %></td>
+    <td><%= cost_sheet.cargoLbs %></td>
+    <td><%= cost_sheet.retardantGallons %></td>
+    <td><%= cost_sheet.foamGallons %></td>
+    <td><%= cost_sheet.acresTreated %></td>
+    <td><%= cost_sheet.psdBalls %></td>
+    <td><%= cost_sheet.gelGallons %></td>
+    <td><%= link_to 'Show', cost_sheet %></td>
+    <td><%= link_to 'Edit', edit_cost_sheet_path(cost_sheet) %></td>
+    <td><%= link_to 'Destroy', cost_sheet, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cost sheet', new_cost_sheet_path %>

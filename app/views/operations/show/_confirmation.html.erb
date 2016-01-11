@@ -1,0 +1,24 @@
+<% class_name = object.class.name.downcase %>
+<% operator = object.is_a?(Rappel) ? object.rappeller.person : object.spotter.person %>
+<div id="<%= "#{object.position}_confirmed" %>" class="rappel_confirmation_status">
+  <% if object.confirmed? %>
+    <span class="confirmed">Confirmed by <span class="name"><%= object.confirmer.fullname %></span></span>
+  <% else %>
+    <span class="unconfirmed">
+      <% if current_person.has_authorization?(Authorizations::EDIT_OPERATIONS) && current_person.current_crew == operator.current_or_most_recent_crew %>
+        Awaiting your confirmation
+        <%= form_tag(url_for(:controller => "/admin/#{class_name.pluralize}", :action => :confirm, :id => object.id), :remote => true, :style => 'display:inline') do %>
+          <%= image_submit_tag Images::YES %>
+        <% end %>
+        <%= form_tag(url_for(:controller => "/admin/#{class_name.pluralize}", :action => :destroy, :id => object.id), :method => :delete, :remote => true, :style => 'display:inline') do %>
+          <% confirm_message = "This will remove the rappel in question" %>
+          <% confirm_message += operation.creator.notification_email ? " and send an email notification to its creator, #{operation.creator.fullname} (#{operation.creator.notification_email})" : 
+                                                                       " (its creator has disabled email notifications and will not be notified)" %>
+          <%= image_submit_tag Images::NO, :confirm => confirm_message %>
+        <% end %>
+      <% else %>
+        Awaiting confirmation by <%= operator.current_or_most_recent_crew.abbrev %>&nbsp;
+      <% end %>
+    </span>
+  <% end %>
+</div>

@@ -1,0 +1,3 @@
+<%= render 'ajax_controls/success', :object => @enrollment %>
+slideDownInsert("enrollment_history_content", "<%= @log_entry.timestamped_comment.html_safe %>");
+$('accounting_total').update("$" + "<%= @enrollment.accounting_total %>");

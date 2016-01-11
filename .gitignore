@@ -1,0 +1,36 @@
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+ 
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Subversion Repo Files
+######################
+.svn
+
+# Temp files
+######################
+*.swp
+*.pid
+
+# Vagrant config
+######################
+.vagrant/*
+
+# Secret Files / Passwords
+##########################
+config/database.yml
+config/secrets.yml
+config/initializers/secret_token.rb
+*.ppk
+*.pem

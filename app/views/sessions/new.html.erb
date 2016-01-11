@@ -1,0 +1,10 @@
+
+<h2>Log In:</h2><br /><br />
+<%= form_for :person, :url => login_url do |f| %>
+    Username: <br />
+    <%= f.text_field :username, :style => "width: 10em;" %><br />
+    Password: <br />
+    <%= f.password_field :password, :style => "width: 10em;" %><br />
+    <%= f.submit :value => "Login", :style => "width:5em;" %><br />
+    <div class="sidebar_error_msg"><%= flash[:auth_alert] %></div>
+<% end %>

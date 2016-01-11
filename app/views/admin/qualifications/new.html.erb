@@ -1,0 +1,5 @@
+<h1>New Qualification for <%= @person.fullname %></h1>
+
+<%= render 'form' %>
+
+<%= link_to "View #{@person.firstname}'s Quals", qualifications_for_admin_person_path(@person) %>

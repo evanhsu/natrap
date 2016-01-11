@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tailnumber:</b>
+  <%= @helicopter.tailnumber %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @helicopter.model %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @helicopter.type %>
+</p>
+
+<p>
+  <b>Contracttype:</b>
+  <%= @helicopter.contractType %>
+</p>
+
+<p>
+  <b>Flightrate:</b>
+  <%= @helicopter.flightRate %>
+</p>
+
+<p>
+  <b>Dailyavailabilityrate:</b>
+  <%= @helicopter.dailyAvailabilityRate %>
+</p>
+
+<p>
+  <b>Pilotextstandbyrate:</b>
+  <%= @helicopter.pilotExtStandbyRate %>
+</p>
+
+<p>
+  <b>Driverextstandbyrate:</b>
+  <%= @helicopter.driverExtStandbyRate %>
+</p>
+
+<p>
+  <b>Mechanicextstandbyrate:</b>
+  <%= @helicopter.mechanicExtStandbyRate %>
+</p>
+
+<p>
+  <b>Servicetruckmileagerate:</b>
+  <%= @helicopter.serviceTruckMileageRate %>
+</p>
+
+<p>
+  <b>Hmgb:</b>
+  <%= @helicopter.hmgb %>
+</p>
+
+
+<%= link_to 'Edit', edit_helicopter_path(@helicopter) %> |
+<%= link_to 'Back', helicopters_path %>

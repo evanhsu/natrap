@@ -1,0 +1,98 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+dan_quinones_phone:
+  person_id: 1
+  address_type: Cell
+  address: (541) 123-4567
+
+dan_quinones_email:
+  person_id: 1
+  address_type: Email
+  address: srcquinones@gmail.com
+
+dan_quinones_notification_email:
+  person_id: 1
+  address_type: Email
+  address: tyler.l.hsu@gmail.com
+  notify: true
+
+evan_hsu_home_email:
+  person_id: 2
+  address_type: Email
+  address: evanhsu@gmail.com
+  notify: true
+
+evan_hsu_work_email:
+  person_id: 2
+  address_type: Email
+  address: elhsu@fs.fed.us
+
+evan_hsu_home_address:
+  person_id: 2
+  address_type: Home Address
+  address: 20381 Vassar Pl, Bend, OR 97702
+
+cole_taggart_work_phone:
+  person_id: 3
+  address_type: Work Phone
+  address: (541) 333-3333 x5133
+
+cole_taggart_cell_phone:
+  person_id: 3
+  address_type: Cell
+  address: (541) 444-4444
+
+cole_taggart_email:
+  person_id: 3
+  address_type: Email
+  address: cole_taggart@gmail.com
+
+cory_vinyard_email:
+  person_id: 4
+  address_type: Email
+  address: cory_vinyard@gmail.com
+
+amy_kazmier_email:
+  person_id: 5
+  address_type: Email
+  address: amy_kazmier@fs.fed.us
+
+amy_kazmier_home_address:
+  person_id: 5
+  address_type: Home Address
+  address: 2345 North Ridge Way, Redmond, OR 97756
+
+norm_sealing_email:
+  person_id: 6
+  address_type: Email
+  address: norm_sealing@gmail.com
+
+andrew_hastings_email:
+  person_id: 7
+  address_type: Email
+  address: andrew_hastings@gmail.com
+
+matt_mahoney_email:
+  person_id: 8
+  address_type: Email
+  address: matt_mahoney@gmail.com
+
+mike_davis_email:
+  person_id: 9
+  address_type: Email
+  address: mike_davis@fs.fed.us.com
+
+garret_harasek_email:
+  person_id: 10
+  address_type: Email
+  address: garret_harasek@gmail.com
+
+amanda_stachowski_email:
+  person_id: 11
+  address_type: Email
+  address: amanda_stachowski@gmail.com
+
+hannah_dewey_email:
+  person_id: 12
+  address_type: Email
+  address: hannah_dewey@gmail.com

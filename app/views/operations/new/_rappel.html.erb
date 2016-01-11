@@ -1,0 +1,44 @@
+<%= fields_for "operation[rappels_attributes][#{count}]", rappel do |rappel_form| %>
+  <div style="text-align:left;margin:0 auto 0 auto;width:18em;border:2px dashed gray;padding:5px" class="rappel_container" id="<%= rappel.position %>_container">
+    <% if rappel.errors.any? %>
+  <div style="color:#FF0000">
+    <% rappel.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  </div>
+<% end %>
+    <% if rappel.door == "left" %>
+      <span style="float:right;text-align:right">
+    <% else %>
+      <span style="float:left;text-align:left;padding-right:5px">
+    <% end %>
+      <%= title %><br />
+      <%= image_tag rappel.rappeller.person.headshot.url, :onerror => "this.src='/images/headshots/missing.jpg'" %><br />
+      <%= select_tag("operation[rappels_attributes][#{count}][purpose]",options_for_select(Rappel::PURPOSES,rappel.purpose)) %><br />
+      Knot:<%= rappel_form.check_box :knot %><br />
+      ETO:  <%= rappel_form.check_box :eto %>
+    </span>
+    Name: <br />
+    <%= text_field_tag :person_fullname, rappel.rappeller.person.fullname, :style => "width:9em;height:1em",
+                       :id => "#{rappel.position}_fullname", "data-rappeller_autocomplete" => "true",
+                       "data-autocomplete_service_url" => "/rappellers/autocomplete.json",
+                       "data-autocomplete_container" => "#{rappel.position}_fullname_autocomplete_container" %>
+    <div id='<%= rappel.position %>_fullname_autocomplete_container'></div>
+    Descent Device: <br />
+    <%= rappel_form.text_field :descent_device_number, :style => "width:7em", "data-autocomplete" => "/rappel_equipment/autocomplete/descent_device.json",
+                               "data-autocomplete_container" => "#{rappel.position}_descent_device_autocomplete_container" %><br />
+    <div id='<%= rappel.position %>_descent_device_autocomplete_container'></div>
+    Rope: <br />
+    <%= rappel_form.text_field :rope_number, :style => "width:7em", "data-autocomplete" => "/rappel_equipment/autocomplete/rope.json",
+                               "data-autocomplete_container" => "#{rappel.position}_rope_autocomplete_container" %><br />
+    <div id='<%= rappel.position %>_rope_autocomplete_container'></div>
+    Rope End: <br />
+    A<%= rappel_form.radio_button :rope_end, "A" %>&nbsp;
+    B<%= rappel_form.radio_button :rope_end, "B" %><br />
+    <%= rappel_form.text_field :comments, :style => "width:98%;", "data-prompt" => "Comments" %>
+    <%= hidden_field_tag "operation[rappels_attributes][#{count}][door]", rappel.door %>
+    <%= hidden_field_tag "operation[rappels_attributes][#{count}][stick]", rappel.stick %>
+    <%= hidden_field_tag("operation[rappels_attributes][#{count}][id]", rappel.id) unless rappel.new_record? %>
+    <%= hidden_field_tag "operation[rappels_attributes][#{count}][rappeller_id]", rappel.rappeller.id, "data-id_field" => true %>
+  </div>
+<% end %>

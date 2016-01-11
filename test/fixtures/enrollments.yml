@@ -1,0 +1,186 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  person_id: 1
+  scheduled_course_id: 10
+  status: enrolled
+  cost_tuition: 250.00
+  cost_wages:
+  prework_received: false
+  payment_method:
+  charge_code: wfpr10
+  override: "0607"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name: 
+  certificate_received: true
+
+two:
+  person_id: 2
+  scheduled_course_id: 10
+  status: enrolled
+  cost_tuition: 250.00
+  cost_wages:
+  prework_received: true
+  payment_method:
+  charge_code: wfpr10
+  override: "0610"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received: true
+
+three:
+  person_id: 5
+  scheduled_course_id: 3
+  status: enrolled
+  cost_tuition: 250.00
+  cost_wages:
+  prework_received: false
+  payment_method:
+  charge_code: wfpr07
+  override: "0607"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received:
+
+four:
+  person_id: 1
+  scheduled_course_id: 9
+  status: nominated
+  cost_tuition: 275.00
+  cost_wages:
+  prework_received: false
+  payment_method:
+  charge_code: wfpr10
+  override: "0610"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received:
+
+five:
+  person_id: 2
+  scheduled_course_id: 8
+  status: enrolled
+  cost_tuition: 275.00
+  cost_wages:
+  prework_received: false
+  payment_method:
+  charge_code: wfpr10
+  override: "0610"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received:
+
+six:
+  person_id: 7
+  scheduled_course_id: 7
+  status: enrolled
+  cost_tuition: 275.00
+  cost_wages:
+  prework_received: true
+  payment_method:
+  charge_code: wfpr07
+  override: "0607"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received: true
+
+seven:
+  person_id: 8
+  scheduled_course_id: 7
+  status: enrolled
+  cost_tuition: 310.25
+  cost_wages:
+  prework_received: true
+  payment_method:
+  charge_code: wfpr07
+  override: "0607"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received:
+
+eight:
+  person_id: 9
+  scheduled_course_id: 6
+  status: enrolled
+  cost_tuition: 210.75
+  cost_wages:
+  prework_received: false
+  payment_method:
+  charge_code: wfpr03
+  override: "0603"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received:
+
+nine:
+  person_id: 12
+  scheduled_course_id: 6
+  status: waitlisted
+  cost_tuition: 210.75
+  cost_wages:
+  prework_received: false
+  payment_method:
+  charge_code: wfpr03
+  override: "0603"
+  travel_paid: false
+  cost_travel:
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received:
+
+ten:
+  person_id: 2
+  scheduled_course_id: 4
+  status: enrolled
+  cost_tuition: 345.67
+  cost_wages: 360
+  prework_received: true
+  payment_method:
+  charge_code: wfpr10
+  override: "0610"
+  travel_paid: false
+  cost_travel: 500.00
+  cost_misc:
+  created_at:
+  updated_at:
+  course_name:
+  certificate_received:
+

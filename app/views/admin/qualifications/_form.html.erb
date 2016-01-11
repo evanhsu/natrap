@@ -1,0 +1,39 @@
+<% content_for :includes do %>
+  <%= javascript_include_tag "autocomplete" %>
+<% end %>
+
+<div style="margin:0 auto 0 auto; text-align: center;">
+<%= form_for([:admin,@qualification]) do |f| %>
+  <% if @qualification.errors.any? %>
+    <div id="error_explanation" style="margin:0 auto 0 auto;">
+      <h2><%= pluralize(@qualification.errors.count, "error") %> prohibited this qualification from being saved:</h2>
+      <ul>
+      <% @qualification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div><br />
+  <% end %>
+
+  <%= f.hidden_field :person_id, :value => @person.id %>
+    
+  <table style="border:2px solid #555555; margin: 0 auto 0 auto;">
+    <tr><td>Qualification Acronym<br /><i>e.g. FFT1</i></td><td>:</td>
+      <td><%= text_field_tag "qualification[acronym]", @qualification.acronym,
+                     "id" => "qualification_acronym",
+                     "data-autocomplete_on_select" => "(function(acronym,description){document.getElementById('qualification_description').writeAttribute('value',description)})",
+                     "data-autocomplete" => "/qualifications/autocomplete.json",
+                     "data-autocomplete_container" => "acronym_autocomplete_container" %>
+          <div id='acronym_autocomplete_container'></div>
+      </td></tr>
+    <tr><td>Full Description</td><td>:</td><td><%= f.text_field :description %></td></tr>
+    <tr><td>Trainee?</td><td>:</td><td><%= f.check_box :trainee %></td></tr>
+    <tr><td>Date Initiated</td><td>:</td><td><%= f.text_field :date_initiated %></td></tr>
+    <tr><td>Date Completed</td><td>:</td><td><%= f.text_field :date_qualified %></td></tr>
+    <tr><td>Upload Supporting Document<br /><i>e.g. a taskbook</i></td><td>:</td><td><%= f.file_field :document %></td></tr>
+    <tr><td colspan="3"><hr /></td></tr>
+    <tr><td colspan="2"></td><td style="text-align:right;"><%= f.submit %></td></tr>
+
+  </table>
+<% end %>
+</div>

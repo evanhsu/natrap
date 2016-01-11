@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h2>Welcome to Natrap.com!</h2>
+    <p>
+      You have received this email because you recently signed up for an account at www.natrap.com.<br />
+      Your credentials are:<br />
+      Username: <span style="font-size:1.2em; font-weight:bold;"><%= @username %></span><br />
+      Password: <span style="font-size:1.2em; font-weight:bold;"><%= @password %></span><br />
+      <br />
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @login_url %>.<br />
+      You can change your password after logging in.
+    </p>
+  </body>
+</html>

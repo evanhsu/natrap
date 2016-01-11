@@ -1,0 +1,47 @@
+<%= form_for(@irregularity) do |f| %>
+  <% if @irregularity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@irregularity.errors.count, "error") %> prohibited this irregularity from being saved:</h2>
+
+      <ul>
+      <% @irregularity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :fire_number %><br>
+    <%= f.text_field :fire_number %>
+  </div>
+  <div class="field">
+    <%= f.label :fire_name %><br>
+    <%= f.text_field :fire_name %>
+  </div>
+  <div class="field">
+    <%= f.label :tailnumber %><br>
+    <%= f.text_field :tailnumber %>
+  </div>
+  <!--
+  <div class="field">
+    <%= f.label :category %><br>
+    <%# f.collection_select @irregularity_categories, :category, :id, nil %>
+  </div>
+  -->
+  <div class="field">
+    <%= f.label :narrative %><br>
+    <%= f.text_area :narrative, rows:10, cols:30 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<%
+@td_style = "font-size: 1.2em;border: 1px solid #98BF21;padding: 3px 7px 2px 7px;background-color: #A7C942;color: white;"
+@td_alt_style = "font-size:1.2em; border:1px solid #98BF21; padding:3px 7px 2px 7px; background-color:#EAF2D3; color:black;"
+@th_style = "font-size: 1.2em;border: 1px solid #98BF21;padding: 3px 7px 2px 7px;background-color: #666666;color: white;"
+@table_style = "width:100%; border:1px solid #000000; border-collapse:collapse;"
+%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h2>Upcoming Courses for the <%= @crew.name %></h2>
+    <%= @start_date %> through <%= @end_date %>
+    <hr />
+
+    <table style="<%= @table_style %>">
+    <% @last_course = "" %>
+    <% @current_style = @td_style %>
+    <% @courses.each do |course| %>
+      <% if course.name != @last_course %>
+        <% @current_style = (@current_style == @td_style ? @td_alt_style:@td_style) %>
+        <tr><td colspan="2" style="<%= @current_style %> font-weight:bold;"><%= link_to course.name, admin_scheduled_course_url(course) %> (<%= course.date_start %> through <%= course.date_end %>)</td></tr>
+        <% course.enrollments.each do |enrollment| %>
+          <tr><td style="<%= @current_style %> width:3em;">&nbsp;</td><td style="<%= @current_style %>"><%= link_to enrollment.person.fullname, admin_enrollment_url(enrollment) %> (<%= enrollment.status %><%= ", Prework NOT received" unless enrollment.prework_received %>)</td></tr>
+        <% end %>
+      <% end %>
+      <% @last_course = course.name %>
+    <% end %>
+    </table>
+    <p>
+      <small><a href="http://www.natrap.com">http://www.natrap.com</a></small><br />
+    </p>
+  </body>
+</html>

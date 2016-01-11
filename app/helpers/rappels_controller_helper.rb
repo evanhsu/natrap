@@ -1,0 +1,2 @@
+module RappelsControllerHelper
+end

@@ -1,0 +1,13 @@
+<% if current_person %>
+  <% cid = current_person.current_crew.id if current_crew %>
+  <% editable_enrollments = current_person.has_authorization?(Authorizations::EDIT_ENROLLMENTS) %>
+  <% editable_scheduled_courses = current_person.has_authorization?(Authorizations::EDIT_SCHEDULED_COURSES) %>
+  <% editable_training_facilities = current_person.has_authorization?(Authorizations::EDIT_TRAINING_FACILITIES) %>
+
+  <ul class="sidebar_section">
+    <li class="left_sidebar_title">Training</li>
+    <li><%= link_to_unless_current "Course Directory", editable_scheduled_courses ? scheduled_courses_for_admin_crew_path(cid) : scheduled_courses_for_crew_path(cid) if current_crew %></li>
+    <!-- <li><%= link_to_unless_current "Course Enrollments", editable_enrollments ? enrollments_for_admin_crew_path(cid) : enrollments_for_crew_path(cid) if current_crew %></li> -->
+    <li><%= link_to_unless_current "Training Facilities", editable_training_facilities ? training_facilities_for_admin_crew_path(cid) : training_facilities_for_crew_path(cid) if current_crew %></li>
+  </ul>
+<% end %>

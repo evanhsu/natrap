@@ -1,0 +1,31 @@
+<% content_for :left_sidebar do %>
+  <%= render :partial => "/people/sidebar" %>
+<% end %>
+
+<h1>Listing people</h1>
+
+<table>
+  <tr>
+    <th style="width:3em;">id</th>
+    <th style="text-align:left;">Name</th>
+    <th>has_password?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @people.each do |person| %>
+  <tr>
+    <td><%= person.id %></td>
+    <td style="text-align: left;"><%= person.firstname + ' ' + person.lastname %></td>
+    <td><%= !person.encrypted_password.nil? %></td>
+    <td><%= link_to 'Show', person %></td>
+    <td><%= link_to 'Edit', edit_person_path(person) %></td>
+    <td><%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Person', new_person_path %>

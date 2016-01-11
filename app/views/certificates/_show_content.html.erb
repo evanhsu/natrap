@@ -1,0 +1,40 @@
+<div style="width:75%; height:75%; margin:0 auto 0 auto;">
+  <span style="width:550px; text-align:left; font-weight:bold; font-size: 1.2em; float:left; height:2em; position:relative;">
+    <% if editable %>
+      <%= link_to "<< "+@person.fullname, admin_person_url(@person), :style => "" %>
+      <%= link_to "<< All Certificates", certificates_for_admin_person_url(@person), :style => "" %>
+    <% else %>
+    
+      <%= link_to "<< "+@person.fullname, person_url(@person), :style => "" %>
+      <%= link_to "<< All Certificates", certificates_for_person_url(@person), :style => "" %>
+    <% end %>
+  </span>
+  <span style="width:50px; text-align:right; font-weight:bold; font-size: 1.2em; float:right;">
+    <%= link_to image_tag('download.png', :title => 'Download this certificate'), download_attachment_for_certificate_url(@certificate) %>
+  </span><br /><hr />
+
+  <div style="display:none; clear:both;"></div>
+
+  <div style="width:100%; text-align:left;">
+    <table style="width:100%;">
+      <tr><td style="font-size:1.2em; font-weight:bold;">
+            <%= @person.fullname %><br />
+            <%= @certificate.name %> <%= "(#{@certificate.year})" unless @certificate.year.blank? %>
+        </td>
+        <td style="width:50%; font-size:0.8em; font-weight:bold; text-align:right; vertical-align: bottom;">
+          <% if editable %>
+            <%= link_to 'Edit', edit_certificate_url(@certificate) %> |
+            <%= link_to 'Delete', [:admin,@certificate], :confirm => 'Are you sure?', :method => :delete %>
+          <% end %>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <object 
+          data="<%= view_attachment_for_certificate_url(@certificate) %>"
+          type="<%= @certificate.image.content_type.blank? ? "application/pdf" : @certificate.image.content_type %>"
+          style="width:100%; min-height:300px; height:auto; overflow:auto; border:5px solid #555555;">
+  </object>
+</div>

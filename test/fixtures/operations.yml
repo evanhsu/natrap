@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  incident_number: WA-OWF-000384
+  aircraft_type_id: 1
+  aircraft_tailnumber: C-GRNR
+  pilot_id: 1
+  weather: Awesome
+  height: 200
+  canopy_opening: 100
+  date: 2011-01-24
+  location: Oregon
+  operation_type: 5
+  creator_id: 1
+  comments: blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+
+two:
+  id: 2
+  incident_number: OR-ART-000475
+  aircraft_type_id: 1
+  aircraft_tailnumber: C-GARF
+  pilot_id: 1
+  weather: Bad
+  height: 500
+  canopy_opening:  100
+  date: 2010-08-24
+  location: MyString
+  operation_type: 2
+  creator_id: 2
+  comments: MyText

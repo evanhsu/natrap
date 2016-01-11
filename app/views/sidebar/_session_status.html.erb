@@ -1,0 +1,28 @@
+<ul id="session_menu">
+<% if current_person %>
+  Logged in as <i><%= current_person.username %></i><br />
+  <br />
+  <%= link_to "Logout", logout_url %><br /><br />
+  
+<% else %>
+  <%= form_for :person, :url => login_url do |f| %>
+    Username: <br />
+    <%= f.text_field :username, :style => "width: 10em;" %><br />
+    Password: <br />
+    <%= f.password_field :password, :style => "width: 10em;" %><br />
+    <%= f.submit :value => "Login", :class => "round-corner-button" %> or <%= link_to "Sign Up", signup_path %><br />
+    <%= link_to "Forgot Password", forgotten_password_path, :html => {:style => "font-weight:bold;"} %>
+    <br /><br />
+    <div class="sidebar_error_msg" style="min-height: 3em;"><%= flash[:auth_alert] %></div>
+
+  <% end %>
+<% end %>
+
+<!--
+Login as:<br/>
+<%= login_link 'SRC admin (Evan Hsu)', 'evanhsu@gmail.com', 'hsuhsuhsu' %><br />
+<%= login_link 'SRC non-admin (Cole Taggart)', 'ctaggart', 'taggart' %><br />
+<%= login_link 'COR admin (Norm Sealing)', 'nsealing', 'sealing' %><br />
+<%= login_link 'COR non-admin (Andrew Hastings)', 'ahastings', 'hastings' %>
+-->
+</ul>

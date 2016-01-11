@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 
+  roBoStateId: 
+  personId: 
+  role: MyString
+  rank: MyString
+  cellIndex: 
+  listId: MyString
+  row: 
+  col: 
+
+two:
+  id: 
+  roBoStateId: 
+  personId: 
+  role: MyString
+  rank: MyString
+  cellIndex: 
+  listId: MyString
+  row: 
+  col: 

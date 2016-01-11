@@ -1,0 +1,14 @@
+<div id="training_facility_fields">
+  <%= fields_for "scheduled_course[training_facility_attributes]", TrainingFacility.new do |f| %>
+  <table style="width:60%; border:2px solid #555555;">
+    <tr><td style="width:8em;">Facility Name:</td><td style="width:auto"><%= f.text_field :name, :style => "width:90%;" %></td></tr>
+    <tr><td>Contact Name:</td><td><%= f.text_field :contact_name, :style => "width:90%;" %></td></tr>
+    <tr><td>Contact Phone:</td><td><%= f.text_field :contact_phone, :style => "width:90%;" %></td></tr>
+    <tr><td>Contact Email:</td><td><%= f.text_field :contact_email, :style => "width:90%;" %></td></tr>
+    <tr><td style="vertical-align: top;">Address:</td><td><%= f.text_area :address, :style => "height:4em;width:90%;" %></td></tr>
+    <tr><td style="vertical-align: top;">Notes:</td><td><%= f.text_area :notes, :style => "height:3em;width:90%" %>
+    <%= f.hidden_field :crew_id, :value => current_person.current_crew.id %></td></tr>
+  <% end %>
+    <tr><td>&nbsp;</td><td><%= link_to("Select an Existing Facility", "#", render_partial_options("training_facility_selection", :method => "update", :container => "training_facility")) %></td></tr>
+  </table>
+</div>

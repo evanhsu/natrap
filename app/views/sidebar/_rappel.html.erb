@@ -1,0 +1,13 @@
+<% if current_person %>
+  <% cid = current_person.current_crew.id if current_crew %>
+  <% editable_operations = current_person.has_authorization?(Authorizations::EDIT_OPERATIONS) %>
+  <ul class="sidebar_section">
+    <li class="left_sidebar_title">Rappel</li>
+    <% if editable_operations %>
+      <li><%= link_to_unless_current "Log a New Rappel", new_operation_url %></li>
+    <% end %>
+    <li><%= link_to_unless_current "View Rappels", editable_operations ? operations_for_admin_crew_url(cid) : operations_for_crew_url(cid) if current_crew %></li>
+    <li>Proficiency Report</li>
+    <li>Action Summary</li>
+  </ul>
+<% end %>
